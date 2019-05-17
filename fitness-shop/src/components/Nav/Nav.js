@@ -44,65 +44,67 @@ class NavBar extends Component {
             </ul>
           </div>
         </div>
-      </div>
+     
       //   Top header ends here
-    );
-    // <Navbar
-    //   id="navbar"
-    //   bg="light"
-    //   expand="lg"
-    //   className="navbar navbar-expand-md navbar-light"
-    //   collapseOnSelect={true}
-    // >
-    //   <Container>
-    //   <Navbar.Toggle
-    //       className="navbar-toggler"
-    //       type="button"
-    //       data-toggle="collapse"
-    //       data-target="#navbarSupportedContent"
-    //       aria-controls="navbarSupportedContent"
-    //       aria-expanded="false"
-    //       aria-label="Toggle navigation"
-    //       id="collaspe-btn"
-    //     />
-    //     <Navbar.Collapse id="navbarSupportedContent">
-    //       <Nav className="navbar-nav ml-auto">
-    //         <div>
-    //           <Nav.Item>
-    //             <Link
-    //               activeclass="active"
-    //               to="home"
-    //               spy={true}
-    //               smooth={true}
-    //               offset={-200}
-    //               duration={800}
-    //               className="smooths nav-link"
-    //               onClick={this.closeNavbar}
-    //             >
-    //               Home
-    //             </Link>
-    //           </Nav.Item>
+    
+    <Navbar
+      id="navbar"
+      bg="light"
+      expand="lg"
+      className="navbar navbar-expand-md navbar-light"
+      collapseOnSelect={true}
+    >
+      <Container>
+      <Navbar.Toggle
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          id="collaspe-btn"
+        />
+        <Navbar.Collapse id="navbarSupportedContent">
+          <Nav className="navbar-nav ml-auto">
+            <div>
+              <Nav.Item>
+                <Link
+                  activeclass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={-200}
+                  duration={800}
+                  className="smooths nav-link"
+                  onClick={this.closeNavbar}
+                >
+                  Home
+                </Link>
+              </Nav.Item>
 
-    //           <Nav.Item>
-    //             <Link
-    //               activeclass="active"
-    //               to="contact"
-    //               spy={true}
-    //               smooth={true}
-    //               offset={-200}
-    //               duration={800}
-    //               className="nav-link"
-    //               onClick={this.closeNavbar}
-    //             >
-    //               Contact
-    //             </Link>
-    //           </Nav.Item>
+              <Nav.Item>
+                <Link
+                  activeclass="active"
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-200}
+                  duration={800}
+                  className="nav-link"
+                  onClick={this.closeNavbar}
+                >
+                  Contact
+                </Link>
+              </Nav.Item>
 
-    //         </div>
-    //       </Nav>
-    //     </Navbar.Collapse>
-    //   </Container>
-    //   </Navbar>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+      </Navbar>
+      </div>
+      );
   }
 }
 
