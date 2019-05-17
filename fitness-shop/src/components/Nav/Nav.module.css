@@ -1,0 +1,39 @@
+h2, a:focus {
+    color:  #2D3645;
+}
+
+.socialIcons ul li a:hover {
+	background-color: #2D3645;
+} 
+
+.socialIcons.bottom ul li a {
+	background-color: #1f2530;
+}
+.socialIcons.bottom ul li a:hover {
+    color: #1f2530;
+}
+
+@media only screen and (max-width : 767px) {
+    .topHeader {
+        display: none;
+    }
+
+    .listInline li {
+        padding-left: 3px;
+    }
+
+    .addressBar {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .socialIcons {
+        text-align: center;
+    }
+}
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+.address-bar ul li a {
+    font-size: 13px;
+}
+}
+
