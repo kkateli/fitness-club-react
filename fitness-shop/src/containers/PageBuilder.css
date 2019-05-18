@@ -865,12 +865,12 @@
    /* =========================
        Our Team Area CSS
       ========================= */
-   .team-box{
+   .club-box{
        overflow: hidden;
        position: relative;
        margin-top: 30px;
    }
-   .team-box:before{
+   .club-box:before{
        content: "";
        display: block;
        border: 30px solid rgba(255, 255, 255, 0.3);
@@ -884,8 +884,8 @@
        transition: all 1s ease 0s;
        -webkit-transition: all 1s ease 0s;
    }
-   .team-box:hover:before{ border: 1px solid rgba(255, 255, 255, 0.18); }
-   .team-box:after{
+   .club-box:hover:before{ border: 1px solid rgba(255, 255, 255, 0.18); }
+   .club-box:after{
        content: "";
        display: block;
        border: 10px solid rgba(255, 255, 255, 0.7);
@@ -898,29 +898,36 @@
        z-index: 1;
        transition: all 0.3s ease 0s;
        -webkit-transition: all 1s ease 0s;
+       
+       
    }
-   .team-box:hover:after{
+   .club-box:hover:after{
        top: 0;
        left: 0;
        bottom: 0;
        right: 0;
        opacity: 0;
+       
    }
-   .team-box img{
+   
+   
+   .club-box img{
        width: 100%;
-       height: auto;
+       height: 350px;
        transform: scale(1.1);
        -webkit-transform: scale(1.1);
        -ms-transform: scale(1.1);
        transition: all 1s ease 0s;
        -webkit-transition: all 1s ease 0s;
    }
-   .team-box:hover img{
+   .club-box img :hover{
        transform: scale(1);
        -webkit-transform: scale(1);
        -ms-transform: scale(1);
+       
+        
    }
-   .team-box .box-content{
+   .club-box .box-content{
        padding: 20px;
        text-align: center;
        color: #fff;
@@ -934,13 +941,14 @@
        transition: all 0.3s ease 0s;
        -webkit-transition: all 0.3s ease 0s;
    }
-   .team-box:hover .box-content{
+   .club-box:hover .box-content{
        top: 6px;
        left: 6px;
        bottom: 6px;
        right: 6px;
+       color: #fff;
    }
-   .team-box .box-inner-content{
+   .club-box .box-inner-content{
        width: 100%;
        padding-bottom: 20px;
        opacity: 0;
@@ -949,51 +957,62 @@
        left: 0;
        transition: all 0.3s ease 0s;
        -webkit-transition: all 0.3s ease 0s;
+       color: #fff;
    }
-   .team-box:hover .box-inner-content{ opacity: 1; }
-   .team-box .title{
+   .club-box:hover .box-inner-content{ opacity: 1; }
+   .club-box .title{
        font-size: 26px;
        font-weight: 500;
        margin: 0;
+       background: #2d3645;
+       margin-bottom:3px;
+       
    }
-   .team-box .post{
+
+   
+   
+   .club-box .post{
        display: block;
        font-size: 16px;
        font-style: italic;
        margin-bottom: 10px;
+       background-color:#2d3645; 
    }
-   .team-box .icon{
+   .club-box .icon{
        padding: 0;
        margin: 0;
        list-style: none;
    }
-   .team-box .icon li{ display: inline-block; }
-   .team-box .icon li a{
+   .club-box .icon li{ display: inline-block; }
+   .club-box .icon li a{
        display: block;
        width: 40px;
        height: 40px;
        line-height: 40px;
-       background: #fff;
+       background:#2d3645;
+       color:#fff !important;
        margin-right: 10px;
        font-size: 18px;
        transition: all 0.3s ease 0s;
        -webkit-transition: all 0.3s ease 0s;
    }
-   .team-box .icon li a:hover{
-       color: #fff !important;
+   
+
+   .club-box .icon li a:hover{
+       color :#fff !important;
        border-radius: 50%;
    }
-   .team-slides .owl-nav {
+   .club-slides .owl-nav {
        position: relative;
    }
-   .team-slides .owl-nav div {
+   .club-slides .owl-nav div {
      font-size: 40px !important;
      opacity: 0.8;
      position: absolute;
        transition: all 0.4s ease 0s;
        -webkit-transition: all 0.4s ease 0s;
    }
-   .team-slides.owl-theme .owl-nav [class*=owl-] {
+   .club-slides.owl-theme .owl-nav [class*=owl-] {
        left: 0;
        right: 0;
        position: relative;
@@ -1001,16 +1020,16 @@
        padding: 0;
        margin-top: 15px;
    }
-   .team-slides .owl-nav div:hover {
+   .club-slides .owl-nav div:hover {
        opacity: 1;
        color: #848484;
    }
-   .team-slides .owl-nav .owl-prev {
+   .club-slides .owl-nav .owl-prev {
      left: 0;
      background-color: transparent !important;
      top: 0;
    }
-   .team-slides .owl-nav .owl-next {
+   .club-slides .owl-nav .owl-next {
      top: 0;
      background-color: transparent !important;
      right: 0;
@@ -2513,10 +2532,14 @@ h2, a:focus {
 .filter-menu button.programs-filter-btn-active, .filter-menu button:hover {
 	background-color: #2D3645;
 }
-.work-details .icon li span, .team-box .title, .team-box .icon li a, .team-slides .owl-nav div {
+.work-details .icon li span,  .club-slides .owl-nav div {
 	color: #2D3645 !important;
 }
-.team-box .icon li a:hover {
+
+.club-box .title, .club-box .icon li a{
+    color:#fff;
+}
+.club-box .icon li a:hover {
 	background: #2D3645;
 }
 .date-box {
@@ -2983,10 +3006,11 @@ h2, a:focus {
     .filter-menu {
         margin-top: 0;
     }
-    .team-box .title {
+    .club-box .title {
         font-size: 20px;
+       
     }
-    .team-slides .owl-nav {
+    .club-slides .owl-nav {
         margin: 15px auto 0;
         padding-bottom: 10px;
     }

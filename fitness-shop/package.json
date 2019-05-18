@@ -9,6 +9,7 @@
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-icofont": "0.0.6",
+    "react-owl-carousel3": "^2.2.5",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-visibility-sensor": "^5.0.2",
