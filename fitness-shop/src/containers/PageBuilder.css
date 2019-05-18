@@ -267,7 +267,7 @@
    .top-header {
        background-color: #eeeeee;
        color: #848484;
-       
+       padding: 10px 0 10px;
    }
    .glyph i {
        font-size: 60px;

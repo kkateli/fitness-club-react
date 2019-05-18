@@ -19,11 +19,11 @@ h2, a:focus {
     color: #1f2530;
 }
 .social-icons {
-    /* text-align: right; */
+    text-align: right;
     
-    /* width:30%;
+    width:30%;
     float:right;
-     */
+    
 }
 .social-icons ul li a {
 	display: block;
@@ -55,7 +55,7 @@ h2, a:focus {
 	background-color: #eee;
     margin-left: 104px;
     
-    /* width:40%; */
+    width:40%;
     
 }
 .address-bar ul li a {
