@@ -649,7 +649,7 @@
    ========================= */
    .services {
        background-color: #fff;
-       margin-top: 130px;
+       margin-top: 50px;
    }
    .service-item {
        background-color: #f5f8f9;
@@ -865,10 +865,14 @@
    /* =========================
        Our Team Area CSS
       ========================= */
+      .our-club{
+          margin-top:50px;
+      }
    .club-box{
        overflow: hidden;
        position: relative;
        margin-top: 30px;
+       
    }
    .club-box:before{
        content: "";
