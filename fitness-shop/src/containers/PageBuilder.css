@@ -319,7 +319,7 @@
    }
    .navbar-light .navbar-nav .nav-item {
        display:inline-block;
-       padding:5px;
+       padding:10px;
 
    }
 
@@ -2482,8 +2482,8 @@ h2, a:focus {
 .social-icons ul li a:hover {
 	background-color: #2D3645;
 }
-.navbar-light .navbar-nav > .nav-item:hover,
-.navbar-light .navbar-nav > .nav-item:active {
+.navbar-light .navbar-nav .nav-item:hover,
+.navbar-light .navbar-nav .nav-item:active {
 	background-color: #1f2530;
 }
 
