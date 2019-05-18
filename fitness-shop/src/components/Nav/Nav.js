@@ -70,11 +70,33 @@ class NavBar extends Component {
                   <Nav.Item>
                     <Link
                       activeclass="active"
-                      to="home"
+                      to="/"
                       className="smooths nav-link"
                       onClick={this.closeNavbar}
                     >
                       Home
+                    </Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
+                      to="whatWeDo"
+                      className="smooths nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      What we do
+                    </Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
+                      to="club"
+                      className="smooths nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      Club
                     </Link>
                   </Nav.Item>
 
