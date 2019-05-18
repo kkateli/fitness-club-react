@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
-import ScrollAnimation from 'react-animate-on-scroll';
+
 
 class WhatWeDo extends Component {
   render() {
@@ -23,13 +23,13 @@ class WhatWeDo extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
-                            <ScrollAnimation animateIn="fadeInUp">
+                           
                                 <div className="section-title">
                                     <h2>{this.props.sectionTitle}</h2>
                                     <p>{this.props.sectionDescription}</p>
                                     <span className="section-title-bg">{this.props.SectionbgTitle}</span>
                                 </div>
-                            </ScrollAnimation>
+                           
                         </div>
                     </div>
                     <div className="row">
