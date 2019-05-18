@@ -57,10 +57,14 @@
        margin: 0 0 25px;
        font-weight: 600;
        text-transform: capitalize;
+       text-align: center;
    }
    .section-title {
        position: relative;
        z-index: 1;
+   }
+   .section-title p{
+    text-align: center;
    }
    .section-title-bg {
        color: #f0f0f0;
@@ -74,6 +78,7 @@
        opacity: 0.8;
        font-family: cursive;
        text-transform: uppercase;
+       text-align: center;
    }
    .button, .center-wrap button button {
        position: relative;
