@@ -55,6 +55,15 @@ class NavBar extends Component {
           collapseOnSelect={true}
         >
           <Container>
+          <Navbar.Brand className="navbar-brand logo">
+              <div>
+                <Link exact to="/">
+                  <img src={this.props.MainLogo} alt="Logo" />
+                </Link>
+              </div>
+            </Navbar.Brand>
+
+            
             <Navbar.Collapse id="navbarSupportedContent">
               <Nav className="navbar-nav ml-auto">
                 <div>
@@ -91,7 +100,7 @@ class NavBar extends Component {
 
 //Default Props
 NavBar.defaultProps = {
-  // MainLogo: require(''),
+  MainLogo: require('../../assets/image/logo.png'),
   // Logo2: require(''),
   mailLink: "email@mail.com",
   mail: "example@example.com ",

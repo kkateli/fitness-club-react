@@ -347,6 +347,7 @@
    }
    .navbar-brand img {
        cursor: pointer;
+       height:250px;
    }
    .menu-shrink {
        box-shadow: 0 0 10px #ebebeb;
