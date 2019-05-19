@@ -62,6 +62,7 @@
    .section-title {
        position: relative;
        z-index: 1;
+       margin-bottom: 5px;
    }
    .section-title p{
     text-align: center;
@@ -1044,40 +1045,40 @@
       ========================= */
 
    /* =========================
-       Blog & News Area CSS
+       Customers & News Area CSS
       ========================= */
-   .our-blog {
+   .our-customers {
        background-color: #f5f8f9;
    }
-   .blog-item {
+   .customers-item {
        margin-top: 30px;
        transition: .4s;
        -webkit-transition: .4s;
        -moz-transition: .4s;
        overflow: hidden
    }
-   .blog-item:hover {
+   .customers-item:hover {
        -webkit-box-shadow: 0px 0px 8px 0px rgba(254, 86, 25, 0.30);
        -moz-box-shadow:    0px 0px 8px 0px rgba(254, 86, 25, 0.30);
        box-shadow:         0px 0px 8px 0px rgba(254, 86, 25, 0.30);
    }
-   .blog-item .blog-img {
+   .customers-item .customers-img {
        display: block;
        overflow: hidden
    }
-   .blog-item .blog-img img{
+   .customers-item .customers-img img{
        width: 100%;
        height: auto;
        transform: scale(1.1);
        transition: all 1s ease 0s;
        -webkit-transition: all 1s ease 0s;
    }
-   .blog-item .blog-img:hover img{
+   .customers-item .customers-img:hover img{
        transform: scale(1);
        -webkit-transform: scale(1);
        -ms-transform: scale(1);
    }
-   .blog-info {
+   .customers-info {
      position: relative;
      padding-left: 135px;
    }
@@ -1125,7 +1126,7 @@
    .post-content {
        padding: 20px;
    }
-   .main-blog {
+   .main-customers {
        padding: 70px 0 90px;
    }
    .pagination-area .pagination {
@@ -1248,19 +1249,19 @@
    .post-img img {
        width: 100%;
    }
-   .blog-details {
+   .customers-details {
        margin-top: 30px;
    }
-   .blog-details .date-box {
+   .customers-details .date-box {
        padding: 23px 24px 20px;
    }
-   .blog-details .title-meta h2 {
+   .customers-details .title-meta h2 {
        font-size: 24px;
        color: #626262;
        transition: .4s;
        -webkit-transition: .4s;
    }
-   .blog-details .post-content p {
+   .customers-details .post-content p {
        margin-bottom: 20px;
        line-height: 26px;
    }
@@ -1354,7 +1355,7 @@
    }
 
    /* =========================
-       End Blog & News Area CSS
+       End Customers & News Area CSS
       ========================= */
 
    /* =========================
@@ -2550,7 +2551,7 @@ h2, a:focus {
 .date-box {
 	background-color: #2D3645;
 }
-.blog-item:hover .title-meta h2 a {
+.customers-item:hover .title-meta h2 a {
     color: #2D3645;
 }
 .post-meta ul li a:hover {
@@ -2761,7 +2762,7 @@ h2, a:focus {
         padding: 20px 20px 10px;
         font-size: 30px;
     }
-    .blog-info {
+    .customers-info {
         padding-left: 0;
         padding-top: 30px;
         padding-right: 0;
@@ -2867,7 +2868,7 @@ h2, a:focus {
         font-size: 25px;
         margin: 0 0 10px;
     }
-    .main-blog {
+    .main-customers {
         padding: 20px 0 40px;
     }
     .all-post .button {
@@ -2894,10 +2895,10 @@ h2, a:focus {
     .panel-body {
         padding: 15px 10px 15px;
     }
-    .blog-item {
+    .customers-item {
         margin-top: 0;
     }
-    .blog-details .title-meta h2 {
+    .customers-details .title-meta h2 {
         font-size: 20px;
         margin-top: 35px;
     }
@@ -3019,7 +3020,7 @@ h2, a:focus {
         margin: 15px auto 0;
         padding-bottom: 10px;
     }
-    .blog-info {
+    .customers-info {
         padding-left: 15px;
         padding-top: 60px;
     }
@@ -3077,7 +3078,7 @@ h2, a:focus {
         font-size: 35px;
         margin: 0 0 12px;
     }
-    .main-blog {
+    .main-customers {
         padding: 20px 0 60px;
     }
     .home-banner-area {
@@ -3132,7 +3133,7 @@ h2, a:focus {
         height: 100%;
         padding: 70px 0 50px;
     }
-    .main-blog {
+    .main-customers {
         padding: 40px 0 60px;
     }
     .home-banner-area h1 {
