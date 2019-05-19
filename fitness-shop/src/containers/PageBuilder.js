@@ -7,7 +7,9 @@ import { Route } from "react-router-dom";
 import Club from "../components/Club/Club";
 import NewPost from "../components/NewPost/NewPost";
 
+
 class PageBuilder extends Component {
+  
   render() {
     return (
       <div>

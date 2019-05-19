@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import firebase from "firebase";
+
+
+
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, "0");
@@ -8,7 +12,6 @@ class NewPost extends Component {
   state = {
     file: "",
     imagePreviewUrl: "",
-
     name: "",
     title: "",
     content: "",
@@ -18,20 +21,23 @@ class NewPost extends Component {
   };
 
   postSubmitButton = () => {
-    // axios.post('https://fitness-club-56fdc.firebaseio.com/.json', {
-    //           name:this.state.post.name,
-    //           title:this.state.post.title,
-    //           content:this.state.post.content,
-    //           tag:this.state.post.tag,
-    //           file:
+    axios.post('https://fitness-club-56fdc.firebaseio.com/.json', {
+              name:this.state.name,
+              title:this.state.title,
+              content:this.state.pontent,
+              tag:this.state.tag,
+              imageUrl:this.state.imagePreviewUrl,
+              date:this.state.date,
+              month:this.state.month,
+
               
-    //         })
-    //         .then(function (response) {
-    //           console.log(response);
-    //         })
-    //         .catch(function (error) {
-    //           console.log(error);
-    //         });
+            })
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
     console.log(this.state);
   };
   name = event => {
@@ -60,8 +66,21 @@ class NewPost extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // TODO: do something with -> this.state.file
-    console.log("handle uploading-", this.state.file);
+    // FIXME : do something with -> this.state.file
+    var config = {
+      apiKey: 'AIzaSyA6rdzOOzlZBeUU4kSwqxuKIFXc2nvKr9Q',
+      storageBucket: 'gs://fitness-club-56fdc.appspot.com/'
+      
+    };
+  firebase.initializeApp(config);
+    firebase.storage().ref().put(this.state.file)
+    .then(() => {
+        console.log('Uploaded.');
+    });
+
+    console.log(this.state.file);
+    
+    
   }
 
   handleImageChange(e) {
@@ -69,6 +88,7 @@ class NewPost extends Component {
 
     let reader = new FileReader();
     let file = e.target.files[0];
+
 
     reader.onloadend = () => {
       this.setState({
