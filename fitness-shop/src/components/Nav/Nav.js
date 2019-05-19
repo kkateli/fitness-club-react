@@ -46,7 +46,7 @@ class NavBar extends Component {
           <Container>
           <Navbar.Brand className="navbar-brand logo">
               <div>
-                <Link exact to="/">
+                <Link to="/">
                   <img src={this.props.MainLogo} alt="Logo" />
                 </Link>
               </div>
@@ -112,7 +112,7 @@ class NavBar extends Component {
 //Default Props
 NavBar.defaultProps = {
   MainLogo: require('../../assets/image/logo.png'),
-  // Logo2: require(''),
+  
   mailLink: "email@mail.com",
   mail: "example@example.com ",
   numberLink: "+123456",
