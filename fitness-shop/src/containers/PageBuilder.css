@@ -3161,20 +3161,29 @@ h2, a:focus {
 h3 {
     margin-left: 15px;
   }
+
+  .nameInput{
+    width:36%;
+    margin-left:35px;
+}
+
+  
   .fileInput {
     border-bottom: 4px solid #d3d3d3;
     border-right: 4px solid #d3d3d3;
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
+    border-top: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
     padding: 10px;
     margin: 15px;
     cursor: pointer;
+    
+ 
   }
   .imgPreview {
     text-align: center;
-    margin: 5px 15px;
-    height: 200px;
-    width: 500px;
+   
+    height: 100px;
+    width: 200px;
     border-left: 1px solid #808080;
     border-right: 1px solid #808080;
     border-top: 5px solid #808080;
@@ -3199,10 +3208,11 @@ h3 {
     cursor: pointer;
   }
   .submitButton:hover {
-    background: #efefef;
+    background: #2D3645;
+    color:#fff;
   }
   .centerText {
     text-align: center;
-    width: 500px;
+    
   }
   

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class NewPost extends Component {
   constructor(props) {
     super(props);
@@ -47,19 +48,22 @@ class NewPost extends Component {
             <p>{this.props.sectionDescription}</p>
             <span className="section-title-bg">New Post</span>
           </div>
-          {/* //form starts here */}
-          {/* <div className="form-row mb-4">
-            <div className="col"> */}
+        
               {/* <!-- Name --> */}
+              <div className="nameInput">
               <input
                 type="text"
                 className="form-control"
                 placeholder="Author Name"
               />
-            {/* </div> */}
-            {/* <div className="col"> */}
-              <div className="previewComponent">
-                <form onSubmit={e => this._handleSubmit(e)}>
+              </div>
+              
+           
+           {/* img */}
+              <div className="previewComponent col-md-7 col-lg-7">
+              <ul className="list-inline">
+                  <li>
+                  <form className="file" onSubmit={e => this._handleSubmit(e)}>
                   <input
                     className="fileInput"
                     type="file"
@@ -73,27 +77,13 @@ class NewPost extends Component {
                     Upload Image
                   </button>
                 </form>
+                  </li>
+                <li>
                 <div className="imgPreview">{$imagePreview}</div>
+                </li>
+                </ul>
               </div>
-              {/* <!-- img --> */}
-              {/* <input
-                type="img"
-                className="form-control"
-                placeholder="img"
-              /> */}
-
-              {/* <div id="mainApp" />
-              <div class="centerText">
-                <span>Checkout associated </span>
-                <a
-                  href="http://www.hartzis.me/react-image-upload/"
-                  target="_blank"
-                >
-                  blog post
-                </a> */}
-              {/* </div> */}
-            {/* </div> */}
-          {/* </div> */}
+              
 
           {/* <!-- Title --> */}
           <input
