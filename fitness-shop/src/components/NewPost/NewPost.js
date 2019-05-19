@@ -50,7 +50,7 @@ class NewPost extends Component {
           </div>
         
               {/* <!-- Name --> */}
-              <div className="nameInput">
+              <div className="input-control">
               <input
                 type="text"
                 className="form-control"
@@ -86,26 +86,31 @@ class NewPost extends Component {
               
 
           {/* <!-- Title --> */}
+          <div className="input-control">
           <input
             type="text"
             className="form-control mb-4"
             placeholder="Post Title"
           />
+          </div>
+          
 
           {/* <!-- Content --> */}
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Post Content"
-          />
+          <div className="input-control">
+          <textarea rows="4" cols="50" placeholder="Post Content" />
 
+          </div>
+         
           {/* <!-- Tag --> */}
+          <div className="input-control">
           <input
             type="text"
             className="form-control"
             placeholder="Tag Name"
             aria-describedby="defaultRegisterFormPhoneHelpBlock"
           />
+          </div>
+          
 
           {/* <!-- Submit button --> */}
           <button className="btn my-4 btn-block" type="submit">
