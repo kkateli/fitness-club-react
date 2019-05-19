@@ -3164,10 +3164,20 @@ h3 {
 
   .input-control{
     width:36%;
-    margin-left:35px;
+    margin:auto;
+
 }
 
+#postTextArea{
+    margin-bottom:15px;
+    border-color:#d3d3d3;
+}
 
+#postButton{
+    color:#fff;
+    margin:auto;
+    margin-top:15px;
+}
   .fileInput {
     border-bottom: 4px solid #d3d3d3;
     border-right: 4px solid #d3d3d3;
@@ -3181,13 +3191,14 @@ h3 {
   }
   .imgPreview {
     text-align: center;
-   
-    height: 100px;
-    width: 200px;
+   margin:auto;
+    height: 200px;
+    width: 300px;
     border-left: 1px solid #808080;
     border-right: 1px solid #808080;
     border-top: 5px solid #808080;
     border-bottom: 5px solid #808080;
+    margin-bottom: 15px;
   }
   .imgPreview img {
     width: 100%;

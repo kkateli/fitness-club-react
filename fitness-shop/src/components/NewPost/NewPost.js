@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class NewPost extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +32,7 @@ class NewPost extends Component {
     let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = <img src={imagePreviewUrl} alt="post img"/>;
+      $imagePreview = <img src={imagePreviewUrl} alt="post img" />;
     } else {
       $imagePreview = (
         <div className="previewText">Please select an Image for Preview</div>
@@ -48,74 +47,65 @@ class NewPost extends Component {
             <p>{this.props.sectionDescription}</p>
             <span className="section-title-bg">New Post</span>
           </div>
-        
-              {/* <!-- Name --> */}
-              <div className="input-control">
+
+          {/* <!-- Name --> */}
+          <div className="input-control">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Author Name"
+            />
+          </div>
+
+          {/* img */}
+          <div className="previewComponent">
+            <form className="file" onSubmit={e => this._handleSubmit(e)}>
               <input
-                type="text"
-                className="form-control"
-                placeholder="Author Name"
+                className="fileInput"
+                type="file"
+                onChange={e => this._handleImageChange(e)}
               />
-              </div>
-              
-           
-           {/* img */}
-              <div className="previewComponent col-md-7 col-lg-7">
-              <ul className="list-inline">
-                  <li>
-                  <form className="file" onSubmit={e => this._handleSubmit(e)}>
-                  <input
-                    className="fileInput"
-                    type="file"
-                    onChange={e => this._handleImageChange(e)}
-                  />
-                  <button
-                    className="submitButton"
-                    type="submit"
-                    onClick={e => this._handleSubmit(e)}
-                  >
-                    Upload Image
-                  </button>
-                </form>
-                  </li>
-                <li>
-                <div className="imgPreview">{$imagePreview}</div>
-                </li>
-                </ul>
-              </div>
-              
+              <button
+                className="submitButton"
+                type="submit"
+                onClick={e => this._handleSubmit(e)}
+              >
+                Upload Image
+              </button>
+            </form>
+
+            <div className="imgPreview">{$imagePreview}</div>
+          </div>
 
           {/* <!-- Title --> */}
           <div className="input-control">
-          <input
-            type="text"
-            className="form-control mb-4"
-            placeholder="Post Title"
-          />
+            <input
+              type="text"
+              className="form-control mb-4"
+              placeholder="Post Title"
+            />
           </div>
-          
 
           {/* <!-- Content --> */}
-          <div className="input-control">
-          <textarea rows="4" cols="50" placeholder="Post Content" />
-
+          <div className="input-control" id="postTextArea">
+            <textarea rows="4" cols="61" placeholder="Post Content" />
           </div>
-         
+
           {/* <!-- Tag --> */}
           <div className="input-control">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Tag Name"
-            aria-describedby="defaultRegisterFormPhoneHelpBlock"
-          />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Tag Name"
+              aria-describedby="defaultRegisterFormPhoneHelpBlock"
+            />
           </div>
-          
 
           {/* <!-- Submit button --> */}
-          <button className="btn my-4 btn-block" type="submit">
+          <div className="button" id="postButton">
             Submit
-          </button>
+            <div className="mask" />
+          </div>
         </form>
       </div>
     );
