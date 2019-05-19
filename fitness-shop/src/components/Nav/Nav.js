@@ -92,11 +92,11 @@ class NavBar extends Component {
                   <Nav.Item>
                     <Link
                       activeclass="active"
-                      to="signUp"
+                      to="newPost"
                       className="nav-link"
                       onClick={this.closeNavbar}
                     >
-                      Sign up
+                      New Post
                     </Link>
                   </Nav.Item>
                 </div>
