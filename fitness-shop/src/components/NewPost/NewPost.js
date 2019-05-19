@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import firebase from "firebase";
 
-
-
+import "firebase/storage";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, "0");
@@ -21,23 +22,22 @@ class NewPost extends Component {
   };
 
   postSubmitButton = () => {
-    axios.post('https://fitness-club-56fdc.firebaseio.com/.json', {
-              name:this.state.name,
-              title:this.state.title,
-              content:this.state.pontent,
-              tag:this.state.tag,
-              imageUrl:this.state.imagePreviewUrl,
-              date:this.state.date,
-              month:this.state.month,
-
-              
-            })
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
+    axios
+      .post("https://fitness-club-56fdc.firebaseio.com/.json", {
+        name: this.state.name,
+        title: this.state.title,
+        content: this.state.pontent,
+        tag: this.state.tag,
+        imageUrl: this.state.imagePreviewUrl,
+        date: this.state.date,
+        month: this.state.month
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     console.log(this.state);
   };
   name = event => {
@@ -66,21 +66,10 @@ class NewPost extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // FIXME : do something with -> this.state.file
-    var config = {
-      apiKey: 'AIzaSyA6rdzOOzlZBeUU4kSwqxuKIFXc2nvKr9Q',
-      storageBucket: 'gs://fitness-club-56fdc.appspot.com/'
-      
-    };
-  firebase.initializeApp(config);
-    firebase.storage().ref().put(this.state.file)
-    .then(() => {
-        console.log('Uploaded.');
-    });
-
-    console.log(this.state.file);
-    
-    
+    firebase
+      .storage()
+      .ref("postImg/" + String(this.state.file.name))
+      .put(this.state.file);
   }
 
   handleImageChange(e) {
@@ -89,14 +78,12 @@ class NewPost extends Component {
     let reader = new FileReader();
     let file = e.target.files[0];
 
-
     reader.onloadend = () => {
       this.setState({
         file: file,
         imagePreviewUrl: reader.result
       });
     };
-
     reader.readAsDataURL(file);
   }
 
@@ -162,7 +149,12 @@ class NewPost extends Component {
 
           {/* <!-- Content --> */}
           <div className="input-control" id="postTextArea">
-            <textarea rows="4" cols="61" placeholder="Post Content" onChange={event => this.content(event)}/>
+            <textarea
+              rows="4"
+              cols="61"
+              placeholder="Post Content"
+              onChange={event => this.content(event)}
+            />
           </div>
 
           {/* <!-- Tag --> */}
@@ -177,7 +169,11 @@ class NewPost extends Component {
           </div>
 
           {/* <!-- Submit button --> */}
-          <div className="button" id="postButton" onClick={this.postSubmitButton}>
+          <div
+            className="button"
+            id="postButton"
+            onClick={this.postSubmitButton}
+          >
             Submit
             <div className="mask" />
           </div>
