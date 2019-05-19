@@ -35,9 +35,35 @@ class Customers extends Component {
     //Customers loop END
     return (
         <React.Fragment>
-           
+            <section id="customers" className="our-customers ptb-100">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 offset-lg-2 text-center">
+                           
+                                <div className="section-title">
+                                    <h2>{this.props.sectionTitle}</h2>
+                                    <p>{this.props.sectionDescription}</p>
+                                    <span className="section-title-bg">{this.props.SectionbgTitle}</span>
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <div className="row">
                         {customersdata}
-                        
+                        <div className="col-lg-12 col-md-12 all-post">
+                            <div className="center-wrap">
+                            <Link to={this.props.btnLink} className="btn-a">
+                                <div className="button">
+                                    {this.props.CustomersBtn} <Icofont icon="icofont-long-arrow-right" />
+                                    <div className="mask"></div>
+                                </div>
+                            </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>   
         </React.Fragment>
     );
   }
