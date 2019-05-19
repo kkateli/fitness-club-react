@@ -2,10 +2,14 @@ import React, { Component } from "react";
 class NewPost extends Component {
   render() {
     return (
-      <div>
+      <div className="new-post">
         {/* <!-- Default form register --> */}
-        <form class="text-center border border-light p-5">
-          <p class="h4 mb-4">Sign up</p>
+        <form class="text-center border border-light">
+          <div className="section-title">
+            <h2>New Post</h2>
+            <p>{this.props.sectionDescription}</p>
+            <span className="section-title-bg">New Post</span>
+          </div>
 
           <div class="form-row mb-4">
             <div class="col">
@@ -90,4 +94,10 @@ class NewPost extends Component {
     );
   }
 }
+NewPost.defaultProps = {
+  SectionbgTitle: "New Post",
+  sectionTitle: "New Post",
+  sectionDescription:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet."
+};
 export default NewPost;

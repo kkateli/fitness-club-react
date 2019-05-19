@@ -16,12 +16,11 @@ class Customers extends Component {
                         {customers.date} <span className="month">{customers.month}</span>
                     </div>
                     <div className="title-meta">
-                        <h2><Link to={customers.postLink}>{customers.posttitle}</Link></h2>
+                        <h2>{customers.posttitle}</h2>
                         <div className="post-meta">
                             <ul>
-                                <li><Icofont icon="icofont-funky-man" /> Posted By: <Link to={customers.authorLink}>{customers.authorName}</Link></li>
-                                <li><Icofont icon="icofont-speech-comments" /> Comments: <Link to={customers.CommentsLink}>{customers.TotalComments}</Link></li>
-                                <li><Icofont icon="icofont-tags" /> Tags: <Link to={customers.TagLink}>{customers.TagName}</Link></li>
+                                <li><Icofont icon="icofont-funky-man" /> Posted By: {customers.authorName}</li>
+                                <li><Icofont icon="icofont-tags" /> Tags: {customers.TagName}</li>
                             </ul>
                         </div>
                     </div>
@@ -86,53 +85,38 @@ Customers.defaultProps = {
             posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
             authorName: "Kate",
-            authorLink: "/#0",
-            TotalComments: "06",
-            CommentsLink: "/#0",
             TagName: "lifestyle",
-            TagLink: "/#0", 
+            
         },
         {
             postImage: require("../../../assets/image/c2.jpg"),
             postLink: "/customers-details",
-            date: "10",
+            date: "25",
             month: "Feb",
             posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
             authorName: "Kate",
-            authorLink: "/#0",
-            TotalComments: "06",
-            CommentsLink: "/#0",
             TagName: "lifestyle",
-            TagLink: "/#0", 
         },
         {
             postImage: require("../../../assets/image/c3.jpg"),
             postLink: "/customers-details",
-            date: "30",
-            month: "Jan",
+            date: "25",
+            month: "Feb",
             posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
             authorName: "Kate",
-            authorLink: "/#0",
-            TotalComments: "06",
-            CommentsLink: "/#0",
             TagName: "lifestyle",
-            TagLink: "/#0", 
         },
         {
             postImage: require("../../../assets/image/c4.jpg"),
             postLink: "/customers-details",
-            date: "20",
-            month: "Jan",
+            date: "25",
+            month: "Feb",
             posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             postContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
             authorName: "Kate",
-            authorLink: "/#0",
-            TotalComments: "06",
-            CommentsLink: "/#0",
             TagName: "lifestyle",
-            TagLink: "/#0", 
         },
 
     ]
