@@ -143,6 +143,16 @@ class NavBar extends Component {
                       New Post
                     </Link>
                   </Nav.Item>
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
+                      to="documentation"
+                      className="nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      Documentation
+                    </Link>
+                  </Nav.Item>
                 </div>
               </Nav>
             </Navbar.Collapse>
