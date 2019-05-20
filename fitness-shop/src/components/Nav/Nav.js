@@ -8,33 +8,64 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-      {/* Start Top Header */}
-          <div className="top-header">
-              <div className="container">
-                  <div className="row">
-                      <div className="col-md-7 col-lg-7">
-                          <div className="address-bar">
-                              <ul className="list-inline">
-                                  <li><a href={this.props.mailLink}><Icofont icon="icofont-email"/> {this.props.mail}</a></li>
-                                  <li><a href={this.props.numberLink}><Icofont icon="icofont-ui-call" /> {this.props.Number}</a></li>
-                              </ul>
-                          </div>
-                      </div>
-
-                      <div className="col-lg-5 col-md-5">
-                          <div className="social-icons">
-                              <ul className="list-inline">
-                                  <li><a href={this.props.facebookLink} rel="noopener noreferrer" target="_blank"><Icofont icon="icofont-facebook" /></a></li>
-                                  <li><a href={this.props.twitterLink} rel="noopener noreferrer" target="_blank"><Icofont icon="icofont-twitter" /></a></li>
-                                  <li><a href={this.props.instagramLink} rel="noopener noreferrer" target="_blank"><Icofont icon="icofont-instagram" /></a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
+        {/* Start Top Header */}
+        <div className="top-header">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-7 col-lg-7">
+                <div className="address-bar">
+                  <ul className="list-inline">
+                    <li>
+                      <a href={this.props.mailLink}>
+                        <Icofont icon="icofont-email" /> {this.props.mail}
+                      </a>
+                    </li>
+                    <li>
+                      <a href={this.props.numberLink}>
+                        <Icofont icon="icofont-ui-call" /> {this.props.Number}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-          </div>
-          {/* End Top Header */}
 
+              <div className="col-lg-5 col-md-5">
+                <div className="social-icons">
+                  <ul className="list-inline">
+                    <li>
+                      <a
+                        href={this.props.facebookLink}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <Icofont icon="icofont-facebook" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={this.props.twitterLink}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <Icofont icon="icofont-twitter" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={this.props.instagramLink}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <Icofont icon="icofont-instagram" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* End Top Header */}
 
         <Navbar
           id="navbar"
@@ -43,15 +74,17 @@ class NavBar extends Component {
           className="navbar navbar-expand-md navbar-light"
           collapseOnSelect={true}
         >
+          <div className="nav-menu">
+            <i className="icofont-navigation-menu" />
+          </div>
           <Container>
-          <Navbar.Brand className="navbar-brand logo">
+            <Navbar.Brand className="navbar-brand logo">
               <div>
                 <Link to="/">
                   <img src={this.props.MainLogo} alt="Logo" />
                 </Link>
               </div>
             </Navbar.Brand>
-
 
             <Navbar.Collapse id="navbarSupportedContent">
               <Nav className="navbar-nav ml-auto">
@@ -111,8 +144,8 @@ class NavBar extends Component {
 
 //Default Props
 NavBar.defaultProps = {
-  MainLogo: require('../../assets/image/logo.png'),
-  
+  MainLogo: require("../../assets/image/logo.png"),
+
   mailLink: "email@mail.com",
   mail: "example@example.com ",
   numberLink: "+123456",
