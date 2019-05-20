@@ -1038,6 +1038,20 @@ a:focus {
     display: none;
   }
 
+  .sub-logo{
+    display: inline-block;
+    height:5px;
+    position: absolute;
+    top: -10px;
+    left:40px;
+    z-index: 9999;
+    
+  }
+
+  .sub-logo img{
+    height: 140px;
+  }
+
   .navbar-brand img{
     display: none;
   }
@@ -1259,10 +1273,10 @@ a:focus {
 }
 /* ANCHOR  */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .top-header {
-    display: none;
+  .sub-logo{
+    display:none;
   }
-
+  
   .navbar-nav{
     display: none;
   }
@@ -1388,6 +1402,10 @@ a:focus {
   .service-item h3 {
     font-size: 20px;
   }
+  .sub-logo{
+    display:none;
+  }
+  
 
   .new-post {
     margin-top: 150px;
@@ -1595,12 +1613,19 @@ h3 {
   border-radius: 50%;
 }
 
+/* ANCHOR  */
 @media only screen and (min-width: 1200px){
   .new-post {
     margin-top: 150px;
   }
 
+  .sub-logo{
+    display:none;
+  }
+  
+
 }
+
 
 
  

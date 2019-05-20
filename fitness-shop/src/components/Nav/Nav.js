@@ -6,18 +6,16 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import Sidebar from "../SideBar/SideBar";
 
 class NavBar extends Component {
-  state={
-    menuClicked:false
-  }
-  clickMenuHandler=()=>{
-    this.setState({menuClicked:!this.state.menuClicked});
-  }
+  state = {
+    menuClicked: false
+  };
+  clickMenuHandler = () => {
+    this.setState({ menuClicked: !this.state.menuClicked });
+  };
   render() {
     let sidebar = null;
-    if(this.state.menuClicked){
-      sidebar = (
-        <Sidebar />
-      )
+    if (this.state.menuClicked) {
+      sidebar = <Sidebar />;
     }
     return (
       <div>
@@ -150,6 +148,11 @@ class NavBar extends Component {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        <div className="sub-logo">
+          <Link to="/">
+            <img src={this.props.MainLogo} alt="Logo" />
+          </Link>
+        </div>
         {sidebar}
       </div>
     );
