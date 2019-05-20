@@ -1,0 +1,38 @@
+import React from "react";
+import {Link} from "react-router-dom";
+const sideBar = () => {
+  return (
+    <div>
+      <header className="sidebar-header" role="banner">
+        <h1 className="sidebar-logo">
+          
+            Keep <span>Traning</span>
+          
+        </h1>
+        <div className="sidebar-nav-wrap">
+          <nav className="sidebar-main-nav" role="navigation">
+            <ul className="unstyled sidebar-list-hover-slide">
+              <li>
+                <Link to={''}>Home</Link>
+              </li>
+              <li>
+                <Link to={''}>What We Do</Link>
+              </li>
+              <li>
+                <Link to={''}>Club</Link>
+              </li>
+              <li>
+                <Link to={''}>New Post</Link>
+              </li>
+              <li>
+                <Link to={''}>Documentation</Link>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </header>
+    </div>
+  );
+};
+export default sideBar;
