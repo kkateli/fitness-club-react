@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { Link } from 'react-router-dom';
 import VisibilitySensor from "react-visibility-sensor";
-// import videoOne from "../../assets/videos/sample.MP4";
+import videoOne from "../../assets/videos/sample.MP4";
 
 
 class Banner extends Component {
@@ -11,7 +11,7 @@ class Banner extends Component {
             <React.Fragment>
                 <div id="home" className="home-video-area">
                     <video autoPlay="autoplay" loop="loop" id="bgvid">
-                        {/* <source src={videoOne} type="video/mp4"/>  */}
+                        <source src={videoOne} type="video/mp4"/> 
                     </video> 
                 
                     <div className="video-text-area">
