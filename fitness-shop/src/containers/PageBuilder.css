@@ -1044,19 +1044,21 @@ a:focus {
     height:5px;
     position: absolute;
     top: -10px;
-    left:40px;
+    left:35px;
     z-index: 9999;
     
   }
 
   .sub-logo img{
-    height: 140px;
+    height: 90px;
   }
 
   .navbar-brand img{
     display: none;
   }
-  
+  .nav-menu{
+    margin-top:15px;
+  }
   .new-post {
     margin-top: 10px;
   }
@@ -1606,9 +1608,12 @@ h3 {
   left: 0;
 }
 
+
+
 .nav-menu i{
   color:#2d3645;
   font-size: 20px;
+  
  
 }
 .nav-menu i:hover,
@@ -1656,6 +1661,7 @@ h3 {
 
 .documentation p, .documentation li{
   font-size:16px;
+  color:black;
 }
 .initWord{
   font-size:25px;
