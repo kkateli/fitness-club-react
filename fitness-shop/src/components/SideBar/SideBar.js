@@ -13,19 +13,19 @@ const sidebar = () => {
           <nav className="sidebar-main-nav" role="navigation">
             <ul className="sidebar-unstyled sidebar-list-hover-slide">
               <li>
-                <Link to={''}>Home</Link>
+                <Link to={'/'}>Home</Link>
               </li>
               <li>
-                <Link to={''}>What We Do</Link>
+                <Link to={'whatWeDo'}>What We Do</Link>
               </li>
               <li>
-                <Link to={''}>Club</Link>
+                <Link to={'club'}>Club</Link>
               </li>
               <li>
-                <Link to={''}>New Post</Link>
+                <Link to={'newPost'}>New Post</Link>
               </li>
               <li>
-                <Link to={''}>Documentation</Link>
+                <Link to={'documentation'}>Documentation</Link>
               </li>
             </ul>
           </nav>
