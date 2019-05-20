@@ -1488,17 +1488,20 @@ h3 {
 .sidebar-header {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 200px;;
   bottom: 0;
   width: 17.5em;
+  height:300px;
   background: #2d3645;
+  z-index: 999;
 }
 .sidebar-logo {
-  text-transform: lowercase;
+  text-transform: uppercase;
   font: 300 2em 'Source Sans Pro', Helvetica, Arial, sans-serif;
   text-align: center;
   padding: 0;
   margin: 0;
+  color:#fff;
 }
 .sidebar-logo a {
   display: block;
@@ -1507,15 +1510,11 @@ h3 {
   text-decoration: none;
   transition: 0.15s linear color;
 }
-.sidebar-logo a:hover {
-  color: #fff;
-}
-.sidebar-logo a:hover span {
-  color: #df4500;
-}
+
 .sidebar-logo span {
   font-weight: 700;
   transition: 0.15s linear color;
+  color: 	#FFD73E;
 }
 .sidebar-main-nav ul {
   border-top: solid 1px #3c3735;
@@ -1528,11 +1527,14 @@ h3 {
   color: #dfdbd9;
   font: 400 1.125em 'Source Sans Pro', Helvetica, Arial, sans-serif;
   text-align: center;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 .sidebar-main-nav a:hover {
   color: #fff;
+  
 }
+
+
 .sidebar-list-hover-slide li {
   position: relative;
   overflow: hidden;
@@ -1556,6 +1558,7 @@ h3 {
   background: #2d3645;
   transition: 0.35s ease left;
 }
+
 .sidebar-list-hover-slide a.is-current:before, .sidebar-list-hover-slide a:hover:before {
   left: 0;
 }
