@@ -3,9 +3,22 @@ import Icofont from "react-icofont";
 
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import Sidebar from "../SideBar/SideBar";
 
 class NavBar extends Component {
+  state={
+    menuClicked:false
+  }
+  clickMenuHandler=()=>{
+    this.setState({menuClicked:!this.state.menuClicked});
+  }
   render() {
+    let sidebar = null;
+    if(this.state.menuClicked){
+      sidebar = (
+        <Sidebar />
+      )
+    }
     return (
       <div>
         {/* Start Top Header */}
@@ -74,7 +87,7 @@ class NavBar extends Component {
           className="navbar navbar-expand-md navbar-light"
           collapseOnSelect={true}
         >
-          <div className="nav-menu">
+          <div className="nav-menu" onClick={this.clickMenuHandler}>
             <i className="icofont-navigation-menu" />
           </div>
           <Container>
@@ -137,6 +150,7 @@ class NavBar extends Component {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        {sidebar}
       </div>
     );
   }
