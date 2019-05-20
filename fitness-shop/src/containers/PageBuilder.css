@@ -1032,20 +1032,25 @@ a:focus {
 .customers-item:hover .title-meta h2 a {
   color: #2d3645;
 }
-
+/* ANCHOR  */
 @media only screen and (max-width: 767px) {
   .top-header {
     display: none;
+  }
+
+  .navbar-brand img{
+    display: none;
+  }
+  
+  .new-post {
+    margin-top: 10px;
   }
 
   .modal-dialog {
     width: 95%;
     margin-top: -65px;
   }
-  .navbar-light {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+  
   .navbar-light .navbar-nav .nav-link {
     text-align: center;
   }
@@ -1252,8 +1257,20 @@ a:focus {
     font-size: 16px;
   }
 }
-
+/* ANCHOR  */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .top-header {
+    display: none;
+  }
+
+  .navbar-nav{
+    display: none;
+  }
+  
+  .new-post {
+    margin-top: 150px;
+  }
+
   .modal-dialog {
     width: 90%;
     margin-top: -60px;
@@ -1366,10 +1383,14 @@ a:focus {
     font-size: 17px;
   }
 }
-
+/* ANCHOR  */
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .service-item h3 {
     font-size: 20px;
+  }
+
+  .new-post {
+    margin-top: 150px;
   }
 
   .title-meta h2 a {
@@ -1397,9 +1418,7 @@ a:focus {
   }
 }
 
-.new-post {
-  margin-top: 150px;
-}
+
 
 h3 {
   margin-left: 15px;
@@ -1575,5 +1594,13 @@ h3 {
   padding:5px;
   border-radius: 50%;
 }
-  
+
+@media only screen and (min-width: 1200px){
+  .new-post {
+    margin-top: 150px;
+  }
+
+}
+
+
  
