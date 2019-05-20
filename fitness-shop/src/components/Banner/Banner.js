@@ -74,7 +74,7 @@ Banner.defaultProps = {
     TopTitle: "Lorem ipsum dolor sit amet",
     Title: "Lorem ipsum dolor sit amet",
     Content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
-    BtnLink:  "/#",
-    BtnName: "get started",
+    BtnLink:  "/documentation",
+    BtnName: "View Documentation",
 };
 export default Banner;
