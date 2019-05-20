@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-const sideBar = () => {
+const sidebar = () => {
   return (
     <div>
       <header className="sidebar-header" role="banner">
@@ -11,7 +11,7 @@ const sideBar = () => {
         </h1>
         <div className="sidebar-nav-wrap">
           <nav className="sidebar-main-nav" role="navigation">
-            <ul className="unstyled sidebar-list-hover-slide">
+            <ul className="sidebar-unstyled sidebar-list-hover-slide">
               <li>
                 <Link to={''}>Home</Link>
               </li>
@@ -35,4 +35,4 @@ const sideBar = () => {
     </div>
   );
 };
-export default sideBar;
+export default sidebar;

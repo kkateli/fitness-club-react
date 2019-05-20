@@ -6,6 +6,7 @@ import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
 import { Route } from "react-router-dom";
 import Club from "../components/Club/Club";
 import NewPost from "../components/NewPost/NewPost";
+import Sidebar from "../components/SideBar/SideBar";
 
 
 class PageBuilder extends Component {
@@ -14,6 +15,7 @@ class PageBuilder extends Component {
     return (
       <div>
         <Nav />
+        <Sidebar />
 
         <Route path="/" exact component={Banner} />
         <Route path="/whatWeDo" component={WhatWeDo} />
