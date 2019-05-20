@@ -1281,6 +1281,9 @@ a:focus {
   .navbar-nav{
     display: none;
   }
+  .documentation{
+    margin-top: 150px;
+  }
   
   .new-post {
     margin-top: 150px;
@@ -1406,7 +1409,9 @@ a:focus {
   .sub-logo{
     display:none;
   }
-  
+  .documentation{
+    margin-top: 150px;
+  }
 
   .new-post {
     margin-top: 150px;
@@ -1619,6 +1624,9 @@ h3 {
   .new-post {
     margin-top: 150px;
   }
+  .documentation{
+    margin-top: 150px;
+  }
 
   .sub-logo{
     display:none;
@@ -1627,6 +1635,33 @@ h3 {
 
 }
 
+.sprintOne li{
+  background-color: #2ba847;
+}
 
+.sprintTwo li{
+  background-color: #FFD73E;
+}
+
+.sprintOne{
+  background-color: #2ba847;
+}
+.sprintTwo{
+  background-color: #FFD73E;
+}
+
+.reachHere{
+  background-color: pink !important;
+}
+
+.documentation p, .documentation li{
+  font-size:16px;
+}
+.initWord{
+  font-size:25px;
+  color:#2d3645;
+  font-family: "Apple Chancery", "Courier New","Times New Roman";
+  font-weight:bold;
+}
 
  

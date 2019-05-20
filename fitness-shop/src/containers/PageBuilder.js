@@ -6,6 +6,7 @@ import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
 import { Route } from "react-router-dom";
 import Club from "../components/Club/Club";
 import NewPost from "../components/NewPost/NewPost";
+import Documentation from "../components/Documentation/Documentation";
 
 
 class PageBuilder extends Component {
@@ -18,6 +19,7 @@ class PageBuilder extends Component {
         <Route path="/whatWeDo" component={WhatWeDo} />
         <Route path="/club" component={Club} />
         <Route path="/newPost" component={NewPost} />
+        <Route path="/documentation" component={Documentation} />
       </div>
     );
   }
