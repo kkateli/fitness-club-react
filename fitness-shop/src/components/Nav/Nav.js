@@ -4,6 +4,7 @@ import Icofont from "react-icofont";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Sidebar from "../SideBar/SideBar";
+import Backdrop from "../Backdrop/Backdrop";
 
 class NavBar extends Component {
   state = {
@@ -15,8 +16,14 @@ class NavBar extends Component {
   render() {
     let sidebar = null;
     if (this.state.menuClicked) {
-      sidebar = <Sidebar />;
+      sidebar = (
+        <div>
+          <Sidebar />;
+          <Backdrop backdropClicked={this.clickMenuHandler} />
+        </div>
+      );
     }
+
     return (
       <div>
         {/* Start Top Header */}
