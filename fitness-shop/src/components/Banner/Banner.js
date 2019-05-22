@@ -3,11 +3,23 @@ import Icofont from 'react-icofont';
 import { Link } from 'react-router-dom';
 import VisibilitySensor from "react-visibility-sensor";
 import videoOne from "../../assets/videos/sample.MP4";
+import Loader from "../Loader/LoaderTwo/LoaderTwo";
+
 
 
 class Banner extends Component {
+    state={
+        loading:true
+    }
+
+    componentDidMount(){
+        this.setState({loading:false});
+    }
+
     render() {
+        
         return (
+            this.state.loading ? <div><Loader /></div> :
             <React.Fragment>
                 <div id="home" className="home-video-area">
                     <video autoPlay="autoplay" loop="loop" muted="muted" preload="auto" id="bgvid">

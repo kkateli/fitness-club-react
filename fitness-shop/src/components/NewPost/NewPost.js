@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Loader from "../Loader/Loader";
+import Loader from "../Loader/LoaderOne/LoaderOne";
 import "firebase/storage";
 import firebase from "firebase/app";
 import "firebase/firestore";
