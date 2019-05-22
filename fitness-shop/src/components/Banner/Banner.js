@@ -10,7 +10,7 @@ class Banner extends Component {
         return (
             <React.Fragment>
                 <div id="home" className="home-video-area">
-                    <video autoPlay="autoplay" loop="loop" id="bgvid">
+                    <video autoPlay="autoplay" loop="loop" muted="muted" preload="auto" id="bgvid">
                         <source src={videoOne} type="video/mp4"/> 
                     </video> 
                 
