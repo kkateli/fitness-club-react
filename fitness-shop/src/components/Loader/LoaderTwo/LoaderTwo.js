@@ -1,9 +1,10 @@
 import React from "react";
 import "./LoaderTwo.css";
-const loaderTwo = ()=>{
-    return (
-        <div id="app" class="loader"></div>
-    )
-
-}
+const loaderTwo = () => {
+  return (
+    <div className="loader-background">
+      <div id="app" className="loader" />
+    </div>
+  );
+};
 export default loaderTwo;

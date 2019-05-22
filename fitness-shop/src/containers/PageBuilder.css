@@ -280,7 +280,7 @@ button {
 .navbar-light .navbar-brand {
   position: absolute;
   top: -50px;
-  z-index: 99999;
+  z-index: 9999;
   padding: 0;
 }
 .navbar-brand img {

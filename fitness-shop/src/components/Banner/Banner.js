@@ -5,7 +5,9 @@ import VisibilitySensor from "react-visibility-sensor";
 import videoOne from "../../assets/videos/sample.MP4";
 import Loader from "../Loader/LoaderTwo/LoaderTwo";
 
-
+// const demoAsyncCall=()=> {
+//     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
+//   }
 
 class Banner extends Component {
     state={
@@ -13,6 +15,7 @@ class Banner extends Component {
     }
 
     componentDidMount(){
+        // demoAsyncCall().then(() => this.setState({loading:false}));
         this.setState({loading:false});
     }
 
@@ -21,6 +24,7 @@ class Banner extends Component {
         return (
             this.state.loading ? <div><Loader /></div> :
             <React.Fragment>
+                
                 <div id="home" className="home-video-area">
                     <video autoPlay="autoplay" loop="loop" muted="muted" preload="auto" id="bgvid">
                         <source src={videoOne} type="video/mp4"/> 
