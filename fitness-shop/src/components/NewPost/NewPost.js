@@ -22,31 +22,27 @@ class NewPost extends Component {
   };
 
   postSubmitButton = () => {
-    if(this.state.name !==""){
+    if (this.state.name !== "") {
       axios
-      .post("https://fitness-club-56fdc.firebaseio.com/.json", {
-        name: this.state.name,
-        title: this.state.title,
-        content: this.state.pontent,
-        tag: this.state.tag,
-        imageUrl: this.state.imagePreviewUrl,
-        date: this.state.date,
-        month: this.state.month
-      })
-      .then(response => {
-        console.log(response);
-        alert("Post submitted. Thanks :)")
-        
-      })
-      .catch(error => {
-        console.log(error);
-       
-      });
-
-    }else{
-      alert("Please fill up the form. It is super fun :)")
+        .post("https://fitness-club-56fdc.firebaseio.com/.json", {
+          name: this.state.name,
+          title: this.state.title,
+          content: this.state.pontent,
+          tag: this.state.tag,
+          imageUrl: this.state.imagePreviewUrl,
+          date: this.state.date,
+          month: this.state.month
+        })
+        .then(response => {
+          console.log(response);
+          alert("Post submitted. Thanks :)");
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    } else {
+      alert("Please fill up the form. It is super fun :)");
     }
-    
   };
 
   name = event => {
@@ -118,8 +114,10 @@ class NewPost extends Component {
     // Loader set up
     let spinner = null;
 
-    if (this.state.ifSpin && (this.state.file !== "")) {
-      spinner = <Loader />;
+    if (this.state.file !== "") {
+      if (this.state.ifSpin) {
+        spinner = <Loader />;
+      }
     }
 
     return (
