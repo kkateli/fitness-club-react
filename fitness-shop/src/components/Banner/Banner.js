@@ -5,9 +5,9 @@ import VisibilitySensor from "react-visibility-sensor";
 import videoOne from "../../assets/videos/sample.MP4";
 import Loader from "../Loader/LoaderTwo/LoaderTwo";
 
-// const demoAsyncCall=()=> {
-//     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-//   }
+const demoAsyncCall=()=> {
+    return new Promise((resolve) => setTimeout(() => resolve(), 3000));
+  }
 
 class Banner extends Component {
     state={
@@ -15,8 +15,8 @@ class Banner extends Component {
     }
 
     componentDidMount(){
-        // demoAsyncCall().then(() => this.setState({loading:false}));
-        this.setState({loading:false});
+        demoAsyncCall().then(() => this.setState({loading:false}));
+        
     }
 
     render() {
