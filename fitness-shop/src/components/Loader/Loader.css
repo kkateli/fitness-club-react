@@ -1,8 +1,9 @@
 .sk-circle {
-  margin: auto;
-  width: 80px;
-  height: 80px;
+  margin:auto;
+  width: 50px;
+  height: 50px;
   position: relative;
+  z-index: 999;
 }
 .sk-circle .sk-child {
   width: 100%;

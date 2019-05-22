@@ -18,12 +18,12 @@ class NewPost extends Component {
     tag: "",
     date: dd,
     month: mm,
-    ifSpin:false
+    ifSpin: false
   };
 
   postSubmitButton = () => {
-    this.setState({ifSpin:true});
-    axios
+    if(this.state.name !==""){
+      axios
       .post("https://fitness-club-56fdc.firebaseio.com/.json", {
         name: this.state.name,
         title: this.state.title,
@@ -33,17 +33,22 @@ class NewPost extends Component {
         date: this.state.date,
         month: this.state.month
       })
-      .then(response=> {
+      .then(response => {
         console.log(response);
-        this.setState({ifSpin:false});
+        alert("Post submitted. Thanks :)")
+        
       })
-      .catch(error=> {
+      .catch(error => {
         console.log(error);
-        this.setState({ifSpin:false});
+       
       });
+
+    }else{
+      alert("Please fill up the form. It is super fun :)")
+    }
     
   };
-  
+
   name = event => {
     this.setState({
       name: event.target.value
@@ -67,27 +72,24 @@ class NewPost extends Component {
       tag: event.target.value
     });
   };
-// Uploading img to Firebase storage
+  // Uploading img to Firebase storage
   handleSubmit(e) {
-    this.setState({ifSpin:true});
+    this.setState({ ifSpin: true });
     e.preventDefault();
-    
-    
+
     firebase
       .storage()
       .ref("postImg/" + String(this.state.file.name))
       .put(this.state.file)
-      .then(()=>{
-        this.setState({ifSpin:false});
+      .then(() => {
+        this.setState({ ifSpin: false });
         alert("Uploaded to Firebase");
-
-      }
-        )
-      .catch(error=> {
+      })
+      .catch(error => {
         console.log(error);
-        this.setState({ifSpin:false});
+        this.setState({ ifSpin: false });
       });
-    }
+  }
 
   handleImageChange(e) {
     e.preventDefault();
@@ -111,21 +113,17 @@ class NewPost extends Component {
     if (imagePreviewUrl) {
       $imagePreview = <img src={imagePreviewUrl} alt="post img" />;
     } else {
-      $imagePreview = (
-        <div className="previewText">Please select an Image for Preview</div>
-      );
+      $imagePreview = <div className="previewText">Image Preview</div>;
     }
     // Loader set up
     let spinner = null;
-    if(this.state.ifSpin){
-      spinner=(<Loader />);
+
+    if (this.state.ifSpin && (this.state.file !== "")) {
+      spinner = <Loader />;
     }
 
     return (
-      
       <div className="new-post">
-        {spinner}
-       
         {/* <!-- page title --> */}
         <form className="text-center border border-light">
           <div className="section-title">
@@ -139,11 +137,11 @@ class NewPost extends Component {
             <input
               type="text"
               className="form-control"
-              placeholder="Author Name"
+              placeholder="Author Name(required)"
               onChange={event => this.name(event)}
             />
           </div>
-
+          {spinner}
           {/* img */}
           <div className="previewComponent">
             <form className="file" onSubmit={e => this.handleSubmit(e)}>
@@ -205,7 +203,6 @@ class NewPost extends Component {
             <div className="mask" />
           </div>
         </form>
-        
       </div>
     );
   }
