@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import Loader from "../Loader/Loader";
 import "firebase/storage";
 import firebase from "firebase/app";
 import "firebase/firestore";
-import "firebase/auth";
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, "0");
@@ -18,10 +17,12 @@ class NewPost extends Component {
     content: "",
     tag: "",
     date: dd,
-    month: mm
+    month: mm,
+    ifSpin:false
   };
 
   postSubmitButton = () => {
+    this.setState({ifSpin:true});
     axios
       .post("https://fitness-club-56fdc.firebaseio.com/.json", {
         name: this.state.name,
@@ -32,14 +33,17 @@ class NewPost extends Component {
         date: this.state.date,
         month: this.state.month
       })
-      .then(function(response) {
+      .then(response=> {
         console.log(response);
+        this.setState({ifSpin:false});
       })
-      .catch(function(error) {
+      .catch(error=> {
         console.log(error);
+        this.setState({ifSpin:false});
       });
-    console.log(this.state);
+    
   };
+  
   name = event => {
     this.setState({
       name: event.target.value
@@ -63,14 +67,27 @@ class NewPost extends Component {
       tag: event.target.value
     });
   };
-
+// Uploading img to Firebase storage
   handleSubmit(e) {
+    this.setState({ifSpin:true});
     e.preventDefault();
+    
+    
     firebase
       .storage()
       .ref("postImg/" + String(this.state.file.name))
-      .put(this.state.file);
-  }
+      .put(this.state.file)
+      .then(()=>{
+        this.setState({ifSpin:false});
+        alert("Uploaded to Firebase");
+
+      }
+        )
+      .catch(error=> {
+        console.log(error);
+        this.setState({ifSpin:false});
+      });
+    }
 
   handleImageChange(e) {
     e.preventDefault();
@@ -88,6 +105,7 @@ class NewPost extends Component {
   }
 
   render() {
+    // img preview
     let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
@@ -97,8 +115,17 @@ class NewPost extends Component {
         <div className="previewText">Please select an Image for Preview</div>
       );
     }
+    // Loader set up
+    let spinner = null;
+    if(this.state.ifSpin){
+      spinner=(<Loader />);
+    }
+
     return (
+      
       <div className="new-post">
+        {spinner}
+       
         {/* <!-- page title --> */}
         <form className="text-center border border-light">
           <div className="section-title">
@@ -178,6 +205,7 @@ class NewPost extends Component {
             <div className="mask" />
           </div>
         </form>
+        
       </div>
     );
   }
