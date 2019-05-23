@@ -4,6 +4,27 @@ import { Link } from 'react-router-dom';
 
 
 class Customers extends Component {
+    // state={
+    //     posts:[]
+    // }
+
+
+//     //Ajax calls
+//   componentDidMount() {
+//     axios.get("https://fitness-club-56fdc.firebaseio.com/.json").then(response => {
+//     //   const postList = response.data.slice(0, 4);
+//     console.log(response);
+//       this.setState({
+//         posts: response.data
+//       }).then(response => {
+//         console.log(response);
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+     
+//     });
+//   }
     
   render() {
     //Customers loop start
@@ -16,17 +37,17 @@ class Customers extends Component {
                         {customers.date} <span className="month">{customers.month}</span>
                     </div>
                     <div className="title-meta">
-                        <h2>{customers.posttitle}</h2>
+                        <h2>{customers.title}</h2>
                         <div className="post-meta">
                             <ul>
-                                <li><Icofont icon="icofont-funky-man" /> Posted By: {customers.authorName}</li>
-                                <li><Icofont icon="icofont-tags" /> Tags: {customers.TagName}</li>
+                                <li><Icofont icon="icofont-funky-man" /> Posted By: {customers.name}</li>
+                                <li><Icofont icon="icofont-tags" /> Tags: {customers.tag}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="post-content">
-                    <p>{customers.postContent}</p>
+                    <p>{customers.content}</p>
                 </div>
             </div>
         </div>

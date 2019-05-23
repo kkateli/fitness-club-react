@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 import Loader from "../Loader/LoaderOne/LoaderOne";
 import "firebase/storage";
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/database";
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, "0");
@@ -23,18 +24,42 @@ class NewPost extends Component {
 
   postSubmitButton = () => {
     if (this.state.name !== "") {
-      axios
-        .post("https://fitness-club-56fdc.firebaseio.com/.json", {
+      // axios
+      //   .post("https://fitness-club-56fdc.firebaseio.com/.json", {
+
+      //     name: this.state.name,
+      //     title: this.state.title,
+      //     content: this.state.pontent,
+      //     tag: this.state.tag,
+      //     imageUrl: this.state.imagePreviewUrl,
+      //     date: this.state.date,
+      //     month: this.state.month
+      //   })
+      //   .then(response => {
+      //     console.log(response);
+      //     alert("Post submitted. Thanks :)");
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   });
+
+      let key = firebase
+        .database()
+        .ref("/")
+        .push().key;
+      firebase
+        .database()
+        .ref("/" + key)
+        .set({
           name: this.state.name,
+          id: key,
           title: this.state.title,
-          content: this.state.pontent,
+          content: this.state.content,
           tag: this.state.tag,
-          imageUrl: this.state.imagePreviewUrl,
           date: this.state.date,
           month: this.state.month
         })
-        .then(response => {
-          console.log(response);
+        .then(() => {
           alert("Post submitted. Thanks :)");
         })
         .catch(error => {
@@ -114,7 +139,7 @@ class NewPost extends Component {
     // Loader set up
     let spinner = null;
 
-    if (this.state.imagePreviewUrl!== "") {
+    if (this.state.imagePreviewUrl !== "") {
       if (this.state.ifSpin) {
         spinner = <Loader />;
       }
