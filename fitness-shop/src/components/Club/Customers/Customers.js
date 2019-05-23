@@ -1,34 +1,37 @@
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 
 class Customers extends Component {
-    // state={
-    //     posts:[]
-    // }
+    state={
+        posts:[]
+    }
 
 
-//     //Ajax calls
-//   componentDidMount() {
-//     axios.get("https://fitness-club-56fdc.firebaseio.com/.json").then(response => {
-//     //   const postList = response.data.slice(0, 4);
-//     console.log(response);
-//       this.setState({
-//         posts: response.data
-//       }).then(response => {
-//         console.log(response);
-//       })
-//       .catch(error => {
-//         console.log(error);
-//       });
+    //Ajax calls
+  componentDidMount() {
+    axios.get("https://fitness-club-56fdc.firebaseio.com/.json").then(response => {
+    //   const postList = response.data.id.slice(0, 4);
+    const postList = Object.keys(response.data);
+      console.log(postList);
+    //   this.setState({
+    //     posts: postList
+    //   }).then(response => {
+    //     console.log(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
      
-//     });
-//   }
+    });
+
+  }
     
   render() {
     //Customers loop start
-    const customersdata = this.props.customerssData.map((customers, index) => (
+    const customersdata = this.state.posts.map((customers, index) => (
         <div className="col-md-6 col-lg-6" key={index}>
             <div className="customers-item">
                 <Link to={customers.postLink} className="customers-img"><img src={customers.postImage} alt="customers-one" /></Link>
