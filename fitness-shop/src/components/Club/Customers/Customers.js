@@ -14,24 +14,26 @@ class Customers extends Component {
   componentDidMount() {
     axios.get("https://fitness-club-56fdc.firebaseio.com/.json").then(response => {
     //   const postList = response.data.id.slice(0, 4);
-    const postList = Object.keys(response.data);
-      console.log(postList);
-    //   this.setState({
-    //     posts: postList
-    //   }).then(response => {
+    const postId = Object.keys(response.data);
+      console.log(response.data[postId[0]]);
+      const postList = response.data[postId[0]];
+      this.setState({
+        posts: postList
+      })
+    //   .then(response => {
     //     console.log(response);
     //   })
     //   .catch(error => {
     //     console.log(error);
     //   });
-     
+     console.log(this.state.posts);
     });
 
   }
     
   render() {
     //Customers loop start
-    const customersdata = this.state.posts.map((customers, index) => (
+    const customersdata = this.props.customerssData.map((customers, index) => (
         <div className="col-md-6 col-lg-6" key={index}>
             <div className="customers-item">
                 <Link to={customers.postLink} className="customers-img"><img src={customers.postImage} alt="customers-one" /></Link>
