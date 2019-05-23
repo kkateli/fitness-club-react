@@ -1676,4 +1676,7 @@ h3 {
   font-weight:bold;
 }
 
+.screen-loader .hidden{
+  display: none;
+}
  

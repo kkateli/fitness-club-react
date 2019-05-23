@@ -114,7 +114,7 @@ class NewPost extends Component {
     // Loader set up
     let spinner = null;
 
-    if (this.state.file !== "") {
+    if (this.state.imagePreviewUrl!== "") {
       if (this.state.ifSpin) {
         spinner = <Loader />;
       }

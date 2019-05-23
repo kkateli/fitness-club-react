@@ -2,32 +2,20 @@ import React, { Component } from "react";
 import Icofont from "react-icofont";
 import { Link } from "react-router-dom";
 import VisibilitySensor from "react-visibility-sensor";
-import videoOne from "../../assets/videos/sample.mp4";
-import Loader from "../Loader/LoaderTwo/LoaderTwo";
+//import videoOne from "../../assets/videos/sample.mp4";
+import gif from "../../assets/image/sample.gif";
 
-// const demoAsyncCall=()=> {
-//     return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-//   }
+
 
 class Banner extends Component {
-  state = {
-    loading: true
-  };
-
-  componentDidMount() {
-    // demoAsyncCall().then(() => this.setState({loading:false}));
-    this.setState({ loading: false });
-  }
-
+  
   render() {
-    return this.state.loading ? (
-      <div>
-        <Loader />
-      </div>
-    ) : (
+    
+    return (
       <React.Fragment>
+        
         <div id="home" className="home-video-area">
-          <video
+          {/* <video
             autoPlay="autoplay"
             loop="loop"
             muted="muted"
@@ -35,7 +23,8 @@ class Banner extends Component {
             id="bgvid"
           >
             <source src={videoOne} type="video/mp4" />
-          </video>
+          </video> */}
+          <img src={gif} alt="Loading..." />
 
           <div className="video-text-area">
             <VisibilitySensor>
