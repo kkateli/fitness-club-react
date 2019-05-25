@@ -7,7 +7,7 @@ import "firebase/firestore";
 import "firebase/database";
 
 const today = new Date();
-const dd = String(today.getDate()).padStart(2, "0");
+const dd = String(today.getDate());
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
