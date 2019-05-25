@@ -8,7 +8,10 @@ import "firebase/database";
 
 const today = new Date();
 const dd = String(today.getDate()).padStart(2, "0");
-const mm = String(today.getMonth());
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+const mm = monthNames[today.getMonth()];
 class NewPost extends Component {
   state = {
     file: "",
