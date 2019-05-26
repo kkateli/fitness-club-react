@@ -46,11 +46,11 @@ const documentation = () => {
           </li>
           <li>Users are able to submit their own posts on newPost page.</li>
           <ul>
-            <li className="reachHere">-Push state to Firebase</li>
+            <li>-Push state to Firebase</li>
           </ul>
           <li>Users are able to view the post they have submitted.</li>
           <ul>
-            <li>-Get data from Firebese</li>
+            <li className="reachHere">-Get data from Firebese</li>
           </ul>
           <li>Users are able to upload training videos.</li>
           <li> Users are able to view training videos.</li>
@@ -70,8 +70,8 @@ const documentation = () => {
       </ol>
 
       <p><span className="initWord">S</span>chedules:</p>
-      <p> Sprint one: 16 May 2019-23 May 2019 </p>
-      <p>Sprint two: 23 May 2019-30 May 2019</p>
+      <p> Sprint one: 16 May 2019-30 May 2019 </p>
+      <p>Sprint two: 30 May 2019-13 Jun 2019</p>
       <p><span className="initWord">A</span>ny questions, Please contact: Kate li kateli24@outlook.com</p>
       <p><span className="initWord">V</span>ideo used: </p>
       <p>Nike Running Commercial | "Steps"</p>
