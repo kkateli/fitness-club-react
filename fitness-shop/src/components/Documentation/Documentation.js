@@ -53,10 +53,10 @@ const documentation = () => {
           </ul>
           <li>Users are able to view the post they have submitted.</li>
           <ul>
-            <li className="reachHere">-Get data from Firebese</li>
+            <li>-Get data from Firebese</li>
           </ul>
-          <li>Users are able to upload training videos.</li>
-          <li> Users are able to view training videos.</li>
+          
+          <li className="reachHere"> Users are able to view training videos.</li>
         </span>
         <span className="sprintTwo">
           <li>User Authentication. (User types: manager/member)</li>
