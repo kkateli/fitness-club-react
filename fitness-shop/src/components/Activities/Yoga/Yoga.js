@@ -76,6 +76,7 @@ class Yoga extends Component {
                 url={this.state.url}
                 playing={this.state.playing}
                 ref={this.ref}
+                width="540px"
               />
             </div>
 
