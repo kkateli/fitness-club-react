@@ -1,16 +1,14 @@
-import React, {Component}from "react";
+import React, { Component } from "react";
 import "./LoaderTwo.css";
 class loaderTwo extends Component {
-  render(){
-    
+  render() {
     return (
-      <div className="screen-loader">
-        <div className="loader-background">
-          <div id="app" className="loader" />
-        </div>
+      <div className="spinner">
+        <div className="bounce1" />
+        <div className="bounce2" />
+        <div className="bounce3" />
       </div>
     );
   }
-  
-};
+}
 export default loaderTwo;

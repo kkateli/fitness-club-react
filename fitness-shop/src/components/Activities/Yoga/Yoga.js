@@ -2,25 +2,27 @@ import React, { Component } from "react";
 import ReactPlayer from "react-player";
 import screenfull from "screenfull";
 import { findDOMNode } from "react-dom";
+import Loader from "../../Loader/LoaderTwo/LoaderTwo";
+
+// const vid=document.getElementById("video-play");
+// const loaderremoved = document.getElementById("my-loader");
+// if(vid){
+    
+//         alert("Browser has loaded the current frame");
+//         loaderremoved.parentNode.removeChild(loaderremoved);
+// };
+
 
 class Yoga extends Component {
   state = {
     url: null,
-    pip: false,
     playing: false,
-    controls: false,
-    light: false,
-
-    muted: false,
-
-    duration: 0,
-    playbackRate: 1.0,
-    loop: false
+    ifSpin: false
   };
   load = url => {
     this.setState({
-      url,
-      pip: false
+      url: url,
+      ifSpin: true
     });
   };
   playPause = () => {
@@ -42,19 +44,31 @@ class Yoga extends Component {
     this.player = player;
   };
 
+  readyHandler=()=>{
+      this.setState({ifSpin:false});
+  }
+
   render() {
+    console.log("render");
+    let loader = null;
+    if (this.state.ifSpin) {
+      loader = <Loader id="my-loader"/>;
+    }
     const yogaData = this.props.yogaData.map((e, index) => {
       return (
         <div className="row yoga-row" key={index}>
           <div className="col title-col">{e.title}</div>
           <div className="col-6 description-col">{e.description}</div>
           <div className="col play-col">
-          <button onClick={() =>this.load(e.video)} >Play</button>
+            <button onClick={() => this.load(e.video)}>Play</button>
           </div>
+
         </div>
       );
     });
+
     return (
+        
       <section id="activities" className="our-activities ptb-100">
         <div className="row">
           <div className="col-lg-8 offset-lg-2 text-center">
@@ -66,8 +80,11 @@ class Yoga extends Component {
               </span>
             </div>
           </div>
+        
         </div>
+        {loader}
         <div className="row">
+       
           <div className="col-lg-6 col-sm-7 ">{yogaData}</div>
           <div className="player col-lg-5 col-sm-7">
             <div className="player-wrapper">
@@ -77,7 +94,11 @@ class Yoga extends Component {
                 playing={this.state.playing}
                 ref={this.ref}
                 width="540px"
+                id="video-play"
+                onReady={()=>this.readyHandler()}
+                
               />
+              
             </div>
 
             <table className="player-control">
@@ -97,7 +118,9 @@ class Yoga extends Component {
           </div>
         </div>
       </section>
+      
     );
+    
   }
 }
 //Default Props
