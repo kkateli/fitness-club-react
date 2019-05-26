@@ -115,7 +115,7 @@ Customers.defaultProps = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
   btnLink: "/customers-one",
   CustomersBtn: "View All Post",
-  customerssData: [
+  customersData: [
     {
       postImage: require("../../../assets/image/c1.jpg"),
       postLink: "/customers-details",
@@ -126,7 +126,7 @@ Customers.defaultProps = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
       authorName: "Kate",
       TagName: "lifestyle"
-    },
+    }
   ]
 };
 

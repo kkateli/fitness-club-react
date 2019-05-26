@@ -8,6 +8,7 @@ import Club from "../components/Club/Club";
 import NewPost from "../components/NewPost/NewPost";
 import Documentation from "../components/Documentation/Documentation";
 import Activities from "../components/Activities/Activities";
+import Yoga from "../components/Activities/Yoga/Yoga";
 
 
 class PageBuilder extends Component {
@@ -22,6 +23,7 @@ class PageBuilder extends Component {
         <Route path="/club" component={Club} />
         <Route path="/newPost" component={NewPost} />
         <Route path="/documentation" component={Documentation} />
+        <Route path="/yoga" component={Yoga} />
       </div>
     );
   }

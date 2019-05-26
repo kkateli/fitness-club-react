@@ -1799,5 +1799,31 @@ h3 {
     display: none;
 }
 
+.video-col video{
+  width:60%;
+  height:60%;
+  margin: auto;
+}
+
+.video-col{
+  
+  width:60%;
+  height:60%;
+
+}
+
+.description-col{
+  
+  text-align: center;
+}
+
+.title-col{
+  text-align: center;
+}
+
+.yoga-row{
+  border: #c0c2c7 1px solid;
+}
+
 
  
