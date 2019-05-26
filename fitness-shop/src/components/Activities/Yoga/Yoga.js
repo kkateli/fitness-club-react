@@ -31,6 +31,10 @@ class Yoga extends Component {
     this.setState({ url: null, playing: false });
   };
 
+  renderLoadButton = (url, label) => {
+    return <button onClick={() => this.load(url)}>{label}</button>;
+  };
+
   render() {
     const yogaData = this.props.yogaData.map((e, index) => {
       return (
@@ -38,7 +42,10 @@ class Yoga extends Component {
           <div className="col title-col">{e.title}</div>
           <div className="col-6 description-col">{e.description}</div>
           <div className="col play-col">
-            <button>Play</button>
+            {this.renderLoadButton(
+              "https://www.youtube.com/watch?v=ky0FGlVKfRw&t=14s",
+              "Play"
+            )}
 
             {/* <video
             controls="controls" preload="none" onclick="this.play()"
@@ -62,36 +69,32 @@ class Yoga extends Component {
             </div>
           </div>
         </div>
-        
-        <div className="player">
-          <div className="player-wrapper">
-            <ReactPlayer
-              className="react-player yoga-player"
-              url="https://www.youtube.com/watch?v=nQFf38xeBww"
-              playing={this.state.playing}
-              width='100%'
-              height='100%'
-            />
-          </div>
+        <div className="row">
+          <div className="col-lg-6 col-sm-7 ">{yogaData}</div>
+          <div className="player col-lg-5 col-sm-7">
+            <div className="player-wrapper">
+              <ReactPlayer
+                className="react-player"
+                url={this.state.url}
+                playing={this.state.playing}
+              />
+            </div>
 
-          <table className="player-control"><tbody>
-            <tr>
-              <th>Controls</th>
-              <td>
-                <button onClick={this.stop}>Stop</button>
-                <button onClick={this.playPause}>
-                  {this.state.playing ? "Pause" : "Play"}
-                </button>
-            
-            </td>
-           
-            </tr>
-            </tbody>
-          </table>
-          
+            <table className="player-control">
+              <tbody>
+                <tr>
+                  <th>Controls</th>
+                  <td>
+                    <button onClick={this.stop}>Stop</button>
+                    <button onClick={this.playPause}>
+                      {this.state.playing ? "Pause" : "Play"}
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        
-        {yogaData}
       </section>
     );
   }
@@ -103,6 +106,11 @@ Yoga.defaultProps = {
   sectionDescription:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
   yogaData: [
+    {
+      title: "Take 5 Yoga Break!",
+      description: "Yoga Quickies | Yoga With Adriene",
+      video: "https://www.youtube.com/watch?v=ky0FGlVKfRw&t=14s"
+    },
     {
       title: "5 Yoga Poses to Lose Weight Quickly And Easily",
       description: "From VENTUNO YOGA",

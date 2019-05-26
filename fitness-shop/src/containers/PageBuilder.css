@@ -1803,15 +1803,18 @@ h3 {
 
 .yoga-row {
   border: #c0c2c7 1px solid;
-  width: 45%;
-  float:left;
+  width: 100%;
+  
  
   
 }
 
-.player{
-  float:right;
-  padding-right:20px;
+
+
+.player-wrapper{
+ background-color: #c0c2c7;
+
+ 
 }
 
 .play-col {
