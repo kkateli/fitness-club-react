@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
+import screenfull from 'screenfull';
+import { findDOMNode } from 'react-dom';
 
 class Yoga extends Component {
   state = {
@@ -18,9 +20,8 @@ class Yoga extends Component {
   load = url => {
     this.setState({
       url,
-      played: 0,
-      loaded: 0,
       pip: false
+    
     });
   };
   playPause = () => {
@@ -31,9 +32,19 @@ class Yoga extends Component {
     this.setState({ url: null, playing: false });
   };
 
+  onClickFullscreen = () => {
+    screenfull.request(findDOMNode(this.player))
+  }
+  togglePIP = () => {
+    this.setState({ pip: !this.state.pip })
+  }
+
   renderLoadButton = (url, label) => {
     return <button onClick={() => this.load(url)}>{label}</button>;
   };
+  ref = player => {
+    this.player = player
+  }
 
   render() {
     const yogaData = this.props.yogaData.map((e, index) => {
@@ -46,12 +57,6 @@ class Yoga extends Component {
               "https://www.youtube.com/watch?v=ky0FGlVKfRw&t=14s",
               "Play"
             )}
-
-            {/* <video
-            controls="controls" preload="none" onclick="this.play()"
-          >
-            <source src={} type="video/mp4" />
-          </video>  */}
           </div>
         </div>
       );
@@ -77,18 +82,25 @@ class Yoga extends Component {
                 className="react-player"
                 url={this.state.url}
                 playing={this.state.playing}
+                ref={this.ref}
               />
             </div>
 
             <table className="player-control">
               <tbody>
                 <tr>
-                  <th>Controls</th>
+            
                   <td>
-                    <button onClick={this.stop}>Stop</button>
+                    
                     <button onClick={this.playPause}>
-                      {this.state.playing ? "Pause" : "Play"}
+                      {this.state.playing ? "Pause" : "Continue"}
                     </button>
+                    <button onClick={this.onClickFullscreen}>Fullscreen</button>
+                    {ReactPlayer.canEnablePIP(this.state.url) &&
+                  <button onClick={this.togglePIP}>{this.state.pip ? 'Disable PiP' : 'Enable PiP'}</button>
+                }
+
+                    <button onClick={this.stop}>Turn Off</button>
                   </td>
                 </tr>
               </tbody>

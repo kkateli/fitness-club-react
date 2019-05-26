@@ -1830,12 +1830,20 @@ h3 {
 }
 
 .play-col button:hover,
-.play-col button:active {
+.play-col button:active,
+.player-control button:hover,
+.player-control button:active{
   background-color: #1f2530;
   color: #fff;
 }
 
-
+.player-control button{
+  margin:10px;
+  padding:10px 20px;
+  background-color: #2d3645;
+  color: #fff;
+  font-size: 15px;
+}
 
 
 
