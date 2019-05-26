@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
-import screenfull from 'screenfull';
-import { findDOMNode } from 'react-dom';
+import screenfull from "screenfull";
+import { findDOMNode } from "react-dom";
 
 class Yoga extends Component {
   state = {
@@ -21,7 +21,6 @@ class Yoga extends Component {
     this.setState({
       url,
       pip: false
-    
     });
   };
   playPause = () => {
@@ -33,18 +32,15 @@ class Yoga extends Component {
   };
 
   onClickFullscreen = () => {
-    screenfull.request(findDOMNode(this.player))
-  }
-  togglePIP = () => {
-    this.setState({ pip: !this.state.pip })
-  }
-
-  renderLoadButton = (url, label) => {
-    return <button onClick={() => this.load(url)}>{label}</button>;
+    screenfull.request(findDOMNode(this.player));
   };
+  togglePIP = () => {
+    this.setState({ pip: !this.state.pip });
+  };
+
   ref = player => {
-    this.player = player
-  }
+    this.player = player;
+  };
 
   render() {
     const yogaData = this.props.yogaData.map((e, index) => {
@@ -53,10 +49,7 @@ class Yoga extends Component {
           <div className="col title-col">{e.title}</div>
           <div className="col-6 description-col">{e.description}</div>
           <div className="col play-col">
-            {this.renderLoadButton(
-              "https://www.youtube.com/watch?v=ky0FGlVKfRw&t=14s",
-              "Play"
-            )}
+          <button onClick={() =>this.load(e.video)} >Play</button>
           </div>
         </div>
       );
@@ -89,16 +82,11 @@ class Yoga extends Component {
             <table className="player-control">
               <tbody>
                 <tr>
-            
                   <td>
-                    
                     <button onClick={this.playPause}>
                       {this.state.playing ? "Pause" : "Continue"}
                     </button>
                     <button onClick={this.onClickFullscreen}>Fullscreen</button>
-                    {ReactPlayer.canEnablePIP(this.state.url) &&
-                  <button onClick={this.togglePIP}>{this.state.pip ? 'Disable PiP' : 'Enable PiP'}</button>
-                }
 
                     <button onClick={this.stop}>Turn Off</button>
                   </td>
