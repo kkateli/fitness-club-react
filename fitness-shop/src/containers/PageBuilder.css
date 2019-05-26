@@ -1801,7 +1801,7 @@ h3 {
   text-align: center;
 }
 
-.yoga-row {
+.yoga-row,.cardio-row {
   border: #c0c2c7 1px solid;
   width: 100%;
   

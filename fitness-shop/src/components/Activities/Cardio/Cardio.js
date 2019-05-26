@@ -6,7 +6,7 @@ import Loader from "../../Loader/LoaderTwo/LoaderTwo";
 
 
 
-class Yoga extends Component {
+class Cardio extends Component {
   state = {
     url: null,
     playing: false,
@@ -42,14 +42,14 @@ class Yoga extends Component {
   }
 
   render() {
-    console.log("render");
+    
     let loader = null;
     if (this.state.ifSpin) {
       loader = <Loader id="my-loader"/>;
     }
-    const yogaData = this.props.yogaData.map((e, index) => {
+    const cardioData = this.props.cardioData.map((e, index) => {
       return (
-        <div className="row yoga-row" key={index}>
+        <div className="row cardio-row" key={index}>
           <div className="col title-col">{e.title}</div>
           <div className="col-6 description-col">{e.description}</div>
           <div className="col play-col">
@@ -78,7 +78,7 @@ class Yoga extends Component {
         {loader}
         <div className="row">
        
-          <div className="col-lg-6 col-sm-7 ">{yogaData}</div>
+          <div className="col-lg-6 col-sm-7 ">{cardioData}</div>
           <div className="player col-lg-5 col-sm-7">
             <div className="player-wrapper">
               <ReactPlayer
@@ -117,22 +117,22 @@ class Yoga extends Component {
   }
 }
 //Default Props
-Yoga.defaultProps = {
-  SectionbgTitle: "Yoga",
-  sectionTitle: "Yoga",
+Cardio.defaultProps = {
+  SectionbgTitle: "Cardio",
+  sectionTitle: "Cardio",
   sectionDescription:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
-  yogaData: [
+  cardioData: [
     {
-      title: "Take 5 Yoga Break!",
-      description: "Yoga Quickies | Yoga With Adriene",
-      video: "https://www.youtube.com/watch?v=ky0FGlVKfRw&t=14s"
+      title: "5-Minute Cardio Workout",
+      description: "DoctorOz",
+      video: "https://www.youtube.com/watch?v=JY73mW7oA3c"
     },
     {
-      title: "5 Yoga Poses to Lose Weight Quickly And Easily",
-      description: "From VENTUNO YOGA",
-      video: "https://www.youtube.com/watch?v=nQFf38xeBww"
+      title: "Easy Warm Up Cardio Workout",
+      description: "Fitness Blender Warm Up Workout",
+      video: "https://www.youtube.com/watch?v=R0mMyV5OtcM&t=8s"
     }
   ]
 };
-export default Yoga;
+export default Cardio;
