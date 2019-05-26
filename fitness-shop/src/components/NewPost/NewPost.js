@@ -8,8 +8,8 @@ import "firebase/database";
 
 const today = new Date();
 const dd = String(today.getDate());
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
 const mm = monthNames[today.getMonth()];
 class NewPost extends Component {
@@ -22,7 +22,8 @@ class NewPost extends Component {
     tag: "",
     date: dd,
     month: mm,
-    ifSpin: false
+    ifSpin: false,
+    imgId:""
   };
 
   postSubmitButton = () => {
@@ -101,12 +102,18 @@ class NewPost extends Component {
     this.setState({ ifSpin: true });
     e.preventDefault();
 
+    let key = firebase
+        .database()
+        .ref("/")
+        .push().key;
+    const extension = this.state.file.name.slice(this.state.file.name.lastIndexOf('.'));
+
     firebase
       .storage()
-      .ref("postImg/" + String(this.state.file.name))
+      .ref("postImg/" + String(key+'.'+extension))
       .put(this.state.file)
       .then(() => {
-        this.setState({ ifSpin: false });
+        this.setState({ ifSpin: false, imgId:key+extension});
         alert("Uploaded to Firebase");
       })
       .catch(error => {
