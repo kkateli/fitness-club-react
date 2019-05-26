@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import v1 from "../../../assets/videos/yoga.MP4";
+
 
 class Yoga extends Component {
   render() {
@@ -8,12 +8,14 @@ class Yoga extends Component {
         <div className="row yoga-row" key={index}>
           <div className="col title-col">{e.title}</div>
           <div className="col-6 description-col">{e.description}</div>
-          <div className="col video-col">
-          <video
+          <div className="col play-col">
+              <button>Play</button>
+
+          {/* <video
             controls="controls" preload="none" onclick="this.play()"
           >
-            <source src={v1} type="video/mp4" />
-          </video> 
+            <source src={} type="video/mp4" />
+          </video>  */}
           </div>
         </div>
       );
@@ -48,7 +50,7 @@ Yoga.defaultProps = {
       {
           title:"5 Yoga Poses to Lose Weight Quickly And Easily",
           description:"From VENTUNO YOGA",
-          video:"../../../assets/videos/yoga.MP4"
+          video:""
 
         
       }
