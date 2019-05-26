@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Icofont from "react-icofont";
+import { MDBContainer, MDBRow } from "mdbreact";
+
 class Activities extends Component {
   render() {
     return (
       <React.Fragment>
+         
         <section id="activities" className="our-activities ptb-100">
           <div className="container">
             <div className="row">
@@ -18,85 +21,76 @@ class Activities extends Component {
               </div>
             </div>
           </div>
-
-          <div className="mdb-lightbox no-margin">
-            <div className="col-md-6 col-lg-4">
-              <div className="work-details">
-                <figure>
-                  <img
-                    src={this.props.cardioImg}
-                    alt="Gallery"
-                    className="img-fluid"
-                  />
-                  <div className="box-content">
-                    <ul className="icon">
-                      <li>
-                        <span
-                          href="ll"
-                        
-                          className="popup-btn"
-                        >
-                          <Icofont icon="icofont-search-2" />
-                        </span>
-                      </li>
-                    </ul>
+          <MDBContainer>
+            <div className="mdb-lightbox no-margin">
+              <MDBRow>
+                <div className="col-md-6 col-lg-4">
+                  <div className="activity-details">
+                    <figure>
+                      <img
+                        src={this.props.cardioImg}
+                        alt="Gallery"
+                        className="img-fluid"
+                      />
+                      <div className="box-content">
+                        <ul className="icon">
+                          <li>
+                            <span href="" className="popup-btn">
+                              <Icofont icon="icofont-search-2" />
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </figure>
                   </div>
-                </figure>
-              </div>
-            </div>
+                </div>
 
-            <div className="col-md-6 col-lg-4">
-              <div className="work-details">
-                <figure>
-                  <img
-                    src={this.props.YogaImg}
-                    alt="Gallery"
-                    className="img-fluid"
-                  />
-                  <div className="box-content">
-                    <ul className="icon">
-                      <li>
-                        <span
-                          href="ll"
-                        
-                          className="popup-btn"
-                        >
-                          <Icofont icon="icofont-search-2" />
-                        </span>
-                      </li>
-                    </ul>
+                <div className="col-md-6 col-lg-4">
+                  <div className="activity-details">
+                    <figure>
+                      <img
+                        src={this.props.YogaImg}
+                        alt="Gallery"
+                        className="img-fluid"
+                      />
+                      <div className="box-content">
+                        <ul className="icon">
+                          <li>
+                            <span href="" className="popup-btn">
+                              <Icofont icon="icofont-search-2" />
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </figure>
                   </div>
-                </figure>
-              </div>
-            </div>
+                </div>
 
-            <div className="col-md-6 col-lg-4">
-              <div className="work-details">
-                <figure>
-                  <img
-                    src={this.props.weightImg}
-                    alt="Gallery"
-                    className="img-fluid"
-                  />
-                  <div className="box-content">
-                    <ul className="icon">
-                      <li>
-                        <span
-                          href="ll"
-                          
-                
-                          className="popup-btn"
-                        >
-                          <Icofont icon="icofont-search-2" />
-                        </span>
-                      </li>
-                    </ul>
+                <div className="col-md-6 col-lg-4">
+                  <div className="activity-details">
+                    <figure>
+                      <img
+                        src={this.props.weightImg}
+                        alt="Gallery"
+                        className="img-fluid"
+                      />
+                      <div className="box-content">
+                        <ul className="icon">
+                          <li>
+                            <span href="" className="popup-btn">
+                              <Icofont icon="icofont-search-2" />
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </figure>
                   </div>
-                </figure>
-              </div>
+                </div>
+              </MDBRow>
             </div>
-          </div>
+          </MDBContainer>
         </section>
+       
       </React.Fragment>
     );
   }
