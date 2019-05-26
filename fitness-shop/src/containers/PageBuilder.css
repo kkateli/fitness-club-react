@@ -1803,12 +1803,20 @@ h3 {
 
 .yoga-row {
   border: #c0c2c7 1px solid;
-  width: 50%;
+  width: 45%;
+  float:left;
+ 
+  
+}
+
+.player{
+  float:right;
+  padding-right:20px;
 }
 
 .play-col {
   margin: auto;
-  margin-left: 10px;
+ 
 }
 
 .play-col button {
@@ -1823,3 +1831,9 @@ h3 {
   background-color: #1f2530;
   color: #fff;
 }
+
+
+
+
+
+

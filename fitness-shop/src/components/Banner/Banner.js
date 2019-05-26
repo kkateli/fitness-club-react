@@ -76,6 +76,11 @@ class Banner extends Component {
             </VisibilitySensor>
           </div>
         </div>
+        <p>
+       Video used:
+      </p>
+      <p>Nike Running Commercial | "Steps"</p>
+      <p>https://www.youtube.com/watch?v=d1qnvK3ID_w </p>
       </React.Fragment>
     );
   }
