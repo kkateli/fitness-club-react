@@ -127,39 +127,6 @@ Customers.defaultProps = {
       authorName: "Kate",
       TagName: "lifestyle"
     },
-    {
-      postImage: require("../../../assets/image/c2.jpg"),
-      postLink: "/customers-details",
-      date: "25",
-      month: "Feb",
-      posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      postContent:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
-      authorName: "Kate",
-      TagName: "lifestyle"
-    },
-    {
-      postImage: require("../../../assets/image/c3.jpg"),
-      postLink: "/customers-details",
-      date: "25",
-      month: "Feb",
-      posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      postContent:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
-      authorName: "Kate",
-      TagName: "lifestyle"
-    },
-    {
-      postImage: require("../../../assets/image/c4.jpg"),
-      postLink: "/customers-details",
-      date: "25",
-      month: "Feb",
-      posttitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      postContent:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum sagittis nulla, non vehicula mauris rutrum vitae. Sed non consequat dolor. Cras in odio augue.",
-      authorName: "Kate",
-      TagName: "lifestyle"
-    }
   ]
 };
 

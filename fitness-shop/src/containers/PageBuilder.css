@@ -1130,8 +1130,10 @@ a:focus {
   }
 
   .date-box {
-    padding: 20px 20px 10px;
-    font-size: 30px;
+    padding: 10px 10px 3px;
+    font-size: 20px;
+
+    
   }
   .customers-info {
     padding-left: 0;
@@ -1347,8 +1349,8 @@ a:focus {
   }
   .date-box {
     left: 15px;
-    padding: 25px 25px 15px;
-    font-size: 35px;
+    padding: 15px 15px 5px;
+    font-size: 30px;
   }
   .title-meta h2 a {
     font-size: 20px;
