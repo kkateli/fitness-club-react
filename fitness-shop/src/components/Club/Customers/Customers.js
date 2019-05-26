@@ -42,7 +42,7 @@ class Customers extends Component {
       <div className="col-md-6 col-lg-6" key={index}>
         <div className="customers-item">
           <Link to={customers.postLink} className="customers-img">
-            <img src={customers.postImage} alt="customers-one" />
+            <img src={customers.imagePreviewUrl} alt="customers-one" />
           </Link>
           <div className="customers-info">
             <div className="date-box">

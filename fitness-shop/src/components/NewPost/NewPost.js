@@ -23,7 +23,7 @@ class NewPost extends Component {
     date: dd,
     month: mm,
     ifSpin: false,
-    imgId:""
+    // imgId:""
   };
 
   postSubmitButton = () => {
@@ -61,7 +61,9 @@ class NewPost extends Component {
           content: this.state.content,
           tag: this.state.tag,
           date: this.state.date,
-          month: this.state.month
+          month: this.state.month,
+          // imgId:this.state.imgId,
+          imagePreviewUrl:this.state.imagePreviewUrl
         })
         .then(() => {
           alert("Post submitted. Thanks :)");
@@ -102,18 +104,18 @@ class NewPost extends Component {
     this.setState({ ifSpin: true });
     e.preventDefault();
 
-    let key = firebase
-        .database()
-        .ref("/")
-        .push().key;
-    const extension = this.state.file.name.slice(this.state.file.name.lastIndexOf('.'));
+    // let key = firebase
+    //     .database()
+    //     .ref("/")
+    //     .push().key;
+    // const extension = this.state.file.name.slice(this.state.file.name.lastIndexOf('.'));
 
     firebase
       .storage()
-      .ref("postImg/" + String(key+'.'+extension))
+      .ref("postImg/" + String(this.state.file.name))
       .put(this.state.file)
       .then(() => {
-        this.setState({ ifSpin: false, imgId:key+extension});
+        this.setState({ ifSpin: false});
         alert("Uploaded to Firebase");
       })
       .catch(error => {
