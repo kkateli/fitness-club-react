@@ -10,6 +10,7 @@ import Documentation from "../components/Documentation/Documentation";
 import Activities from "../components/Activities/Activities";
 import Yoga from "../components/Activities/Yoga/Yoga";
 import Cardio from "../components/Activities/Cardio/Cardio";
+import Weight from "../components/Activities/Weight/Weight";
 
 
 class PageBuilder extends Component {
@@ -26,6 +27,7 @@ class PageBuilder extends Component {
         <Route path="/documentation" component={Documentation} />
         <Route path="/yoga" component={Yoga} />
         <Route path="/cardio" component={Cardio} />
+        <Route path="/weight" component={Weight} />
       </div>
     );
   }
