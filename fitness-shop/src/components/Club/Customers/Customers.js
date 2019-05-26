@@ -109,8 +109,8 @@ class Customers extends Component {
 
 //Default Props
 Customers.defaultProps = {
-  SectionbgTitle: "Customers",
-  sectionTitle: "Our Customers",
+  SectionbgTitle: "Members",
+  sectionTitle: "Our Members",
   sectionDescription:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
   btnLink: "/customers-one",

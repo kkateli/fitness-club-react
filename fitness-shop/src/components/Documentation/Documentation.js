@@ -7,28 +7,31 @@ const documentation = () => {
         <span className="section-title-bg">Documentation</span>
       </div>
       <p>
-        <span className="initWord">O</span>ur site enables people to train their bodies at home. We provide
-        detailed training videos, demonstrated by professional personal
-        trainers, to make sure you understand every single tip to follow. We can
-        leave comments or share them with your friends. You also can post your
-        training experience to share with others.
+        <span className="initWord">O</span>ur site enables people to train their
+        bodies at home. We provide detailed training videos, demonstrated by
+        professional personal trainers, to make sure you understand every single
+        tip to follow. We can leave comments or share them with your friends.
+        You also can post your training experience to share with others.
       </p>
       <p>
-        <span className="initWord">T</span>his project is Front-end only. Data are stored in Firebase directly
-        through AJAX calls. It is set up by
+        <span className="initWord">T</span>his project is Front-end only. Data
+        are stored in Firebase directly through AJAX calls. It is set up by
         create-react-app(https://github.com/facebook/create-react-app), where
         amazing tools such as Webpack, Babel, ESLint are already installed. The
         project follows continuous integration / continuous delivery pipelines.
         All commits are recorded on GitHub.
       </p>
-      <p><span className="initWord">P</span>lease view:</p>
+      <p>
+        <span className="initWord">P</span>lease view:
+      </p>
       <p>https://github.com/kkateli/fitness-club-react </p>
       <p>
-      <span className="initWord">S</span>ome contents are filled with dummy text. They will be updeated after
-        all functionalities are built.{" "}
+        <span className="initWord">S</span>ome contents are filled with dummy
+        text. They will be updeated after all functionalities are built.{" "}
       </p>
       <p>
-      <span className="initWord">R</span>equirements: <span className="sprintOne">Sprint one</span>,
+        <span className="initWord">R</span>equirements:{" "}
+        <span className="sprintOne">Sprint one</span>,
         <span className="sprintTwo">Sprint two</span>,
         <span className="reachHere">Where I have reached</span>
       </p>
@@ -69,14 +72,23 @@ const documentation = () => {
         </span>
       </ol>
 
-      <p><span className="initWord">S</span>chedules:</p>
+      <p>
+        <span className="initWord">S</span>chedules:
+      </p>
       <p> Sprint one: 16 May 2019-30 May 2019 </p>
       <p>Sprint two: 30 May 2019-13 Jun 2019</p>
-      <p><span className="initWord">A</span>ny questions, Please contact: Kate li kateli24@outlook.com</p>
-      <p><span className="initWord">V</span>ideo used: </p>
+      <p>
+        <span className="initWord">A</span>ny questions, Please contact: Kate li
+        kateli24@outlook.com
+      </p>
+      <p>
+        <span className="initWord">V</span>ideo used:{" "}
+      </p>
       <p>Nike Running Commercial | "Steps"</p>
       <p>https://www.youtube.com/watch?v=d1qnvK3ID_w </p>
-      <p><span className="initWord">I</span>mages used:</p>
+      <p>
+        <span className="initWord">I</span>mages used:
+      </p>
       <p>
         https://www.walmart.ca/en/ip/sunny-health-fitness-sf-e905-magnetic-elliptical-trainer/6000193040818
       </p>
@@ -86,6 +98,15 @@ const documentation = () => {
       <p>https://www.kmart.co.nz/product/balance-trainer/1643378</p>
       <p>
         https://www.amazon.com/Schwinn-411-Compact-Elliptical-Machine/dp/B07H1BKRQ3
+      </p>
+      <p>
+        https://www.womenshealthmag.com/uk/fitness/a707685/best-cardio-for-weight-loss/
+      </p>
+      <p>
+        http://www1.cbn.com/cbnnews/cwn/2019/march/yoga-meditation-on-the-rise-one-will-open-you-up-to-demonic-power-the-other-is-essential-christianity
+      </p>
+      <p>
+        https://www.nbcnews.com/better/health/6-easy-ways-add-cardio-your-strength-workout-ncna827366
       </p>
     </div>
   );

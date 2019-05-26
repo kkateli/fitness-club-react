@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Icofont from "react-icofont";
 import { MDBContainer, MDBRow } from "mdbreact";
+import {Link} from "react-router-dom";
 
 class Activities extends Component {
   render() {
@@ -26,7 +27,8 @@ class Activities extends Component {
               <MDBRow>
                 <div className="col-md-6 col-lg-4">
                   <div className="activity-details">
-                    <figure>
+                      <Link to='/cardio'>
+                      <figure>
                       <img
                         src={this.props.cardioImg}
                         alt="Gallery"
@@ -35,19 +37,22 @@ class Activities extends Component {
                       <div className="box-content">
                         <ul className="icon">
                           <li>
-                            <span href="" className="popup-btn">
+                            <span className="popup-btn">
                               <Icofont icon="icofont-search-2" />
                             </span>
                           </li>
                         </ul>
                       </div>
                     </figure>
+                      </Link>
+                   
                   </div>
                 </div>
 
                 <div className="col-md-6 col-lg-4">
                   <div className="activity-details">
-                    <figure>
+                      <Link to="/yoga"> 
+                      <figure>
                       <img
                         src={this.props.YogaImg}
                         alt="Gallery"
@@ -56,19 +61,22 @@ class Activities extends Component {
                       <div className="box-content">
                         <ul className="icon">
                           <li>
-                            <span href="" className="popup-btn">
+                            <span className="popup-btn">
                               <Icofont icon="icofont-search-2" />
                             </span>
                           </li>
                         </ul>
                       </div>
                     </figure>
+                      </Link>
+                    
                   </div>
                 </div>
 
                 <div className="col-md-6 col-lg-4">
                   <div className="activity-details">
-                    <figure>
+                      <Link to="/weight">
+                      <figure>
                       <img
                         src={this.props.weightImg}
                         alt="Gallery"
@@ -77,13 +85,15 @@ class Activities extends Component {
                       <div className="box-content">
                         <ul className="icon">
                           <li>
-                            <span href="" className="popup-btn">
+                            <span className="popup-btn">
                               <Icofont icon="icofont-search-2" />
                             </span>
                           </li>
                         </ul>
                       </div>
                     </figure>
+                      </Link>
+                    
                   </div>
                 </div>
               </MDBRow>
