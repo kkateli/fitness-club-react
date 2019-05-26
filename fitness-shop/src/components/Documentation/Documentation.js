@@ -56,7 +56,7 @@ const documentation = () => {
             <li>-Get data from Firebese</li>
           </ul>
           
-          <li className="reachHere"> Users are able to view training videos.</li>
+          <li className="reachHere"> Users are able to view training videos.(Finished)</li>
         </span>
         <span className="sprintTwo">
           <li>User Authentication. (User types: manager/member)</li>

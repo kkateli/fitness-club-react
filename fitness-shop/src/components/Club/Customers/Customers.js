@@ -117,7 +117,7 @@ Customers.defaultProps = {
   CustomersBtn: "View All Post",
   customersData: [
     {
-      postImage: require("../../../assets/image/c1.jpg"),
+      // postImage: require("../../../assets/image/c1.jpg"),
       postLink: "/customers-details",
       date: "25",
       month: "Feb",
