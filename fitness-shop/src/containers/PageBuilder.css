@@ -241,7 +241,7 @@ button {
 
 
 .navbar-light .navbar-nav {
-  width:60%;
+  width:70%;
   margin-left: 60%;
 }
 .navbar-light .navbar-nav .nav-item {
@@ -397,22 +397,22 @@ button {
 .filter-menu button:hover {
   color: #fff;
 }
-.work-details {
+.activity-details {
   background: #fff;
   text-align: center;
   position: relative;
   margin-top: 30px;
 }
-.work-details img {
+.activity-details img {
   width: 100%;
   height: auto;
   transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
 }
-.work-details:hover img {
+.activity-details:hover img {
   opacity: 0.5;
 }
-.work-details .box-content {
+.activity-details .box-content {
   padding: 30px 10px 30px 0;
   position: absolute;
   top: 0;
@@ -423,14 +423,14 @@ button {
   transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
 }
-.work-details:hover .box-content {
+.activity-details:hover .box-content {
   top: 10px;
   left: 10px;
   bottom: 10px;
   right: 10px;
   opacity: 0.9;
 }
-.work-details .title {
+.activity-details .title {
   width: 100%;
   font-size: 22px;
   font-weight: 700;
@@ -440,7 +440,7 @@ button {
   position: absolute;
   bottom: 55%;
 }
-.work-details .icon {
+.activity-details .icon {
   width: 100%;
   list-style: none;
   padding: 0;
@@ -449,7 +449,7 @@ button {
   position: absolute;
   top: 50%;
 }
-.work-details .icon li {
+.activity-details .icon li {
   display: inline-block;
   opacity: 0;
   transform: translateY(40px);
@@ -458,13 +458,13 @@ button {
   transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
 }
-.work-details:hover .icon li {
+.activity-details:hover .icon li {
   opacity: 1;
   transform: translateY(0px);
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
 }
-.work-details:hover .icon li:first-child {
+.activity-details:hover .icon li:first-child {
   transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
 }
@@ -472,7 +472,7 @@ button {
   transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
 }
-.work-details .icon li span {
+.activity-details .icon li span {
   display: block;
   width: 38px;
   height: 38px;
@@ -485,7 +485,7 @@ button {
   transition: all 0.35s ease 0s;
   -webkit-transition: all 0.35s ease 0s;
 }
-.work-details .span :hover {
+.activity-details .span :hover {
   background: #fff;
 }
 #Container .mix {
@@ -1015,7 +1015,7 @@ a:focus {
 .filter-menu button:hover {
   background-color: #2d3645;
 }
-.work-details .icon li span,
+.activity-details .icon li span,
 .club-slides .owl-nav div {
   color: #2d3645 !important;
 }
@@ -1097,7 +1097,7 @@ a:focus {
     margin-bottom: 15px;
   }
 
-  .work-details {
+  .activity-details {
     margin-top: 0;
   }
   .list-inline li {
@@ -1681,4 +1681,125 @@ h3 {
 .screen-loader .hidden{
   display: none;
 }
+
+/* =========================
+    Our Works Area CSS
+   ========================= */
+   .filtr-item {
+    padding-top: 30px;
+}
+.filter-menu {
+	margin-top: 30px;
+    position: relative;
+    text-align: center;
+	z-index: 5;
+}
+.filter-menu button {
+	display: inline-block;
+	cursor: pointer;
+	background-color: #eee;
+	padding: 7px 15px;
+    text-transform: uppercase;
+    border: none;
+    margin: 0 2px;
+    transition: .4s;
+    -webkit-transition: .4s;
+}
+.filter-menu button.programs-filter-btn-active,  .filter-menu button:hover {
+    color: #fff;
+}
+.activity-details{
+    background: #fff;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+.activity-details img{
+    width: 100%;
+    height: auto;
+    transition: all 0.35s ease 0s;
+    -webkit-transition: all 0.35s ease 0s;
+}
+.activity-details:hover img{ opacity: 0.5; }
+.activity-details .box-content{
+    padding: 30px 10px 30px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.35s ease 0s;
+    -webkit-transition: all 0.35s ease 0s;
+}
+.activity-details:hover .box-content{
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    opacity: .9;
+}
+.activity-details .title{
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 17px;
+    margin: 5px 0;
+    position: absolute;
+    bottom: 55%;
+}
+.activity-details .icon{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+}
+.activity-details .icon li{
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    -webkit-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    transition: all 0.35s ease 0s;
+    -webkit-transition: all 0.35s ease 0s;
+}
+.activity-details:hover .icon li{
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+}
+.activity-details:hover .icon li:first-child{
+    transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+}
+.box:hover .icon li:nth-child(2){
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+}
+.activity-details .icon li span{
+    display: block;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: all 0.35s ease 0s;
+    -webkit-transition: all 0.35s ease 0s;
+}
+.activity-details .span :hover{ background: #fff; }
+#Container .mix {
+    display: none;
+}
+/* =========================
+    End Our Works Area CSS
+   ========================= */
+
  

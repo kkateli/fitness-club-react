@@ -7,6 +7,7 @@ import { Route } from "react-router-dom";
 import Club from "../components/Club/Club";
 import NewPost from "../components/NewPost/NewPost";
 import Documentation from "../components/Documentation/Documentation";
+import Activities from "../components/Activities/Activities";
 
 
 class PageBuilder extends Component {
@@ -17,6 +18,7 @@ class PageBuilder extends Component {
         <Nav />
         <Route path="/" exact component={Banner} />
         <Route path="/whatWeDo" component={WhatWeDo} />
+        <Route path="/activities" component={Activities} />
         <Route path="/club" component={Club} />
         <Route path="/newPost" component={NewPost} />
         <Route path="/documentation" component={Documentation} />
