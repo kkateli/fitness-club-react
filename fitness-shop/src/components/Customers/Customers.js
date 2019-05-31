@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Icofont from "react-icofont";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loader from "../Loader/LoaderTwo/LoaderTwo";
 
 class Customers extends Component {
   state = {
-    posts: []
+    posts: [],
+    ifloading:true
   };
 
   //Ajax calls
@@ -21,7 +23,8 @@ class Customers extends Component {
         }
 
         this.setState({
-          posts: postList
+          posts: postList,
+          ifloading:false
         });
       })
 
@@ -35,6 +38,10 @@ class Customers extends Component {
   }
 
   render() {
+    let loader=null;
+    if(this.state.ifloading){
+      loader=<Loader />
+    }
     //Customers loop start
     //Only show 4 posts in this page.
     const shownPosts = [...this.state.posts.slice(this.state.posts.length-4, this.state.posts.length)];
@@ -85,6 +92,7 @@ class Customers extends Component {
                 </div>
               </div>
             </div>
+            {loader}
 
             <div className="row">
               {customersdata}
