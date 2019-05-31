@@ -22,7 +22,7 @@ const sidebar = () => {
                 <Link to={'activities'}>Activities</Link>
               </li>
               <li>
-                <Link to={'club'}>Club</Link>
+                <Link to={'memberPost'}>Member Posts</Link>
               </li>
               <li>
                 <Link to={'newPost'}>New Post</Link>

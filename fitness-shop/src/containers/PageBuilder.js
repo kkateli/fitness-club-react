@@ -22,7 +22,7 @@ class PageBuilder extends Component {
         <Route path="/" exact component={Banner} />
         <Route path="/whatWeDo" component={WhatWeDo} />
         <Route path="/activities" component={Activities} />
-        <Route path="/MemberPost" component={Customers} />
+        <Route path="/memberPost" component={Customers} />
         <Route path="/newPost" component={NewPost} />
         <Route path="/documentation" component={Documentation} />
         <Route path="/yoga" component={Yoga} />
