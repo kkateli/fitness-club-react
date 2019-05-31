@@ -110,7 +110,7 @@ Customers.defaultProps = {
   SectionbgTitle: "Posts",
   sectionTitle: "Member Posts",
   sectionDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+    "New post submitted will show here.",
   customersData: [
     {
       // postImage: require("../../../assets/image/c1.jpg"),

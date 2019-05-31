@@ -89,10 +89,10 @@ class Banner extends Component {
 //Default Props
 Banner.defaultProps = {
   // VideoLink: {videoOne},
-  TopTitle: "Lorem ipsum dolor sit amet",
-  Title: "Lorem ipsum dolor sit amet",
+  TopTitle: "Train yourself at",
+  Title: "Keep Training",
   Content:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+    "Totally new to body training? Leave the confusion to us. We provide detailed training videos, demonstrated by professional personal trainers, to make sure you understand every single tip. You also can share your timeline with friends here. Have fun!",
   BtnLink: "/documentation",
   BtnName: "View Documentation"
 };

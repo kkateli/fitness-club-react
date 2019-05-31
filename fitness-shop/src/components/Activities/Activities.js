@@ -111,7 +111,7 @@ Activities.defaultProps = {
   SectionbgTitle: "Activities",
   sectionTitle: "Activities",
   sectionDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
+    "Choose one category to watch training demonstrations we prepared for you.",
   cardioImg: require("../../assets/image/cardio.jpg"),
   YogaImg: require("../../assets/image/yoga.jpg"),
   weightImg: require("../../assets/image/weight.jpg")
