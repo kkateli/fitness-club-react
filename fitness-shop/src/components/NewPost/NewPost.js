@@ -246,7 +246,7 @@ NewPost.defaultProps = {
   SectionbgTitle: "New Post",
   sectionTitle: "New Post",
   sectionDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet."
+    "Posts submitted here will be shown on MEMBER POSTS page."
 };
 
 export default NewPost;

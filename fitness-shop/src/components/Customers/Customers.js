@@ -88,17 +88,7 @@ class Customers extends Component {
 
             <div className="row">
               {customersdata}
-              <div className="col-lg-12 col-md-12 all-post">
-                <div className="center-wrap">
-                  <Link to={this.props.btnLink} className="btn-a">
-                    <div className="button">
-                      {this.props.CustomersBtn}{" "}
-                      <Icofont icon="icofont-long-arrow-right" />
-                      <div className="mask" />
-                    </div>
-                  </Link>
-                </div>
-              </div>
+              
             </div>
           </div>
         </section>
@@ -109,12 +99,10 @@ class Customers extends Component {
 
 //Default Props
 Customers.defaultProps = {
-  SectionbgTitle: "Members",
-  sectionTitle: "Our Members",
+  SectionbgTitle: "Posts",
+  sectionTitle: "Member Posts",
   sectionDescription:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet.",
-  btnLink: "/customers-one",
-  CustomersBtn: "View All Post",
   customersData: [
     {
       // postImage: require("../../../assets/image/c1.jpg"),
