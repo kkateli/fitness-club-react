@@ -143,11 +143,11 @@ class NavBar extends Component {
                   <Nav.Item>
                     <Link
                       activeclass="active"
-                      to="club"
+                      to="MemberPost"
                       className="smooths nav-link"
                       onClick={this.closeNavbar}
                     >
-                      Club
+                      Member Posts
                     </Link>
                   </Nav.Item>
 

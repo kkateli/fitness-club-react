@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
+import Club from "../Club/Club";
 
 
 class WhatWeDo extends Component {
@@ -37,6 +38,7 @@ class WhatWeDo extends Component {
                     </div>
                 </div>
             </section>
+            <Club />
         </React.Fragment>
     );
   }
