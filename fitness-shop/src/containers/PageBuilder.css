@@ -291,7 +291,7 @@ button {
 
 /* VIDEO-AREA */
 .home-video-area {
-  height: 700px;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -312,7 +312,7 @@ button {
 .home-video-area .center-wrap {
   margin-top: 40px;
 }
-.home-video-area img {
+.home-video-area .banner-video {
   min-width: 100%;
   min-height: 100%;
 }
@@ -1261,12 +1261,22 @@ a:focus {
     line-height: 50px;
   }
   .home-video-area {
-    height: 600px;
+    height: 100%;
   }
   .video-text-area h1 {
-    font-size: 35px;
+    font-size: 25px;
     line-height: 50px;
   }
+
+  .video-text-area .hero-text{
+    display: none;
+  }
+
+  .video-text-area .center-wrap .button{
+    padding: 0;
+  }
+
+  
   .feature-area {
     padding: 0;
   }
@@ -1394,7 +1404,7 @@ a:focus {
     font-size: 40px;
   }
   .home-video-area {
-    height: 600px;
+    height: 100%;
   }
   .home-video-area h1 {
     font-size: 40px;

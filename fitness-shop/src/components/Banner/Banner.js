@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Icofont from "react-icofont";
 import { Link } from "react-router-dom";
 import VisibilitySensor from "react-visibility-sensor";
-//import videoOne from "../../assets/videos/sample.mp4";
-import gif from "../../assets/image/sample.gif";
-
+import videoOne from "../../assets/videos/sample.MP4";
+import ReactPlayer from "react-player";
 
 
 class Banner extends Component {
@@ -24,7 +23,18 @@ class Banner extends Component {
           >
             <source src={videoOne} type="video/mp4" />
           </video> */}
-          <img src={gif} alt="Loading..." />
+          {/* <img src={gif} alt="Loading..." /> */}
+
+          <ReactPlayer
+                className="banner-video"
+                url={videoOne}
+                playing
+                loop
+                muted
+                width="100%"
+                height="100%"
+ 
+              />
 
           <div className="video-text-area">
             <VisibilitySensor>
