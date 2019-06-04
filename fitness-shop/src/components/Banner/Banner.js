@@ -37,6 +37,7 @@ class Banner extends Component {
           </video> */}
           {/* <img src={gif} alt="Loading..." /> */}
          {spinner}
+         
           <ReactPlayer
             className="banner-video"
             url={videoOne}
