@@ -4,15 +4,27 @@ import { Link } from "react-router-dom";
 import VisibilitySensor from "react-visibility-sensor";
 import videoOne from "../../assets/videos/sample.MP4";
 import ReactPlayer from "react-player";
-
+import Loader from "../Loader/LoaderThree/LoaderThree";
 
 class Banner extends Component {
-  
+  state = {
+    ifSpin: true
+  };
+
+  spinHandler = () => {
+    this.setState({
+      ifSpin: false
+    });
+  };
+
   render() {
-    
+    let spinner = null;
+    if (this.state.ifSpin) {
+      spinner = <Loader />;
+    }
+
     return (
       <React.Fragment>
-        
         <div id="home" className="home-video-area">
           {/* <video
             autoPlay="autoplay"
@@ -24,17 +36,17 @@ class Banner extends Component {
             <source src={videoOne} type="video/mp4" />
           </video> */}
           {/* <img src={gif} alt="Loading..." /> */}
-
+         {spinner}
           <ReactPlayer
-                className="banner-video"
-                url={videoOne}
-                playing
-                loop
-                muted
-                width="100%"
-                height="100%"
- 
-              />
+            className="banner-video"
+            url={videoOne}
+            playing
+            loop
+            muted
+            width="100%"
+            height="100%"
+            onReady={() => this.spinHandler()}
+          />
 
           <div className="video-text-area">
             <VisibilitySensor>
@@ -61,6 +73,7 @@ class Banner extends Component {
                       >
                         {this.props.Title}
                       </h1>
+
                       <p
                         className={
                           isVisible
@@ -86,11 +99,9 @@ class Banner extends Component {
             </VisibilitySensor>
           </div>
         </div>
-        <p>
-       Video used:
-      </p>
-      <p>Nike Running Commercial | "Steps"</p>
-      <p>https://www.youtube.com/watch?v=d1qnvK3ID_w </p>
+        <p>Video used:</p>
+        <p>Nike Running Commercial | "Steps"</p>
+        <p>https://www.youtube.com/watch?v=d1qnvK3ID_w </p>
       </React.Fragment>
     );
   }
