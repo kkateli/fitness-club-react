@@ -14,9 +14,13 @@ import Weight from "../components/Activities/Weight/Weight";
 import Signin from "../components/Signin/Signin";
 import Signup from "../components/Signup/Signup";
 import Logout from "../components/Logout/Logout";
-
+import * as actions from "../actions/actions";
+import {connect} from "react-redux";
 
 class PageBuilder extends Component {
+  componentDidMount(){
+    this.props.checkAuthAction();
+  }
   
   render() {
     return (
@@ -38,4 +42,7 @@ class PageBuilder extends Component {
     );
   }
 }
-export default PageBuilder;
+const mapDispatchToProps=(dispatch)=>{
+  return {checkAuthAction:()=>dispatch(actions.authCheck())}
+}
+export default connect(null,mapDispatchToProps)(PageBuilder);
