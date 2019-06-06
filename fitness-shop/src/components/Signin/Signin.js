@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import css from "./Signin.module.css";
 import Input from "../Input/Input";
 import { Link } from "react-router-dom";
+import {connect} from "react-redux";
+import * as actions from "../../actions/actions";
 class Signin extends Component {
   state = {
     controls: {
@@ -86,7 +88,7 @@ class Signin extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    // this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value,this.state.ifSignup);
+    this.props.signinAction(this.state.controls.email.value, this.state.controls.password.value);
   };
 
   render() {
@@ -134,4 +136,8 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+const mapDispatchToProps=(dispatch)=>{
+    return {signinAction:(email, password)=>dispatch(actions.signin(email,password))};
+}
+
+export default connect(null,mapDispatchToProps)(Signin);
