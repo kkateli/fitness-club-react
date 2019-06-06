@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import css from "./Signin.module.css";
+import css from "./Signup.module.css";
 import Input from "../Input/Input";
-import {Link} from "react-router-dom";
-class Signin extends Component {
+class Signup extends Component {
   state = {
     controls: {
       username: {
@@ -98,24 +97,31 @@ class Signin extends Component {
     }
 
     const form = formElementsArray.map(formElement => (
-      <Input
-        key={formElement.id}
-        elementType={formElement.config.elementType}
-        elementConfig={formElement.config.elementConfig}
-        value={formElement.config.value}
-        invalid={!formElement.config.valid}
-        shouldValidate={formElement.config.validation}
-        touched={formElement.config.touched}
-        changed={event => this.inputChangedHandler(event, formElement.id)}
-      />
+      <div>
+        <Input
+          key={formElement.id}
+          elementType={formElement.config.elementType}
+          elementConfig={formElement.config.elementConfig}
+          value={formElement.config.value}
+          invalid={!formElement.config.valid}
+          shouldValidate={formElement.config.validation}
+          touched={formElement.config.touched}
+          changed={event => this.inputChangedHandler(event, formElement.id)}
+        />
+        <p>
+          {formElement.id.charAt(0).toUpperCase() + formElement.id.slice(1)}{" "}
+          should not be less than {formElement.config.validation.minLength}{" "}
+          characters
+        </p>
+      </div>
     ));
 
     return (
-      <div className={css.Signin}>
-        <h1>Sign in</h1>
+      <div className={css.Signup}>
+        <h1>Sign up</h1>
         <form onSubmit={this.submitHandler}>
           {form}
-          <p>New member? Please <span><Link to={"/signup"}><strong>sign up</strong></Link></span></p>
+
           <button>Submit </button>
         </form>
       </div>
@@ -123,4 +129,4 @@ class Signin extends Component {
   }
 }
 
-export default Signin;
+export default Signup;
