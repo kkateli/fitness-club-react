@@ -20,7 +20,7 @@ class NavBar extends Component {
     if (this.state.menuClicked) {
       sidebar = (
         <div>
-          <Sidebar />;
+            <Sidebar ifAuthControl = {this.props.ifAuth}/>;
           <Backdrop backdropClicked={this.clickMenuHandler} />
         </div>
       );
