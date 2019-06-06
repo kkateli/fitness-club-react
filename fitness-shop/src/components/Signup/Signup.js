@@ -21,20 +21,20 @@ class Signup extends Component {
         valid: false,
         touched: false
       },
-      username: {
-        elementType: "input",
-        elementConfig: {
-          type: "text",
-          placeholder: "Username"
-        },
-        value: "",
-        validation: {
-          required: true,
-          minLength: 3
-        },
-        valid: false,
-        touched: false
-      },
+      // username: {
+      //   elementType: "input",
+      //   elementConfig: {
+      //     type: "text",
+      //     placeholder: "Username"
+      //   },
+      //   value: "",
+      //   validation: {
+      //     required: true,
+      //     minLength: 3
+      //   },
+      //   valid: false,
+      //   touched: false
+      // },
 
       password: {
         elementType: "input",
@@ -103,7 +103,8 @@ class Signup extends Component {
   submitHandler = event => {
     event.preventDefault();
     this.props.signupAction(
-      this.state.controls.username.value,
+      
+      this.state.controls.email.value,
       this.state.controls.password.value
     );
   };
@@ -136,7 +137,7 @@ class Signup extends Component {
         <h1>Sign up</h1>
         <form onSubmit={this.submitHandler}>
           {form}
-          <p>Password should not be less than 6 characters:)</p>
+          <p>Password should not be less than 6 characters</p>
 
           <button>Submit </button>
         </form>
@@ -146,8 +147,8 @@ class Signup extends Component {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    signupAction: (username, password) =>
-      dispatch(actions.signup(username, password))
+    signupAction: (email, password) =>
+      dispatch(actions.signup(email, password))
   };
 };
 
