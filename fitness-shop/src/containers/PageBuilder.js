@@ -11,6 +11,7 @@ import Activities from "../components/Activities/Activities";
 import Yoga from "../components/Activities/Yoga/Yoga";
 import Cardio from "../components/Activities/Cardio/Cardio";
 import Weight from "../components/Activities/Weight/Weight";
+import Signin from "../components/Signin/Signin";
 
 
 class PageBuilder extends Component {
@@ -21,6 +22,7 @@ class PageBuilder extends Component {
         <Nav />
         <Route path="/" exact component={Banner} />
         <Route path="/whatWeDo" component={WhatWeDo} />
+        <Route path="/signin" component={Signin} />
         <Route path="/activities" component={Activities} />
         <Route path="/memberPost" component={Customers} />
         <Route path="/newPost" component={NewPost} />

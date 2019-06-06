@@ -19,6 +19,9 @@ const sidebar = () => {
                 <Link to={'whatWeDo'}>What We Do</Link>
               </li>
               <li>
+                <Link to={'signin'}>Sign in</Link>
+              </li>
+              <li>
                 <Link to={'activities'}>Activities</Link>
               </li>
               <li>

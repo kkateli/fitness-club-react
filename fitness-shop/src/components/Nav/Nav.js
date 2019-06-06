@@ -132,6 +132,17 @@ class NavBar extends Component {
                   <Nav.Item>
                     <Link
                       activeclass="active"
+                      to="signin"
+                      className="smooths nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      Sign in
+                    </Link>
+                  </Nav.Item>
+
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
                       to="activities"
                       className="smooths nav-link"
                       onClick={this.closeNavbar}
