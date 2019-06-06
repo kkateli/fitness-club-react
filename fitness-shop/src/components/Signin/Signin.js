@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import css from "./Signin.module.css";
 import Input from "../Input/Input";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 class Signin extends Component {
   state = {
     controls: {
-      username: {
+      email: {
         elementType: "input",
         elementConfig: {
-          type: "text",
-          placeholder: "Username"
+          type: "email",
+          placeholder: "Email"
         },
         value: "",
         validation: {
           required: true,
-          minLength: 3
+          isEmail: true
         },
         valid: false,
         touched: false
       },
+     
       password: {
         elementType: "input",
         elementConfig: {
@@ -115,7 +116,14 @@ class Signin extends Component {
         <h1>Sign in</h1>
         <form onSubmit={this.submitHandler}>
           {form}
-          <p>New member? Please <span><Link to={"/signup"}><strong>sign up</strong></Link></span></p>
+          <p>
+            New member? Please{" "}
+            <span>
+              <Link to={"/signup"}>
+                <strong>sign up</strong>
+              </Link>
+            </span>
+          </p>
           <button>Submit </button>
         </form>
       </div>

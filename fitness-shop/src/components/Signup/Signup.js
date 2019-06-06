@@ -1,9 +1,26 @@
 import React, { Component } from "react";
 import css from "./Signup.module.css";
 import Input from "../Input/Input";
+import { connect } from "react-redux";
+import * as actions from "../../actions/actions";
+
 class Signup extends Component {
   state = {
     controls: {
+      email: {
+        elementType: "input",
+        elementConfig: {
+          type: "email",
+          placeholder: "Email"
+        },
+        value: "",
+        validation: {
+          required: true,
+          isEmail: true
+        },
+        valid: false,
+        touched: false
+      },
       username: {
         elementType: "input",
         elementConfig: {
@@ -18,6 +35,7 @@ class Signup extends Component {
         valid: false,
         touched: false
       },
+
       password: {
         elementType: "input",
         elementConfig: {
@@ -84,7 +102,10 @@ class Signup extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    // this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value,this.state.ifSignup);
+    this.props.signupAction(
+      this.state.controls.username.value,
+      this.state.controls.password.value
+    );
   };
 
   render() {
@@ -97,9 +118,8 @@ class Signup extends Component {
     }
 
     const form = formElementsArray.map(formElement => (
-      <div>
+      <div key={formElement.id}>
         <Input
-          key={formElement.id}
           elementType={formElement.config.elementType}
           elementConfig={formElement.config.elementConfig}
           value={formElement.config.value}
@@ -108,11 +128,6 @@ class Signup extends Component {
           touched={formElement.config.touched}
           changed={event => this.inputChangedHandler(event, formElement.id)}
         />
-        <p>
-          {formElement.id.charAt(0).toUpperCase() + formElement.id.slice(1)}{" "}
-          should not be less than {formElement.config.validation.minLength}{" "}
-          characters
-        </p>
       </div>
     ));
 
@@ -121,6 +136,7 @@ class Signup extends Component {
         <h1>Sign up</h1>
         <form onSubmit={this.submitHandler}>
           {form}
+          <p>Password should not be less than 6 characters:)</p>
 
           <button>Submit </button>
         </form>
@@ -128,5 +144,14 @@ class Signup extends Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    signupAction: (username, password) =>
+      dispatch(actions.signup(username, password))
+  };
+};
 
-export default Signup;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Signup);
