@@ -60,15 +60,19 @@ const documentation = () => {
         </span>
         <span className="sprintTwo">
           <li>User Authentication. (User types: manager/member)</li>
-          <li>A manager is able to upload a trainer's details. </li>
-          <li>A manager is able to delete a trainer's details.</li>
-          <li>A manager is able to delete a member's posts. </li>
-          <li>A manager is able to upload training videos by categories. </li>
+          <li>A user is able to sign up</li>
+          <li>A member is able to sign in</li>
           <li> A member is able to edit/delete their posts.</li>
           <li>
             A member is able to view training videos by categories.(Yoga,
             cardio, and weight-lifting).
           </li>
+
+          <li>A manager is able to upload a trainer's details. </li>
+          <li>A manager is able to delete a trainer's details.</li>
+          <li>A manager is able to delete a member's posts. </li>
+          <li>A manager is able to upload training videos by categories. </li>
+          
         </span>
       </ol>
 

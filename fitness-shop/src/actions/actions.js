@@ -62,6 +62,7 @@ export const signup = (email, password) => {
       .then(response => {
         console.log(response.data);
         dispatch(authSuccess(response.data.idToken, response.data.localId));
+        alert("Your account has been created. Thank you!");
       })
       .catch(err => {
         console.log(err);

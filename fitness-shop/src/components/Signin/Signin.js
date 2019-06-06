@@ -19,7 +19,7 @@ class Signin extends Component {
         valid: false,
         touched: false
       },
-     
+
       password: {
         elementType: "input",
         elementConfig: {
@@ -118,12 +118,15 @@ class Signin extends Component {
           {form}
           <p>
             New member? Please{" "}
-            <span>
+            <span className={css.signup}>
               <Link to={"/signup"}>
                 <strong>sign up</strong>
               </Link>
-            </span>
+            </span> or sign in as a guest:
           </p>
+          
+          <p>Email: test@test.com</p>
+          <p> Password: 111111</p>
           <button>Submit </button>
         </form>
       </div>
