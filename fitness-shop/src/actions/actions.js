@@ -61,12 +61,12 @@ export const signup = (email, password) => {
       .post(url, authData)
       .then(response => {
         console.log(response.data);
-        dispatch(authSuccess(response.data.idToken, response.data.localId));
         alert("Your account has been created. Thank you!");
+        document.location.href="/signin";
       })
       .catch(err => {
         console.log(err);
-        dispatch(authFail(err));
+        alert(err);
       });
   };
 };
