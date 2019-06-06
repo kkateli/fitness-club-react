@@ -56,20 +56,21 @@ const documentation = () => {
             <li>-Get data from Firebese</li>
           </ul>
           
-          <li className="reachHere"> Users are able to view training videos.(Finished)</li>
+          <li> Users are able to view training videos.</li>
         </span>
         <span className="sprintTwo">
-          <li>User Authentication. (User types: manager/member)</li>
+          <li>User Authentication.</li>
           <li>A user is able to sign up</li>
           <li>A member is able to sign in</li>
-          <li> A member is able to edit/delete their posts.</li>
-          <li>
+         
+          <li className="reachHere">
             A member is able to view training videos by categories.(Yoga,
             cardio, and weight-lifting).
           </li>
-
+          <li>A manager is able to log in.</li>
           <li>A manager is able to upload a trainer's details. </li>
           <li>A manager is able to delete a trainer's details.</li>
+          <li> A member is able to edit/delete their posts.</li>
           <li>A manager is able to delete a member's posts. </li>
           <li>A manager is able to upload training videos by categories. </li>
           
