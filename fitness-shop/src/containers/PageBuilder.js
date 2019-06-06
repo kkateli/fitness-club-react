@@ -13,6 +13,7 @@ import Cardio from "../components/Activities/Cardio/Cardio";
 import Weight from "../components/Activities/Weight/Weight";
 import Signin from "../components/Signin/Signin";
 import Signup from "../components/Signup/Signup";
+import Logout from "../components/Logout/Logout";
 
 
 class PageBuilder extends Component {
@@ -32,6 +33,7 @@ class PageBuilder extends Component {
         <Route path="/yoga" component={Yoga} />
         <Route path="/cardio" component={Cardio} />
         <Route path="/weight" component={Weight} />
+        <Route path="/logout" component={Logout} />
       </div>
     );
   }

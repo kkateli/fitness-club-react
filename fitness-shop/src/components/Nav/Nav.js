@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import Sidebar from "../SideBar/SideBar";
 import Backdrop from "../Backdrop/Backdrop";
+import { connect } from "react-redux";
 
 class NavBar extends Component {
   state = {
@@ -13,6 +14,8 @@ class NavBar extends Component {
   clickMenuHandler = () => {
     this.setState({ menuClicked: !this.state.menuClicked });
   };
+
+  
   render() {
     let sidebar = null;
     if (this.state.menuClicked) {
@@ -186,7 +189,11 @@ class NavBar extends Component {
               </Nav>
             </Navbar.Collapse>
           </Container>
+          {this.props.ifAuth ? (
+            <Link to={'/logout'}><p>Log out</p></Link>
+          ) : null}
         </Navbar>
+
         <div className="sub-logo">
           <Link to="/">
             <img src={this.props.MainLogo} alt="Logo" />
@@ -210,4 +217,11 @@ NavBar.defaultProps = {
   twitterLink: "Twitter link",
   instagramLink: "Ins link"
 };
-export default NavBar;
+const mapStateToProps = state => {
+  return { ifAuth: state.auth.token != null };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(NavBar);
