@@ -15,7 +15,6 @@ class NavBar extends Component {
     this.setState({ menuClicked: !this.state.menuClicked });
   };
 
-  
   render() {
     let sidebar = null;
     if (this.state.menuClicked) {
@@ -131,50 +130,56 @@ class NavBar extends Component {
                       What we do
                     </Link>
                   </Nav.Item>
+                  {!this.props.ifAuth ? (
+                    <Nav.Item>
+                      <Link
+                        activeclass="active"
+                        to="signin"
+                        className="smooths nav-link"
+                        onClick={this.closeNavbar}
+                      >
+                        Sign in
+                      </Link>
+                    </Nav.Item>
+                  ) : null}
 
-                  <Nav.Item>
-                    <Link
-                      activeclass="active"
-                      to="signin"
-                      className="smooths nav-link"
-                      onClick={this.closeNavbar}
-                    >
-                      Sign in
-                    </Link>
-                  </Nav.Item>
+                  {this.props.ifAuth ? (
+                    <Nav.Item>
+                      <Link
+                        activeclass="active"
+                        to="activities"
+                        className="smooths nav-link"
+                        onClick={this.closeNavbar}
+                      >
+                        Activities
+                      </Link>
+                    </Nav.Item>
+                  ) : null}
+                  {this.props.ifAuth ? (
+                    <Nav.Item>
+                      <Link
+                        activeclass="active"
+                        to="memberPost"
+                        className="smooths nav-link"
+                        onClick={this.closeNavbar}
+                      >
+                        Member Posts
+                      </Link>
+                    </Nav.Item>
+                  ) : null}
+                  {this.props.ifAuth ? (
+                    <Nav.Item>
+                      <Link
+                        activeclass="active"
+                        to="newPost"
+                        className="nav-link"
+                        onClick={this.closeNavbar}
+                      >
+                        New Post
+                      </Link>
+                    </Nav.Item>
+                  ) : null}
 
-                  <Nav.Item>
-                    <Link
-                      activeclass="active"
-                      to="activities"
-                      className="smooths nav-link"
-                      onClick={this.closeNavbar}
-                    >
-                      Activities
-                    </Link>
-                  </Nav.Item>
-
-                  <Nav.Item>
-                    <Link
-                      activeclass="active"
-                      to="memberPost"
-                      className="smooths nav-link"
-                      onClick={this.closeNavbar}
-                    >
-                      Member Posts
-                    </Link>
-                  </Nav.Item>
-
-                  <Nav.Item>
-                    <Link
-                      activeclass="active"
-                      to="newPost"
-                      className="nav-link"
-                      onClick={this.closeNavbar}
-                    >
-                      New Post
-                    </Link>
-                  </Nav.Item>
                   <Nav.Item>
                     <Link
                       activeclass="active"
@@ -190,7 +195,9 @@ class NavBar extends Component {
             </Navbar.Collapse>
           </Container>
           {this.props.ifAuth ? (
-            <Link to={'/logout'}><p>Log out</p></Link>
+            <Link to={"/logout"}>
+              <p>Log out</p>
+            </Link>
           ) : null}
         </Navbar>
 

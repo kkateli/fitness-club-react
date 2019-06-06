@@ -3,7 +3,7 @@ import Nav from "../components/Nav/Nav";
 import "./PageBuilder.css";
 import Banner from "../components/Banner/Banner";
 import WhatWeDo from "../components/WhatWeDo/WhatWeDo";
-import { Route } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import Customers from "../components/Customers/Customers";
 import NewPost from "../components/NewPost/NewPost";
 import Documentation from "../components/Documentation/Documentation";
@@ -16,6 +16,7 @@ import Signup from "../components/Signup/Signup";
 import Logout from "../components/Logout/Logout";
 import * as actions from "../actions/actions";
 import {connect} from "react-redux";
+
 
 class PageBuilder extends Component {
   componentDidMount(){
