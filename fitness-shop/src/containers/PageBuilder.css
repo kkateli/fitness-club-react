@@ -240,13 +240,13 @@ button {
 }
 
 .navbar-light .navbar-nav {
-  width: 80%;
-  margin-left: 50%;
+  width: 65%;
+  
 }
 .navbar-light .navbar-nav .nav-item {
   display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -284,7 +284,13 @@ button {
 }
 .navbar-brand img {
   cursor: pointer;
-  height: 250px;
+  height: 200px;
+}
+
+.logoutButton{
+  
+  position:absolute;
+  right:5px;
 }
 
 /* End Navbar Style */

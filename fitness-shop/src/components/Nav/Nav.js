@@ -20,12 +20,11 @@ class NavBar extends Component {
     if (this.state.menuClicked) {
       sidebar = (
         <div>
-            <Sidebar ifAuthControl = {this.props.ifAuth}/>;
+          <Sidebar ifAuthControl={this.props.ifAuth} />;
           <Backdrop backdropClicked={this.clickMenuHandler} />
         </div>
       );
     }
-    
 
     return (
       <div>
@@ -194,12 +193,14 @@ class NavBar extends Component {
                 </div>
               </Nav>
             </Navbar.Collapse>
+
+            {this.props.ifAuth ? (
+              <p className="logoutButton">
+                Hi, {this.props.userEmail.split("@")[0]}
+                <Link to={"/logout"}> Log out</Link>
+              </p>
+            ) : null}
           </Container>
-          {this.props.ifAuth ? (
-            
-              <p>Hi, {this.props.userEmail.split("@")[0]}<Link to={"/logout"}> Log out</Link></p>
-            
-          ) : null}
         </Navbar>
 
         <div className="sub-logo">
@@ -226,8 +227,7 @@ NavBar.defaultProps = {
   instagramLink: "Ins link"
 };
 const mapStateToProps = state => {
-  return { ifAuth: state.auth.token != null,
-  userEmail: state.auth.userEmail };
+  return { ifAuth: state.auth.token != null, userEmail: state.auth.userEmail };
 };
 
 export default connect(
