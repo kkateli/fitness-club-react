@@ -25,6 +25,7 @@ class NavBar extends Component {
         </div>
       );
     }
+    
 
     return (
       <div>
@@ -195,9 +196,9 @@ class NavBar extends Component {
             </Navbar.Collapse>
           </Container>
           {this.props.ifAuth ? (
-            <Link to={"/logout"}>
-              <p>Log out</p>
-            </Link>
+            
+              <p>Hi, {this.props.userEmail.split("@")[0]}<Link to={"/logout"}> Log out</Link></p>
+            
           ) : null}
         </Navbar>
 
@@ -225,7 +226,8 @@ NavBar.defaultProps = {
   instagramLink: "Ins link"
 };
 const mapStateToProps = state => {
-  return { ifAuth: state.auth.token != null };
+  return { ifAuth: state.auth.token != null,
+  userEmail: state.auth.userEmail };
 };
 
 export default connect(

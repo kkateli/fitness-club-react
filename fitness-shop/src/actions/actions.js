@@ -5,11 +5,12 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (token, userId) => {
+export const authSuccess = (token, userId, userEmail) => {
   return {
     type: "AUTH_SUCCESS",
     token: token,
-    userId: userId
+    userId: userId,
+    userEmail:userEmail
   };
 };
 
@@ -24,6 +25,7 @@ export const logout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("expirationTime");
   localStorage.removeItem("userId");
+  localStorage.removeItem("email");
   return {
     type: "AUTH_LOGOUT"
   };
@@ -32,6 +34,7 @@ export const logout = () => {
 export const authCheck = () => {
   return dispatch => {
     const token = localStorage.getItem("token");
+    
     if (!token) {
       dispatch(logout());
     } else {
@@ -41,7 +44,8 @@ export const authCheck = () => {
         dispatch(logout());
       } else {
         const userId = localStorage.getItem("userId");
-        dispatch(authSuccess(token, userId));
+        const userEmail = localStorage.getItem("email");
+        dispatch(authSuccess(token, userId,userEmail));
       }
     }
   };
@@ -91,7 +95,8 @@ export const signin = (email, password) => {
         localStorage.setItem("token", response.data.idToken);
         localStorage.setItem("expirationTime", expirationTime);
         localStorage.setItem("userId", response.data.localId);
-        dispatch(authSuccess(response.data.idToken, response.data.localId));
+        localStorage.setItem("email", response.data.email);
+        dispatch(authSuccess(response.data.idToken, response.data.localId, response.data.email));
       })
       .catch(err => {
         console.log(err);

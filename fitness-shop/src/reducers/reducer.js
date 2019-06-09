@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 const initialState = {
   token: null,
   userId: null,
+  userEmail:null,
   error: null,
   loading: false
 };
@@ -17,6 +18,7 @@ const authReducer = (state = initialState, action) => {
       ...{
         token: action.token,
         userId: action.userId,
+        userEmail:action.userEmail,
         error: null,
         loading: false
       }
@@ -30,7 +32,7 @@ const authReducer = (state = initialState, action) => {
   else if(action.type ==="AUTH_LOGOUT"){
     return {
       ...state,
-      ...{token:null,userId:null,loading:false}
+      ...{token:null,userId:null,userEmail: null,loading:false}
     }
   }
   return state;
