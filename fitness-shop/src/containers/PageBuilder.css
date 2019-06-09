@@ -279,7 +279,7 @@ button {
 .navbar-light .navbar-brand {
   position: absolute;
   top: -50px;
-  z-index: 9999;
+  z-index: 998;
   padding: 0;
 }
 .navbar-brand img {
@@ -1552,7 +1552,7 @@ h3 {
 .sidebar-header {
   position: fixed;
   left: 0;
-  top: 200px;
+  top: 80px;
   bottom: 0;
   width: 17.5em;
   height: 355px;
