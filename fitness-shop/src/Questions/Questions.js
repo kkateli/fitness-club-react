@@ -5,7 +5,8 @@ import axios from "axios";
 
 class Questions extends Component {
   state = {
-    questions: []
+    questions: [],
+    searchQuestion: ""
   };
   //Ajax calls
   componentDidMount() {
@@ -26,15 +27,27 @@ class Questions extends Component {
       });
   }
 
+  search = event => {
+    this.setState({
+      searchQuestion: event.target.value
+    });
+    
+  };
+
   render() {
-    const questionList = this.state.questions.map((e,index) => {
+    
+    const questionList = this.state.questions.map((e, index) => {
       
-      return (
-        
-        <div key={index}>
-          <Question title={e.title} content={e.content}/>
-        </div>
-      );
+      if(e.title.includes(this.state.searchQuestion)){
+        return (
+          <div key={index}>
+            <Question title={e.title} content={e.content} />
+          </div>
+        );
+      }else{
+        return null;
+      }
+      
     });
     return (
       <div className={cssClasses.questions}>
@@ -47,6 +60,7 @@ class Questions extends Component {
               type="text"
               className={cssClasses.searchBar}
               placeholder="Search for something..."
+              onChange={event => this.search(event)}
             />
           </form>
 
