@@ -6,7 +6,7 @@ const questionDetails = (props)=>{
         <p>{props.qContent}</p>
        
       
-       <button className="btn btn-primary" onClick={props.confirm}>Confirm</button>
+      
        <button className="btn btn-primary" onClick = {props.cancel}>Cancel</button>
        </div>
 

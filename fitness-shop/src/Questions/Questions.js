@@ -40,6 +40,10 @@ class Questions extends Component {
     this.setState({ifShown:true});
   }
 
+  cancelHandler=()=>{
+    this.setState({ifShown:false});
+  }
+
   render() {
     const questionList = this.state.questions.map((e, index) => {
       if (e.title.includes(this.state.searchQuestion)) {
@@ -57,7 +61,7 @@ class Questions extends Component {
     if(this.state.ifShown){
       report=(
         <Modal>
-          <QuestionDetails />
+          <QuestionDetails cancel={this.cancelHandler}/>
         </Modal>
       )
 
