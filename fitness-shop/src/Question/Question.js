@@ -12,7 +12,7 @@ const question = props => {
           <p className="card-text searchContent">
             {props.content}
           </p>
-          <button className="btn btn-primary">View the answer</button>
+          <button onClick={props.showDetail} className="btn btn-primary">View the answer</button>
         </div>
       </div>
     </div>

@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import Question from "../Question/Question";
 import cssClasses from "./Questions.module.css";
 import axios from "axios";
+import Modal from "../components/Modal/Modal";
+import QuestionDetails from "../components/QuestionDetails/QuestionDetails";
 
 class Questions extends Component {
   state = {
     questions: [],
-    searchQuestion: ""
+    searchQuestion: "",
+    ifShown:false
   };
   //Ajax calls
   componentDidMount() {
@@ -31,24 +34,35 @@ class Questions extends Component {
     this.setState({
       searchQuestion: event.target.value
     });
-    
   };
 
+  showDetailHandler=()=>{
+    this.setState({ifShown:true});
+  }
+
   render() {
-    
     const questionList = this.state.questions.map((e, index) => {
-      
-      if(e.title.includes(this.state.searchQuestion)){
+      if (e.title.includes(this.state.searchQuestion)) {
         return (
           <div key={index}>
-            <Question title={e.title} content={e.content} />
+            <Question title={e.title} content={e.content} showDetail={this.showDetailHandler}/>
           </div>
         );
-      }else{
+      } else {
         return null;
       }
-      
     });
+
+    let report  = null;
+    if(this.state.ifShown){
+      report=(
+        <Modal>
+          <QuestionDetails />
+        </Modal>
+      )
+
+    }
+
     return (
       <div className={cssClasses.questions}>
         <div className="section-title">
@@ -66,6 +80,7 @@ class Questions extends Component {
 
           {questionList}
         </div>
+        {report}
       </div>
     );
   }
