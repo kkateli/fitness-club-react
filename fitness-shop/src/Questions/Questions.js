@@ -4,7 +4,7 @@ import cssClasses from "./Questions.module.css";
 import axios from "axios";
 import Modal from "../components/Modal/Modal";
 import QuestionDetails from "../components/QuestionDetails/QuestionDetails";
-import question from "../Question/Question";
+import Backdrop from "../components/Backdrop/Backdrop";
 
 class Questions extends Component {
   state = {
@@ -71,9 +71,13 @@ class Questions extends Component {
     let report = null;
     if (this.state.ifShown && this.state.qustion!=null) {
       report = (
-        <Modal>
+        <div>
+<Modal>
           <QuestionDetails qTitle={this.state.question.title} qContent = {this.state.question.content} cancel={this.cancelHandler} />
         </Modal>
+        <Backdrop backdropClicked={this.cancelHandler}/>
+        </div>
+        
       );
     }
 
