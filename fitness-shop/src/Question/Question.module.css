@@ -1,0 +1,18 @@
+.title{
+
+    border:1px solid black;
+    width: 50%;
+
+}
+
+.content{
+    border:1px solid black;
+    width: 50%;
+    height:50%;
+}
+
+.question{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+}

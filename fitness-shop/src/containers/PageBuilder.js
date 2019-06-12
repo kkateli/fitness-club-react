@@ -17,6 +17,7 @@ import Logout from "../components/Logout/Logout";
 import * as actions from "../actions/actions";
 import { connect } from "react-redux";
 import {Redirect} from "react-router-dom";
+import Questions from "../Questions/Questions";
 
 class PageBuilder extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class PageBuilder extends Component {
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
         <Route path="/documentation" component={Documentation} />
+        <Route path="/questions" component={Questions} />
         <Redirect to="/" />
       </Switch>
     );
@@ -47,6 +49,7 @@ class PageBuilder extends Component {
           <Route path="/cardio" component={Cardio} />
           <Route path="/weight" component={Weight} />
           <Route path="/logout" component={Logout} />
+          <Route path="/questions" component={Questions} />
           <Redirect to="/" />
         </Switch>
       );
