@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Question.css";
 
+
 const question = props => {
   return (
     <div className='question'>
@@ -11,6 +12,7 @@ const question = props => {
           <p className="card-text searchContent">
             {props.content}
           </p>
+          <button className="btn btn-primary">View the answer</button>
         </div>
       </div>
     </div>
