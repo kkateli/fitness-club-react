@@ -1,17 +1,11 @@
-.searchTitle{
-    
-
-    
-
-}
-
-.searchContent{
-   
-}
 
 .question{
     
     
     width:40%;
     margin:30px auto;
+}
+
+.question button{
+    margin:auto;
 }

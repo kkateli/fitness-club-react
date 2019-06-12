@@ -4,12 +4,14 @@ import cssClasses from "./Questions.module.css";
 import axios from "axios";
 import Modal from "../components/Modal/Modal";
 import QuestionDetails from "../components/QuestionDetails/QuestionDetails";
+import question from "../Question/Question";
 
 class Questions extends Component {
   state = {
     questions: [],
     searchQuestion: "",
-    ifShown:false
+    ifShown: false,
+    qustion:""
   };
   //Ajax calls
   componentDidMount() {
@@ -36,20 +38,29 @@ class Questions extends Component {
     });
   };
 
-  showDetailHandler=()=>{
-    this.setState({ifShown:true});
-  }
+  showDetailHandler = i => {
+    this.setState({ ifShown: true });
+    this.state.questions.map((e, index) => {
+      if (i === index) {
+        this.setState({question:e});
+      } 
+    });
+  };
 
-  cancelHandler=()=>{
-    this.setState({ifShown:false});
-  }
+  cancelHandler = () => {
+    this.setState({ ifShown: false });
+  };
 
   render() {
     const questionList = this.state.questions.map((e, index) => {
       if (e.title.includes(this.state.searchQuestion)) {
         return (
           <div key={index}>
-            <Question title={e.title} content={e.content} showDetail={this.showDetailHandler}/>
+            <Question
+              title={e.title}
+              content={e.content}
+              showDetail={() => this.showDetailHandler(index)}
+            />
           </div>
         );
       } else {
@@ -57,14 +68,13 @@ class Questions extends Component {
       }
     });
 
-    let report  = null;
-    if(this.state.ifShown){
-      report=(
+    let report = null;
+    if (this.state.ifShown && this.state.qustion!=null) {
+      report = (
         <Modal>
-          <QuestionDetails cancel={this.cancelHandler}/>
+          <QuestionDetails qTitle={this.state.question.title} qContent = {this.state.question.content} cancel={this.cancelHandler} />
         </Modal>
-      )
-
+      );
     }
 
     return (
