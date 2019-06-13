@@ -85,7 +85,8 @@ class Questions extends Component {
       <div className={cssClasses.questions}>
         <div className="section-title">
           <h2>Questions</h2>
-
+          <p>You can search questions here. Key words are case-sensitive</p>
+          </div>
           <form className={cssClasses.searchEngine}>
             <i className="icofont-search" />
             <input
@@ -97,7 +98,7 @@ class Questions extends Component {
           </form>
 
           {questionList}
-        </div>
+        
         {report}
       </div>
     );
