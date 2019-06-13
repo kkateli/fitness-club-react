@@ -3,3 +3,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.details h3, .details p{
+    color:black;
+}

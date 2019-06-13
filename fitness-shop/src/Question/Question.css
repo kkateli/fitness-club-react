@@ -11,3 +11,8 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.question h5, .question p{
+    color:black;
+
+}
