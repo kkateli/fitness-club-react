@@ -1,0 +1,22 @@
+.home-background{
+    width:100%;
+    height:100%;
+    z-index: -1;
+
+    
+    
+   
+}
+
+.button-control img{
+    display: block;
+    width:100px;
+    z-index: 10;
+    margin-bottom:30px;
+}
+
+.button-control{
+    position: absolute;
+    top:200px;
+    left:250px;
+}

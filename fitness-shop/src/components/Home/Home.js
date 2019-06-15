@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import img1 from "../../assets/image/fitness.jpg";
 import img2 from "../../assets/image/fitness-deep-map.png";
 import cloud from "../../assets/image/cloud.png";
+import rippleButton from "../../assets/image/rippleButton.png";
+import hoverButton from "../../assets/image/hoverButton.png";
+import "./Home.css";
 
 let app = new PIXI.Application({
   width: window.innerWidth,
@@ -57,19 +60,16 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home-background">
         <div ref={this.rippleHandler}>
-          <button onClick={this.rippleHandler} className="btn btn-primary">
-            Ripple Effect
-          </button>
-          <button
-            style={{ display: "block" }}
-            onClick={this.pic}
-            className="btn btn-primary"
-          >
-            Hover Movement
-          </button>
+        <div className="button-control">
+        <img onClick = {this.rippleHandler} src={rippleButton} alt="ripple" />
+         <img onClick = {this.pic} src={hoverButton} alt="hover" />  
         </div>
+        </div>
+          
+        
+        
       </div>
     );
   }
