@@ -18,6 +18,7 @@ import * as actions from "../actions/actions";
 import { connect } from "react-redux";
 import {Redirect} from "react-router-dom";
 import Questions from "../Questions/Questions";
+import Home from "../components/Home/Home";
 
 class PageBuilder extends Component {
   componentDidMount() {
@@ -33,6 +34,7 @@ class PageBuilder extends Component {
         <Route path="/signup" component={Signup} />
         <Route path="/documentation" component={Documentation} />
         <Route path="/questions" component={Questions} />
+        <Route path="/home" component={Home} />
         <Redirect to="/" />
       </Switch>
     );
