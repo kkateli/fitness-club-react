@@ -34,7 +34,7 @@ class PageBuilder extends Component {
         <Route path="/signup" component={Signup} />
         <Route path="/documentation" component={Documentation} />
         <Route path="/questions" component={Questions} />
-        <Route path="/home" component={Home} />
+        <Route path="/home" exact component={Home} />
         <Redirect to="/" />
       </Switch>
     );

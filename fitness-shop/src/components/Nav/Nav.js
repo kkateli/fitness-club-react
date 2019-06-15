@@ -15,6 +15,7 @@ class NavBar extends Component {
     this.setState({ menuClicked: !this.state.menuClicked });
   };
 
+  
   render() {
     let sidebar = null;
     if (this.state.menuClicked) {
