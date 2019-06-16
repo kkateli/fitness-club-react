@@ -41,9 +41,9 @@ class Home extends Component {
     app.stage.filters = [this.state.displacementFilter];
     window.onmousemove = e => {
       this.state.displacementFilter.scale.x =
-        (window.innerWidth / 2 - e.clientX) / 40;
+        (window.innerWidth / 2 - e.clientX) / 140;
       this.state.displacementFilter.scale.y =
-        (window.innerHeight / 2 - e.clientY) / 40;
+        (window.innerHeight / 2 - e.clientY) / 20;
     };
   };
 
