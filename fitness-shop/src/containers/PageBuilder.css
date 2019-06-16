@@ -11,6 +11,7 @@ body {
 }
 .navbar {
   padding: 0;
+  
 }
 a:hover,
 a:focus {
@@ -230,7 +231,9 @@ button {
   transition: 0.6s;
   -webkit-transition: 0.6s;
   background-color: #c0c2c7 !important;
+  
 }
+
 
 .navbar-light .navbar-nav .nav-link {
   color: #000;
