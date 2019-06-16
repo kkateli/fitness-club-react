@@ -230,13 +230,12 @@ button {
 .navbar-light {
   transition: 0.6s;
   -webkit-transition: 0.6s;
-  background-color: #c0c2c7 !important;
+  background-color: black !important;
   
 }
 
-
 .navbar-light .navbar-nav .nav-link {
-  color: #000;
+  color: lightgray !important;
 
   text-transform: uppercase;
   cursor: pointer;
@@ -250,16 +249,17 @@ button {
   display: inline-block;
   padding-left: 3px;
   padding-right: 3px;
+  
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #fff !important;
+  color: #ffd73e !important;
 }
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
-  color: #fff !important;
+  color: #ffd73e !important;
   background: none;
 }
 .navbar-light.fixed-top,
@@ -294,7 +294,10 @@ button {
   
   position:absolute;
   right:5px;
+  color:lightgray !important;
 }
+
+
 
 /* End Navbar Style */
 
@@ -1007,7 +1010,7 @@ a:focus {
 }
 .navbar-light .navbar-nav .nav-link.active {
   background-color: #1f2530 !important;
-  color: #fff !important;
+  color: #ffd73e !important;
 }
 
 .navbar-light.fixed-top,

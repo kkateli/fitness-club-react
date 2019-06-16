@@ -36,7 +36,7 @@ class NavBar extends Component {
       nav = (
         <Navbar
           id="navbar"
-          bg="light"
+          
           expand="lg"
           className="navbar navbar-expand-md navbar-light"
           collapseOnSelect={true}

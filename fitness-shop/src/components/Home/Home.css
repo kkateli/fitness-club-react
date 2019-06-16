@@ -48,5 +48,14 @@
   width: 100%;
   position: fixed;
   z-index: 99;
-  color: aliceblue;
+  
+}
+.black-back{
+  background-color:red;
+  height: 15px;
+  
+  top:49px;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
 }
