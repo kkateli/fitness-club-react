@@ -7,43 +7,44 @@ import rippleButton from "../../assets/image/rippleButton.png";
 import hoverButton from "../../assets/image/hoverButton.png";
 import "./Home.css";
 
-
-
+const app = new PIXI.Application({
+  width: window.innerWidth,
+  height: window.innerHeight
+});
 
 class Home extends Component {
   state = {
     displacementFilter: null,
-    displacementSprite: null,
-    app : new PIXI.Application({
-        width: window.innerWidth,
-        height: window.innerHeight
-      })
+    displacementSprite: null
   };
 
-  
+  componentDidMount() {
+    document.body.appendChild(app.view);
+  }
+
+  componentWillUnmount() {
+    document.body.removeChild(app.view);
+  }
 
   pic = () => {
-    document.body.appendChild(this.state.app.view);
-
     let img = new PIXI.Sprite.from(img1);
     img.width = window.innerWidth;
     img.height = window.innerHeight;
-    this.state.app.stage.addChild(img);
+    app.stage.addChild(img);
 
     let depthMap = new PIXI.Sprite.from(img2);
-    this.state.app.stage.addChild(depthMap);
+    app.stage.addChild(depthMap);
     this.state.displacementFilter = new PIXI.filters.DisplacementFilter(
       depthMap
     );
 
-    this.state.app.stage.filters = [this.state.displacementFilter];
+    app.stage.filters = [this.state.displacementFilter];
     window.onmousemove = e => {
       this.state.displacementFilter.scale.x =
         (window.innerWidth / 2 - e.clientX) / 40;
       this.state.displacementFilter.scale.y =
         (window.innerHeight / 2 - e.clientY) / 40;
     };
-    
   };
 
   animate = () => {
@@ -53,22 +54,20 @@ class Home extends Component {
   };
 
   rippleHandler = () => {
-    document.body.appendChild(this.state.app.view);
     let img = new PIXI.Sprite.from(img1);
     img.width = window.innerWidth;
     img.height = window.innerHeight;
-    this.state.app.stage.addChild(img);
+    app.stage.addChild(img);
 
     this.state.displacementSprite = new PIXI.Sprite.from(cloud);
     this.state.displacementSprite.texture.baseTexture.wrapMode =
       PIXI.WRAP_MODES.REPEAT;
-    this.state.app.stage.addChild(this.state.displacementSprite);
+    app.stage.addChild(this.state.displacementSprite);
     this.state.displacementFilter = new PIXI.filters.DisplacementFilter(
       this.state.displacementSprite
     );
-    this.state.app.stage.filters = [this.state.displacementFilter];
+    app.stage.filters = [this.state.displacementFilter];
     this.animate();
-    
   };
 
   render() {
