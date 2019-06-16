@@ -304,6 +304,7 @@ button {
   width: 100%;
   overflow: hidden;
   position: relative;
+  top:-15px;
 }
 .home-video-area::before {
   position: absolute;

@@ -162,7 +162,7 @@ class NavBar extends Component {
           {nav}
           <div className="mark-wrap" onClick={this.clickVanish}>
             <div className="dropup-mark">
-              <i class="icofont-caret-up" />
+              <i className="icofont-caret-up" />
             </div>
           </div>
         </div>

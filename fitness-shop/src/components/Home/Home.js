@@ -108,7 +108,10 @@ class Home extends Component {
       );
     }
     return (
+      <div>
+      <div className="black-brick"></div>
       <div className="home-background">
+        
         <div ref={this.rippleHandler}>
           <div className="button-control">
             <div className="the-buttons">
@@ -133,6 +136,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }
