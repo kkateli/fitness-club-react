@@ -15,7 +15,25 @@ const app = new PIXI.Application({
 class Home extends Component {
   state = {
     displacementFilter: null,
-    displacementSprite: null
+    displacementSprite: null,
+    ifHover1: false,
+    ifHover2: false
+  };
+
+  hoverOverButton1 = () => {
+    this.setState({ ifHover1: true });
+  };
+
+  hoverOffButton1 = () => {
+    this.setState({ ifHover1: false });
+  };
+
+  hoverOverButton2 = () => {
+    this.setState({ ifHover2: true });
+  };
+
+  hoverOffButton2 = () => {
+    this.setState({ ifHover2: false });
   };
 
   componentDidMount() {
@@ -71,12 +89,46 @@ class Home extends Component {
   };
 
   render() {
+    let arrow1 = null;
+    if (this.state.ifHover1) {
+      arrow1 = (
+        <div className="home-arrow">
+          <i class="icofont-hand-drawn-left" />
+        </div>
+      );
+    }
+    let arrow2 = null;
+    if (this.state.ifHover2) {
+      arrow2 = (
+        <div className="home-arrow">
+          <i class="icofont-hand-drawn-left" />
+        </div>
+      );
+    }
     return (
       <div className="home-background">
         <div ref={this.rippleHandler}>
           <div className="button-control">
-            <img onClick={this.rippleHandler} src={rippleButton} alt="ripple" />
-            <img onClick={this.pic} src={hoverButton} alt="hover" />
+            <div className="the-buttons">
+              <img
+                onMouseOver={this.hoverOverButton1}
+                onMouseOut={this.hoverOffButton1}
+                onClick={this.rippleHandler}
+                src={rippleButton}
+                alt="ripple"
+              />
+              {arrow1}
+            </div>
+            <div className="the-buttons">
+              <img
+                onMouseOver={this.hoverOverButton2}
+                onMouseOut={this.hoverOffButton2}
+                onClick={this.pic}
+                src={hoverButton}
+                alt="hover"
+              />
+              {arrow2}
+            </div>
           </div>
         </div>
       </div>
