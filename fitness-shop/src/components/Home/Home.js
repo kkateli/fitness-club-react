@@ -94,6 +94,7 @@ class Home extends Component {
       arrow1 = (
         <div className="home-arrow">
           <i class="icofont-hand-drawn-left" />
+          <p>Click the button</p>
         </div>
       );
     }
@@ -102,6 +103,7 @@ class Home extends Component {
       arrow2 = (
         <div className="home-arrow">
           <i class="icofont-hand-drawn-left" />
+          <p>Click the button and hover over the man on the right</p>
         </div>
       );
     }

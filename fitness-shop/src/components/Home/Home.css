@@ -6,8 +6,17 @@
 .home-arrow {
   color: lightgrey;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 10px;
+  
+  opacity: 1;
+  
 }
+.home-arrow p{
+    display: inline;
+    font-family:fantasy,cursive,"Gill Sans",sans-serif;
+    margin-left:10px;
+}
+
 
 .button-control .the-buttons {
   display: block;
