@@ -8,7 +8,7 @@ const sidebar = props => {
         <h1 className="sidebar-logo">
           Keep <span>Traning</span>
         </h1>
-        <div className="sidebar-nav-wrap">
+        <div onClick = {props.clickButtonHandler} className="sidebar-nav-wrap">
           <nav className="sidebar-main-nav" role="navigation">
             <ul className="sidebar-unstyled sidebar-list-hover-slide">
               <li>

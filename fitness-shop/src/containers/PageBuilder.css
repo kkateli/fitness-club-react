@@ -1555,7 +1555,7 @@ h3 {
 .sidebar-header {
   position: fixed;
   left: 0;
-  top: 80px;
+  top: 0;
   bottom: 0;
   width: 17.5em;
   height: 355px;
