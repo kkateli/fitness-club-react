@@ -9,10 +9,15 @@ import { connect } from "react-redux";
 
 class NavBar extends Component {
   state = {
-    menuClicked: false
+    menuClicked: false,
+    ifVanish: true
   };
   clickMenuHandler = () => {
     this.setState({ menuClicked: !this.state.menuClicked });
+  };
+
+  clickVanish = () => {
+    this.setState({ ifVanish: !this.state.ifVanish });
   };
 
   render() {
@@ -26,137 +31,140 @@ class NavBar extends Component {
       );
     }
 
-    return (
-      <div>
-        <div className="nav-menu" onClick={this.clickMenuHandler}>
-          <i className="icofont-navigation-menu" />
-        </div>
-        {sidebar}
-        <div className="real-nav">
-          <Navbar
-            id="navbar"
-            bg="light"
-            expand="lg"
-            className="navbar navbar-expand-md navbar-light"
-            collapseOnSelect={true}
-          >
-            <Container>
-              <Navbar.Brand className="navbar-brand logo">
+    let nav = null;
+    if (!this.state.ifVanish) {
+      nav = (
+        <Navbar
+          id="navbar"
+          bg="light"
+          expand="lg"
+          className="navbar navbar-expand-md navbar-light"
+          collapseOnSelect={true}
+        >
+          <Container>
+            <Navbar.Brand className="navbar-brand logo">
+              <div>
+                <Link to="/">
+                  <img src={this.props.MainLogo} alt="Logo" />
+                </Link>
+              </div>
+            </Navbar.Brand>
+
+            <Navbar.Collapse id="navbarSupportedContent">
+              <Nav className="navbar-nav ml-auto">
                 <div>
-                  <Link to="/">
-                    <img src={this.props.MainLogo} alt="Logo" />
-                  </Link>
-                </div>
-              </Navbar.Brand>
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
+                      to="/"
+                      className="smooths nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      Home
+                    </Link>
+                  </Nav.Item>
 
-              <Navbar.Collapse id="navbarSupportedContent">
-                <Nav className="navbar-nav ml-auto">
-                  <div>
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
+                      to="whatWeDo"
+                      className="smooths nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      What we do
+                    </Link>
+                  </Nav.Item>
+                  {!this.props.ifAuth ? (
                     <Nav.Item>
                       <Link
                         activeclass="active"
-                        to="/"
+                        to="signin"
                         className="smooths nav-link"
                         onClick={this.closeNavbar}
                       >
-                        Home
+                        Sign in
                       </Link>
                     </Nav.Item>
+                  ) : null}
 
+                  {this.props.ifAuth ? (
                     <Nav.Item>
                       <Link
                         activeclass="active"
-                        to="whatWeDo"
+                        to="activities"
                         className="smooths nav-link"
                         onClick={this.closeNavbar}
                       >
-                        What we do
+                        Activities
                       </Link>
                     </Nav.Item>
-                    {!this.props.ifAuth ? (
-                      <Nav.Item>
-                        <Link
-                          activeclass="active"
-                          to="signin"
-                          className="smooths nav-link"
-                          onClick={this.closeNavbar}
-                        >
-                          Sign in
-                        </Link>
-                      </Nav.Item>
-                    ) : null}
-
-                    {this.props.ifAuth ? (
-                      <Nav.Item>
-                        <Link
-                          activeclass="active"
-                          to="activities"
-                          className="smooths nav-link"
-                          onClick={this.closeNavbar}
-                        >
-                          Activities
-                        </Link>
-                      </Nav.Item>
-                    ) : null}
-                    {this.props.ifAuth ? (
-                      <Nav.Item>
-                        <Link
-                          activeclass="active"
-                          to="memberPost"
-                          className="smooths nav-link"
-                          onClick={this.closeNavbar}
-                        >
-                          Member Posts
-                        </Link>
-                      </Nav.Item>
-                    ) : null}
-                    {this.props.ifAuth ? (
-                      <Nav.Item>
-                        <Link
-                          activeclass="active"
-                          to="newPost"
-                          className="nav-link"
-                          onClick={this.closeNavbar}
-                        >
-                          New Post
-                        </Link>
-                      </Nav.Item>
-                    ) : null}
-
+                  ) : null}
+                  {this.props.ifAuth ? (
                     <Nav.Item>
                       <Link
                         activeclass="active"
-                        to="documentation"
+                        to="memberPost"
+                        className="smooths nav-link"
+                        onClick={this.closeNavbar}
+                      >
+                        Member Posts
+                      </Link>
+                    </Nav.Item>
+                  ) : null}
+                  {this.props.ifAuth ? (
+                    <Nav.Item>
+                      <Link
+                        activeclass="active"
+                        to="newPost"
                         className="nav-link"
                         onClick={this.closeNavbar}
                       >
-                        Documentation
+                        New Post
                       </Link>
                     </Nav.Item>
-                  </div>
-                </Nav>
-              </Navbar.Collapse>
+                  ) : null}
 
-              {this.props.ifAuth ? (
-                <p className="logoutButton">
-                  Hi, {this.props.userEmail.split("@")[0]}
-                  <Link to={"/logout"}> Log out</Link>
-                </p>
-              ) : null}
-             
-            </Container>
-            
-          </Navbar>
-          <div className="mark-wrap">
-          <div className="dropup-mark"><i class="icofont-caret-up"></i></div>
+                  <Nav.Item>
+                    <Link
+                      activeclass="active"
+                      to="documentation"
+                      className="nav-link"
+                      onClick={this.closeNavbar}
+                    >
+                      Documentation
+                    </Link>
+                  </Nav.Item>
+                </div>
+              </Nav>
+            </Navbar.Collapse>
+
+            {this.props.ifAuth ? (
+              <p className="logoutButton">
+                Hi, {this.props.userEmail.split("@")[0]}
+                <Link to={"/logout"}> Log out</Link>
+              </p>
+            ) : null}
+          </Container>
+        </Navbar>
+      );
+    }
+
+    return (
+      <div>
+        <div className="sidebar-nav">
+          <div className="nav-menu" onClick={this.clickMenuHandler}>
+            <i className="icofont-navigation-menu" />
           </div>
-         
-          {/* <div className="sub-logo">
-            <Link to="/">
-              <img src={this.props.MainLogo} alt="Logo" />
-            </Link>
-          </div> */}
-          
+        </div>
+
+        {sidebar}
+        <div className="real-nav">
+          {nav}
+          <div className="mark-wrap" onClick={this.clickVanish}>
+            <div className="dropup-mark">
+              <i class="icofont-caret-up" />
+            </div>
+          </div>
         </div>
       </div>
     );

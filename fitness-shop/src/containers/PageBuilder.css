@@ -1630,15 +1630,18 @@ h3 {
 }
 
 .nav-menu i {
-  color: #2d3645;
+  
+
+  color: #fff;
+  background-color: #2d3645;
+  padding: 15px;
+  border-radius: 50%;
   font-size: 20px;
 }
 .nav-menu i:hover,
 .nav-menu i:active {
-  color: #fff;
-  background-color: #2d3645;
-  padding: 5px;
-  border-radius: 50%;
+  color: #ffd73e;
+  
 }
 
 /* ANCHOR  */
