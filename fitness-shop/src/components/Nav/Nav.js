@@ -34,6 +34,7 @@ class NavBar extends Component {
     let nav = null;
     if (!this.state.ifVanish) {
       nav = (
+        <div>
         <Navbar
           id="navbar"
           
@@ -44,7 +45,7 @@ class NavBar extends Component {
           <Container>
             <Navbar.Brand className="navbar-brand logo">
               <div>
-                <Link to="/">
+                <Link to="/home">
                   <img src={this.props.MainLogo} alt="Logo" />
                 </Link>
               </div>
@@ -56,7 +57,7 @@ class NavBar extends Component {
                   <Nav.Item>
                     <Link
                       activeclass="active"
-                      to="/"
+                      to="/home"
                       className="smooths nav-link"
                       onClick={this.closeNavbar}
                     >
@@ -144,8 +145,18 @@ class NavBar extends Component {
                 <Link to={"/logout"}> Log out</Link>
               </p>
             ) : null}
+            
           </Container>
+          
+          
         </Navbar>
+        <div className="dropup-mark-active" onClick={this.clickVanish}>
+        <div className="dropup-active">
+        <i className="icofont-caret-up" />
+      </div>
+        </div>
+        
+      </div>
       );
     }
 
@@ -160,11 +171,14 @@ class NavBar extends Component {
         {sidebar}
         <div className="real-nav">
           {nav}
-          <div className="mark-wrap" onClick={this.clickVanish}>
+          {this.state.ifVanish ?(
+            <div className="mark-wrap" onClick={this.clickVanish}>
             <div className="dropup-mark">
               <i className="icofont-caret-up" />
             </div>
           </div>
+          ) :null}
+          
         </div>
       </div>
     );
@@ -173,15 +187,7 @@ class NavBar extends Component {
 
 //Default Props
 NavBar.defaultProps = {
-  MainLogo: require("../../assets/image/logo.png"),
-
-  mailLink: "email@mail.com",
-  mail: "example@example.com ",
-  numberLink: "+123456",
-  Number: "+12345",
-  facebookLink: "Facebook link",
-  twitterLink: "Twitter link",
-  instagramLink: "Ins link"
+  MainLogo: require("../../assets/image/logo.png")
 };
 const mapStateToProps = state => {
   return { ifAuth: state.auth.token != null, userEmail: state.auth.userEmail };

@@ -28,20 +28,20 @@ class PageBuilder extends Component {
   render() {
     let routes = (
       <Switch>
-        <Route path="/" exact component={Banner} />
+        <Route path="/home" exact component={Banner} />
+        <Route path="/" exact component={Home} />
         <Route path="/whatWeDo" component={WhatWeDo} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
         <Route path="/documentation" component={Documentation} />
         <Route path="/questions" component={Questions} />
-        <Route path="/home" exact component={Home} />
-        <Redirect to="/" />
+        <Redirect to="/home" />
       </Switch>
     );
     if (this.props.ifAuth) {
       routes = (
         <Switch>
-          <Route path="/" exact component={Banner} />
+          <Route path="/" exact component={Home} />
           <Route path="/whatWeDo" component={WhatWeDo} />
           <Route path="/activities" component={Activities} />
           <Route path="/memberPost" component={Customers} />
@@ -52,7 +52,8 @@ class PageBuilder extends Component {
           <Route path="/weight" component={Weight} />
           <Route path="/logout" component={Logout} />
           <Route path="/questions" component={Questions} />
-          <Redirect to="/" />
+          <Route path="/home" exact component={Banner} />
+          <Redirect to="/home" />
         </Switch>
       );
     }

@@ -27,3 +27,20 @@
     left:5px;
     z-index: 100;
 }
+
+.dropup-mark-active{
+  
+ background-color: black;
+ 
+  width:100%;
+
+}
+
+
+.dropup-active{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  color:white;
+  width:10px;
+}
