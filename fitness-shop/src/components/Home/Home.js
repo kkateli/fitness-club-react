@@ -6,6 +6,8 @@ import cloud from "../../assets/image/cloud.png";
 import rippleButton from "../../assets/image/rippleButton.png";
 import hoverButton from "../../assets/image/hoverButton.png";
 import "./Home.css";
+import Icofont from "react-icofont";
+import { Link } from "react-router-dom";
 
 const app = new PIXI.Application({
   width: window.innerWidth,
@@ -109,35 +111,43 @@ class Home extends Component {
     }
     return (
       <div>
-      <div className="black-brick"></div>
-      
-      <div className="home-background">
-        
-        <div ref={this.rippleHandler}>
-          <div className="button-control">
-            <div className="the-buttons">
-              <img
-                onMouseOver={this.hoverOverButton1}
-                onMouseOut={this.hoverOffButton1}
-                onClick={this.rippleHandler}
-                src={rippleButton}
-                alt="ripple"
-              />
-              {arrow1}
-            </div>
-            <div className="the-buttons">
-              <img
-                onMouseOver={this.hoverOverButton2}
-                onMouseOut={this.hoverOffButton2}
-                onClick={this.pic}
-                src={hoverButton}
-                alt="hover"
-              />
-              {arrow2}
+        <div className="black-brick" />
+
+        <div className="home-background">
+          <div ref={this.rippleHandler}>
+            <div className="button-control">
+              <div className="the-buttons">
+                <img
+                  onMouseOver={this.hoverOverButton1}
+                  onMouseOut={this.hoverOffButton1}
+                  onClick={this.rippleHandler}
+                  src={rippleButton}
+                  alt="ripple"
+                />
+                {arrow1}
+              </div>
+              <div className="the-buttons">
+                <img
+                  onMouseOver={this.hoverOverButton2}
+                  onMouseOut={this.hoverOffButton2}
+                  onClick={this.pic}
+                  src={hoverButton}
+                  alt="hover"
+                />
+                {arrow2}
+              </div>
+              <div className="effect-button">
+                <Link to="/home" className="btn-a">
+                  <div className="button">
+                    Go to Home Page
+                    <Icofont icon="icofont-long-arrow-right" />
+                    <div className="mask" />
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     );
   }
