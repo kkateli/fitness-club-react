@@ -123,7 +123,12 @@ class Signup extends Component {
           {form}
           <p>Password should not be less than 6 characters</p>
 
-          <button>Submit </button>
+          <div className="btn-f">
+          <button className="button">
+            Submit
+            <div className="mask" />
+          </button>
+          </div>
         </form>
       </div>
     );

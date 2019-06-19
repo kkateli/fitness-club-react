@@ -119,6 +119,18 @@ p {
 button {
   padding: 0;
 }
+.btn-f{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  position: relative;
+  color:white;
+  width:200px;
+}
+.btn-f button{
+  color:white;
+}
+
 .button .mask {
   background: #fff;
   background: rgba(255, 255, 255, 0.5);

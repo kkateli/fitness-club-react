@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import css from "./Signin.module.css";
 import Input from "../Input/Input";
 import { Link } from "react-router-dom";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 class Signin extends Component {
   state = {
@@ -88,7 +88,10 @@ class Signin extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    this.props.signinAction(this.state.controls.email.value, this.state.controls.password.value);
+    this.props.signinAction(
+      this.state.controls.email.value,
+      this.state.controls.password.value
+    );
   };
 
   render() {
@@ -124,20 +127,31 @@ class Signin extends Component {
               <Link to={"/signup"}>
                 <strong>sign up</strong>
               </Link>
-            </span> or sign in as a guest:
+            </span>{" "}
+            or sign in as a guest:
           </p>
-          
+
           <p>Email: test@test.com</p>
           <p> Password: 111111</p>
-          <button>Submit </button>
+          <div className="btn-f">
+          <button className="button">
+            Submit
+            <div className="mask" />
+          </button>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-const mapDispatchToProps=(dispatch)=>{
-    return {signinAction:(email, password)=>dispatch(actions.signin(email,password))};
-}
+const mapDispatchToProps = dispatch => {
+  return {
+    signinAction: (email, password) => dispatch(actions.signin(email, password))
+  };
+};
 
-export default connect(null,mapDispatchToProps)(Signin);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Signin);
