@@ -35,7 +35,7 @@ class PageBuilder extends Component {
         <Route path="/signup" component={Signup} />
         <Route path="/documentation" component={Documentation} />
         <Route path="/questions" component={Questions} />
-        <Redirect to="/home" />
+        <Redirect to="/" />
       </Switch>
     );
     if (this.props.ifAuth) {
@@ -53,7 +53,7 @@ class PageBuilder extends Component {
           <Route path="/logout" component={Logout} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" exact component={Banner} />
-          <Redirect to="/home" />
+          <Redirect to="/" />
         </Switch>
       );
     }

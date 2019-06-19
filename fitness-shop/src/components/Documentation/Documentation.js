@@ -94,6 +94,7 @@ const documentation = () => {
       <p>
         <span className="initWord">I</span>mages used:
       </p>
+      <p>https://backgroundcheckall.com/gym-banner-background-4/</p>
       <p>
         https://www.walmart.ca/en/ip/sunny-health-fitness-sf-e905-magnetic-elliptical-trainer/6000193040818
       </p>
