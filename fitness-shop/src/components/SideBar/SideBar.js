@@ -12,7 +12,7 @@ const sidebar = props => {
           <nav className="sidebar-main-nav" role="navigation">
             <ul className="sidebar-unstyled sidebar-list-hover-slide">
               <li>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/home"}>Home</Link>
               </li>
               <li>
                 <Link to={"whatWeDo"}>What We Do</Link>

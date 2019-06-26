@@ -251,6 +251,7 @@ button {
 
   text-transform: uppercase;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .navbar-light .navbar-nav {
