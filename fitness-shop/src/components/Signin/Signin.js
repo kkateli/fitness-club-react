@@ -37,7 +37,8 @@ class Signin extends Component {
         valid: false,
         touched: false
       }
-    }
+    },
+    userType:""
   };
 
   checkValidity(value, rules) {
@@ -87,15 +88,22 @@ class Signin extends Component {
     this.setState({ controls: updatedControls });
   };
 
+  selectUserTypeHandler=(event)=>{
+this.setState({userType:event.target.value});
+
+  }
+
   submitHandler = event => {
     event.preventDefault();
     this.props.signinAction(
       this.state.controls.email.value,
-      this.state.controls.password.value
+      this.state.controls.password.value,
+      this.state.userType
     );
   };
 
   render() {
+    console.log(this.state.userType);
     const formElementsArray = [];
     for (let key in this.state.controls) {
       formElementsArray.push({
@@ -127,7 +135,8 @@ class Signin extends Component {
             <Row>
               <Col className={css.title}>User Type</Col>
               <Col xs={9}>
-              <Form.Control as="select">
+              <Form.Control as="select" onChange={event=>{this.selectUserTypeHandler(event)}}>
+              <option>Choose...</option> 
             <option>Member</option>
             <option>Management</option>
           </Form.Control>

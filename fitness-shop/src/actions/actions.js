@@ -5,11 +5,12 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (token, userId, userEmail) => {
+export const authSuccess = (token, userId, userType,userEmail) => {
   return {
     type: "AUTH_SUCCESS",
     token: token,
     userId: userId,
+    userType:userType,
     userEmail: userEmail
   };
 };
@@ -43,9 +44,10 @@ export const authCheck = () => {
       if (expirationTime < new Date()) {
         dispatch(logout());
       } else {
+        const userType = localStorage.getItem("userType");
         const userId = localStorage.getItem("userId");
         const userEmail = localStorage.getItem("email");
-        dispatch(authSuccess(token, userId, userEmail));
+        dispatch(authSuccess(token, userId, userType, userEmail));
       }
     }
   };
@@ -101,6 +103,7 @@ export const signin = (email, password,userType) => {
       .post(url, authData)
       .then(response => {
         console.log(response.data);
+        console.log(userType);
         //Local storage to hold auth info after reloading
         //to store in an obj
         const expirationTime = new Date(new Date().getTime() + 3600 * 1000);
@@ -108,6 +111,7 @@ export const signin = (email, password,userType) => {
         localStorage.setItem("expirationTime", expirationTime);
         localStorage.setItem("userId", response.data.localId);
         localStorage.setItem("email", response.data.email);
+        localStorage.setItem("userType", userType);
         dispatch(
           authSuccess(
             response.data.idToken,
