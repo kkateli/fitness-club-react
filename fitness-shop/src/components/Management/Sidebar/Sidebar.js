@@ -32,7 +32,7 @@ class sidebar extends Component {
     return (
       <div>
         <nav className="mana-sidebar">
-            <div>
+            <div className="mana-profile">
                 <p>Welcome, placeHolder</p>
                 <p style={{borderBottom:"1px solid white"}}><i class="icofont-power"></i>Log out</p>
             </div>
