@@ -38,9 +38,9 @@ class sidebar extends Component {
             </div>
           <ul>
               <li>
-                  <a>
+                  <NavLink className="mana-nav-link" to="/management">
                       <p>Home</p>
-                  </a>
+                  </NavLink>
               </li>
 
               <li>
@@ -55,13 +55,13 @@ class sidebar extends Component {
                 <div>
                   <ul className="nav mana-nav list-group">
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>Yoga</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/yoga"><p>Yoga</p></NavLink>
                     </li>
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>Cardio</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/cardio"><p>Cardio</p></NavLink>
                     </li>
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>Weight Training</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/weight"><p>Weight Training</p></NavLink>
                     </li>
                   </ul>
                 </div>
@@ -80,10 +80,10 @@ class sidebar extends Component {
                 <div>
                   <ul className="nav mana-nav list-group">
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>View Members</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/members"><p>View Members</p></NavLink>
                     </li>
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>Add A Member</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/addMember"><p>Add A Member</p></NavLink>
                     </li>
                   </ul>
                 </div>
@@ -102,10 +102,10 @@ class sidebar extends Component {
                 <div>
                   <ul className="nav mana-nav list-group">
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>View Posts</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/posts"><p>View Posts</p></NavLink>
                     </li>
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="#"><p>Add A Post</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management.addPost"><p>Add A Post</p></NavLink>
                     </li>
                   </ul>
                 </div>

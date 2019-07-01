@@ -19,7 +19,9 @@ import { connect } from "react-redux";
 import {Redirect} from "react-router-dom";
 import Questions from "../Questions/Questions";
 import Home from "../components/Home/Home";
+import Members from "../components/Management/Members/Members";
 import Sidebar from "../components/Management/Sidebar/Sidebar";
+
 
 class PageBuilder extends Component {
   componentDidMount() {
@@ -36,7 +38,8 @@ class PageBuilder extends Component {
         <Route path="/signup" component={Signup} />
         <Route path="/documentation" component={Documentation} />
         <Route path="/questions" component={Questions} />
-        <Route path="/s" component={Sidebar} />
+        <Route path="/management/members" component={Members} />
+        <Route path="/management" component={Sidebar} />
         <Redirect to="/" />
       </Switch>
     );
@@ -55,7 +58,6 @@ class PageBuilder extends Component {
           <Route path="/logout" component={Logout} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" exact component={Banner} />
-          
           <Redirect to="/" />
         </Switch>
       );

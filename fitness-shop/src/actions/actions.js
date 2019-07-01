@@ -10,7 +10,7 @@ export const authSuccess = (token, userId, userEmail) => {
     type: "AUTH_SUCCESS",
     token: token,
     userId: userId,
-    userEmail:userEmail
+    userEmail: userEmail
   };
 };
 
@@ -34,7 +34,7 @@ export const logout = () => {
 export const authCheck = () => {
   return dispatch => {
     const token = localStorage.getItem("token");
-    
+
     if (!token) {
       dispatch(logout());
     } else {
@@ -45,7 +45,7 @@ export const authCheck = () => {
       } else {
         const userId = localStorage.getItem("userId");
         const userEmail = localStorage.getItem("email");
-        dispatch(authSuccess(token, userId,userEmail));
+        dispatch(authSuccess(token, userId, userEmail));
       }
     }
   };
@@ -54,6 +54,16 @@ export const authCheck = () => {
 export const signup = (email, password) => {
   return dispatch => {
     dispatch(authStart());
+    const member = {
+      email: email,
+      signupTime: new Date()
+    };
+
+    axios
+      .post("https://fitness-members.firebaseio.com/.json", member)
+      .catch(err => {
+        console.log(err);
+      });
     const authData = {
       email: email,
       password: password,
@@ -66,7 +76,7 @@ export const signup = (email, password) => {
       .then(response => {
         console.log(response.data);
         alert("Your account has been created. Thank you!");
-        document.location.href="/signin";
+        document.location.href = "/signin";
       })
       .catch(err => {
         console.log(err);
@@ -96,7 +106,13 @@ export const signin = (email, password) => {
         localStorage.setItem("expirationTime", expirationTime);
         localStorage.setItem("userId", response.data.localId);
         localStorage.setItem("email", response.data.email);
-        dispatch(authSuccess(response.data.idToken, response.data.localId, response.data.email));
+        dispatch(
+          authSuccess(
+            response.data.idToken,
+            response.data.localId,
+            response.data.email
+          )
+        );
       })
       .catch(err => {
         console.log(err);
