@@ -4,6 +4,7 @@ import Input from "../Input/Input";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
+import { Form, Col, Container,Row } from "react-bootstrap";
 class Signin extends Component {
   state = {
     controls: {
@@ -121,6 +122,20 @@ class Signin extends Component {
         <h1>Sign in</h1>
         <form onSubmit={this.submitHandler}>
           {form}
+          <div className={css.userTypeSelect}>
+          <Container>
+            <Row>
+              <Col className={css.title}>User Type</Col>
+              <Col xs={9}>
+              <Form.Control as="select">
+            <option>Member</option>
+            <option>Management</option>
+          </Form.Control>
+              </Col>
+            </Row>
+          </Container>
+         
+          </div>
           <p>
             New member? Please{" "}
             <span className={css.signup}>
@@ -134,10 +149,10 @@ class Signin extends Component {
           <p>Email: test@test.com</p>
           <p> Password: 111111</p>
           <div className="btn-f">
-          <button className="button">
-            Submit
-            <div className="mask" />
-          </button>
+            <button className="button">
+              Submit
+              <div className="mask" />
+            </button>
           </div>
         </form>
       </div>
@@ -147,7 +162,8 @@ class Signin extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signinAction: (email, password) => dispatch(actions.signin(email, password))
+    signinAction: (email, password, userType) =>
+      dispatch(actions.signin(email, password, userType))
   };
 };
 

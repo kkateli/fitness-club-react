@@ -1,22 +1,28 @@
 .Signin {
-    margin: 8% auto;
-    width: 80%;
-    text-align: center;
-    box-shadow: 0 2px 3px #ccc;
-    border: 1px solid #ccc;
-    padding: 30px;
-    box-sizing: border-box;
+  margin: 8% auto;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #ccc;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
-    .Signin {
-        width: 500px;
-    }
+  .Signin {
+    width: 500px;
+  }
 }
 
-.signup{
-    padding:10px;
-    color:blue;
-    font-size: 16px;
-    
+.signup {
+  padding: 10px;
+  color: blue;
+  font-size: 16px;
+}
+
+.userTypeSelect {
+  margin: 20px;
+}
+.userTypeSelect .title {
+  margin-top: 5px;
 }

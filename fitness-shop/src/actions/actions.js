@@ -56,7 +56,8 @@ export const signup = (email, password) => {
     dispatch(authStart());
     const member = {
       email: email,
-      signupTime: new Date()
+      signupTime: new Date(),
+      userType:"Member"
     };
 
     axios
@@ -67,7 +68,8 @@ export const signup = (email, password) => {
     const authData = {
       email: email,
       password: password,
-      returnSesureToken: true
+      returnSesureToken: true,
+      
     };
     let url =
       "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyA6rdzOOzlZBeUU4kSwqxuKIFXc2nvKr9Q";
@@ -85,7 +87,7 @@ export const signup = (email, password) => {
   };
 };
 
-export const signin = (email, password) => {
+export const signin = (email, password,userType) => {
   return dispatch => {
     dispatch(authStart());
     const authData = {
@@ -110,7 +112,9 @@ export const signin = (email, password) => {
           authSuccess(
             response.data.idToken,
             response.data.localId,
+            userType,
             response.data.email
+
           )
         );
       })
