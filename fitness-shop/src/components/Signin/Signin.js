@@ -4,7 +4,7 @@ import Input from "../Input/Input";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
-import { Form, Col, Container,Row } from "react-bootstrap";
+import { Form, Col, Container, Row } from "react-bootstrap";
 class Signin extends Component {
   state = {
     controls: {
@@ -38,7 +38,7 @@ class Signin extends Component {
         touched: false
       }
     },
-    userType:""
+    userType: ""
   };
 
   checkValidity(value, rules) {
@@ -88,18 +88,24 @@ class Signin extends Component {
     this.setState({ controls: updatedControls });
   };
 
-  selectUserTypeHandler=(event)=>{
-this.setState({userType:event.target.value});
-
-  }
+  selectUserTypeHandler = event => {
+    this.setState({ userType: event.target.value });
+  };
 
   submitHandler = event => {
     event.preventDefault();
-    this.props.signinAction(
-      this.state.controls.email.value,
-      this.state.controls.password.value,
-      this.state.userType
-    );
+    if (
+      this.state.userType === "Member" ||
+      this.state.userType === "Management"
+    ) {
+      this.props.signinAction(
+        this.state.controls.email.value,
+        this.state.controls.password.value,
+        this.state.userType
+      );
+    } else {
+      alert("Please choose a user type");
+    }
   };
 
   render() {
@@ -131,19 +137,23 @@ this.setState({userType:event.target.value});
         <form onSubmit={this.submitHandler}>
           {form}
           <div className={css.userTypeSelect}>
-          <Container>
-            <Row>
-              <Col className={css.title}>User Type</Col>
-              <Col xs={9}>
-              <Form.Control as="select" onChange={event=>{this.selectUserTypeHandler(event)}}>
-              <option>Choose...</option> 
-            <option>Member</option>
-            <option>Management</option>
-          </Form.Control>
-              </Col>
-            </Row>
-          </Container>
-         
+            <Container>
+              <Row>
+                <Col className={css.title}>User Type</Col>
+                <Col xs={9}>
+                  <Form.Control
+                    as="select"
+                    onChange={event => {
+                      this.selectUserTypeHandler(event);
+                    }}
+                  >
+                    <option>Choose...</option>
+                    <option>Member</option>
+                    <option>Management</option>
+                  </Form.Control>
+                </Col>
+              </Row>
+            </Container>
           </div>
           <p>
             New member? Please{" "}
