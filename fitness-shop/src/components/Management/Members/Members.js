@@ -20,26 +20,15 @@ class Members extends Component {
   }
 
   render() {
-    // const postList = this.state.posts.map((e, index) => {
-    //   return (
-    //     <tr>
-    //       <td>{index}</td>
-    //       <td>{e[index].email}</td>
-    //       <td>{String(e[index].signupTime)}</td>
-    //     </tr>
-    //   );
-    // });
     const postList = Object.keys(this.state.posts).map((e, index) => {
-        return  (
-                <tr>
-                  <td>{index}</td>
-                  <td>{this.state.posts[e].email}</td>
-                  <td>{String(this.state.posts[e].signupTime)}</td>
-                </tr>
-                
-              );
-             
-    })
+      return (
+        <tr>
+          <td>{index}</td>
+          <td>{this.state.posts[e].email}</td>
+          <td>{String(this.state.posts[e].signupTime)}</td>
+        </tr>
+      );
+    });
     return (
       <div>
         <Table responsive>

@@ -6,7 +6,8 @@ class sidebar extends Component {
   state = {
     membersOpen:false,
     postsOpen:false,
-    videosOpen:false
+    videosOpen:false,
+    managementOpen:false
   };
 
   membersHandler=()=>{
@@ -27,6 +28,12 @@ class sidebar extends Component {
         videosOpen: !this.state.videosOpen
         
       })
+  }
+  managementHandler=()=>{
+    this.setState({
+      managementOpen: !this.state.managementOpen
+      
+    })
   }
   render() {
     return (
@@ -62,6 +69,28 @@ class sidebar extends Component {
                     </li>
                     <li className="list-group-item">
                       <NavLink className="mana-nav-link" to="/management/weight"><p>Weight Training</p></NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </Collapse>
+            </li>
+
+            <li>
+              <a
+                onClick={this.managementHandler}
+                data-toggle="collapse"
+              >
+                <p>Management<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                
+              </a>
+              <Collapse in={this.state.managementOpen}>
+                <div>
+                  <ul className="nav mana-nav list-group">
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="/management/members"><p>View Management</p></NavLink>
+                    </li>
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="/management/addMember"><p>Add An Admin</p></NavLink>
                     </li>
                   </ul>
                 </div>
