@@ -35,7 +35,8 @@ class Signup extends Component {
         valid: false,
         touched: false
       }
-    }
+    },
+    ifShow: false
   };
 
   checkValidity(value, rules) {
@@ -68,6 +69,10 @@ class Signup extends Component {
 
     return isValid;
   }
+
+  noteHandler = () => {
+    this.setState({ ifShow: !this.state.ifShow });
+  };
 
   inputChangedHandler = (event, controlName) => {
     const updatedControls = {
@@ -118,16 +123,30 @@ class Signup extends Component {
 
     return (
       <div className={css.Signup}>
-        <h1>Sign up</h1>
+        <h1 onClick={this.noteHandler}>
+          Sign up
+          <i
+            style={{ fontSize: "10px", padding: "5px" }}
+            class="icofont-question"
+          />
+        </h1>
+        {this.state.ifShow ? (
+          <div className={css.talkBubble}>
+            <p>
+              Member signup only. If you are an administrator, please log in as
+              management to add admin
+            </p>
+          </div>
+        ) : null}
+
         <form onSubmit={this.submitHandler}>
           {form}
           <p>Password should not be less than 6 characters</p>
-
           <div className="btn-f">
-          <button className="button">
-            Submit
-            <div className="mask" />
-          </button>
+            <button className="button">
+              Submit
+              <div className="mask" />
+            </button>
           </div>
         </form>
       </div>

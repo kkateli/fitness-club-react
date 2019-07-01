@@ -6,6 +6,7 @@
     border: 1px solid #ccc;
     padding: 30px;
     box-sizing: border-box;
+    position: relative;
 }
 
 @media (min-width: 600px) {
@@ -13,3 +14,32 @@
         width: 500px;
     }
 }
+
+.talkBubble {
+    width: 200px;
+    height: 80px;
+    background: gray;
+    position: absolute;
+    top:10px;
+    left:330px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .talkBubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid gray;
+    border-bottom: 13px solid transparent;
+  }
+
+  .talkBubble p{
+      font-size: 14px;
+      text-align:center;
+      color: black;
+  }
