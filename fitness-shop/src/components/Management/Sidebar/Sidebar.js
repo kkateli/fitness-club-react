@@ -5,7 +5,8 @@ import "./Sidebar.css";
 class sidebar extends Component {
   state = {
     membersOpen:false,
-    postsOpen:false
+    postsOpen:false,
+    videosOpen:false
   };
 
   membersHandler=()=>{
@@ -20,16 +21,52 @@ class sidebar extends Component {
         
       })
   }
+
+  videosHandler=()=>{
+    this.setState({
+        videosOpen: !this.state.videosOpen
+        
+      })
+  }
   render() {
     return (
       <div>
         <nav className="mana-sidebar">
+            <div>
+                <p>Welcome, placeHolder</p>
+                <p style={{borderBottom:"1px solid white"}}><i class="icofont-power"></i>Log out</p>
+            </div>
           <ul>
               <li>
                   <a>
                       <p>Home</p>
                   </a>
               </li>
+
+              <li>
+              <a
+                onClick={this.videosHandler}
+                data-toggle="collapse"
+              >
+                <p>Videos<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                
+              </a>
+              <Collapse in={this.state.videosOpen}>
+                <div>
+                  <ul className="nav mana-nav list-group">
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="#"><p>Yoga</p></NavLink>
+                    </li>
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="#"><p>Cardio</p></NavLink>
+                    </li>
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="#"><p>Weight Training</p></NavLink>
+                    </li>
+                  </ul>
+                </div>
+              </Collapse>
+            </li>
 
               <li>
               <a
