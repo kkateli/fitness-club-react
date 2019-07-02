@@ -27,6 +27,7 @@ export const logout = () => {
   localStorage.removeItem("expirationTime");
   localStorage.removeItem("userId");
   localStorage.removeItem("email");
+  localStorage.removeItem("userType");
   return {
     type: "AUTH_LOGOUT"
   };
@@ -133,7 +134,6 @@ export const signin = (email, password, userType) => {
       .post(url, authData)
       .then(response => {
         console.log(response.data);
-
         //Local storage to hold auth info after reloading
         //to store in an obj
         const expirationTime = new Date(new Date().getTime() + 3600 * 1000);
@@ -150,6 +150,12 @@ export const signin = (email, password, userType) => {
             response.data.email
           )
         );
+        // if(userType==="Member"){
+        //   document.location.href = "/home";
+        // }
+        // if(userType==="Admin"){
+        //   document.location.href = "/Management";
+        // }
       })
       .catch(err => {
         console.log(err);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import axios from "axios";
+import "./Members.css";
 class Members extends Component {
   state = {
     posts: []
@@ -30,7 +31,8 @@ class Members extends Component {
       );
     });
     return (
-      <div>
+      <div className="memberTable">
+        <h1>View Members</h1>
         <Table responsive>
           <thead>
             <tr>

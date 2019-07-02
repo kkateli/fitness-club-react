@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Collapse } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import {Link} from "react-router-dom";
+
 class sidebar extends Component {
   state = {
     membersOpen:false,
@@ -41,7 +43,7 @@ class sidebar extends Component {
         <nav className="mana-sidebar">
             <div className="mana-profile">
                 <p>Welcome, placeHolder</p>
-                <p style={{borderBottom:"1px solid white"}}><i class="icofont-power"></i>Log out</p>
+                <Link to={"/logout"}><p style={{borderBottom:"1px solid white"}}><i class="icofont-power"></i>Log out</p></Link>
             </div>
           <ul>
               <li>
