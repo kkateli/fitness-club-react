@@ -51,32 +51,6 @@ class sidebar extends Component {
                       <p>Home</p>
                   </NavLink>
               </li>
-
-              <li>
-              <a
-                onClick={this.videosHandler}
-                data-toggle="collapse"
-              >
-                <p>Videos<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
-                
-              </a>
-              <Collapse in={this.state.videosOpen}>
-                <div>
-                  <ul className="nav mana-nav list-group">
-                    <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management/yoga"><p>Yoga</p></NavLink>
-                    </li>
-                    <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management/cardio"><p>Cardio</p></NavLink>
-                    </li>
-                    <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management/weight"><p>Weight Training</p></NavLink>
-                    </li>
-                  </ul>
-                </div>
-              </Collapse>
-            </li>
-
             <li>
               <a
                 onClick={this.managementHandler}
@@ -113,9 +87,7 @@ class sidebar extends Component {
                     <li className="list-group-item">
                       <NavLink className="mana-nav-link" to="/management/members"><p>View Members</p></NavLink>
                     </li>
-                    <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management/addMember"><p>Add A Member</p></NavLink>
-                    </li>
+                
                   </ul>
                 </div>
               </Collapse>
@@ -135,8 +107,30 @@ class sidebar extends Component {
                     <li className="list-group-item">
                       <NavLink className="mana-nav-link" to="/management/posts"><p>View Posts</p></NavLink>
                     </li>
+                  </ul>
+                </div>
+              </Collapse>
+            </li>
+
+            <li>
+              <a
+                onClick={this.videosHandler}
+                data-toggle="collapse"
+              >
+                <p>Videos<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                
+              </a>
+              <Collapse in={this.state.videosOpen}>
+                <div>
+                  <ul className="nav mana-nav list-group">
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management.addPost"><p>Add A Post</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/yoga"><p>Yoga</p></NavLink>
+                    </li>
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="/management/cardio"><p>Cardio</p></NavLink>
+                    </li>
+                    <li className="list-group-item">
+                      <NavLink className="mana-nav-link" to="/management/weight"><p>Weight Training</p></NavLink>
                     </li>
                   </ul>
                 </div>

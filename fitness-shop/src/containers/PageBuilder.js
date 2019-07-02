@@ -23,6 +23,7 @@ import Members from "../components/Management/Members/Members";
 import Sidebar from "../components/Management/Sidebar/Sidebar";
 import AddAdmin from "../components/Management/AddAdmin/AddAdmin";
 import Admins from "../components/Management/ViewManagement/ViewManagement";
+import Posts from "../components/Management/ViewPosts/ViewPosts";
 
 
 class PageBuilder extends Component {
@@ -79,6 +80,7 @@ class PageBuilder extends Component {
             <Route path="/logout" component={Logout} />
             <Route path="/" exact component={Home} />
             <Route path="/management/admins" component={Admins} />
+            <Route path="/management/posts" component={Posts} />
             <Redirect to="/" />
           </Switch>
         </div>
