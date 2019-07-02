@@ -123,10 +123,9 @@ class Signup extends Component {
 
     return (
       <div className={css.Signup}>
-        <h1>
+        <h1 onClick={this.noteHandler}>
           Sign up
           <i
-            onClick={this.noteHandler}
             style={{
               fontSize: "10px",
               border: "1px solid black",
@@ -141,7 +140,7 @@ class Signup extends Component {
           <div className={css.talkBubble}>
             <p>
               Member signup only. If you are an administrator, please log in as
-              management to add admin
+              an admin to manage staff
             </p>
           </div>
         ) : null}
