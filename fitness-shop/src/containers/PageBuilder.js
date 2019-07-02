@@ -22,6 +22,8 @@ import Home from "../components/Home/Home";
 import Members from "../components/Management/Members/Members";
 import Sidebar from "../components/Management/Sidebar/Sidebar";
 import AddAdmin from "../components/Management/AddAdmin/AddAdmin";
+import Admins from "../components/Management/ViewManagement/ViewManagement";
+
 
 class PageBuilder extends Component {
   componentDidMount() {
@@ -75,7 +77,8 @@ class PageBuilder extends Component {
             <Route path="/management/members" component={Members} />
             <Route path="/management/addadmin" component={AddAdmin} />
             <Route path="/logout" component={Logout} />
-            <Route path="/" component={Home} />
+            <Route path="/" exact component={Home} />
+            <Route path="/management/admins" component={Admins} />
             <Redirect to="/" />
           </Switch>
         </div>

@@ -3,6 +3,7 @@ import "./AddAdmin.css";
 import Input from "../../Input/Input";
 import { connect } from "react-redux";
 import * as actions from "../../../actions/actions";
+import axios from "axios";
 
 class AddAdmin extends Component {
   state = {
@@ -99,6 +100,18 @@ class AddAdmin extends Component {
       this.state.controls.email.value,
       this.state.controls.password.value
     );
+    const admin = {
+      email: "admin/" + this.state.controls.email.value,
+      name:this.state.controls.name.value,
+      Job:this.state.controls.job.value,
+      sponsor:this.state.controls.sponsor.value,
+      signupTime: new Date()
+    };
+    axios
+      .post("https://fitness-admin.firebaseio.com/.json", admin)
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   checkValidity(value, rules) {

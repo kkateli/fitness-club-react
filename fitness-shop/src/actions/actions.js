@@ -91,15 +91,6 @@ export const signup = (email, password) => {
 export const manaSignup = (email, password) => {
   return dispatch => {
     dispatch(authStart());
-    const member = {
-      email: "admin/" + email,
-      signupTime: new Date()
-    };
-    axios
-      .post("https://fitness-admin.firebaseio.com/.json", member)
-      .catch(err => {
-        console.log(err);
-      });
     const authData = {
       email: "admin/" + email,
       password: password,
