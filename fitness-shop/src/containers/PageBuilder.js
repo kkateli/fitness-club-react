@@ -21,6 +21,7 @@ import Questions from "../Questions/Questions";
 import Home from "../components/Home/Home";
 import Members from "../components/Management/Members/Members";
 import Sidebar from "../components/Management/Sidebar/Sidebar";
+import AddAdmin from "../components/Management/AddAdmin/AddAdmin";
 
 
 class PageBuilder extends Component {
@@ -39,6 +40,8 @@ class PageBuilder extends Component {
         <Route path="/documentation" component={Documentation} />
         <Route path="/questions" component={Questions} />
         <Route path="/management/members" component={Members} />
+        
+        <Route path="/management/addadmin" component={AddAdmin} />
         <Route path="/management" component={Sidebar} />
         <Redirect to="/" />
       </Switch>

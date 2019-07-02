@@ -87,10 +87,10 @@ class sidebar extends Component {
                 <div>
                   <ul className="nav mana-nav list-group">
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management/members"><p>View Management</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/admins"><p>View Management</p></NavLink>
                     </li>
                     <li className="list-group-item">
-                      <NavLink className="mana-nav-link" to="/management/addMember"><p>Add An Admin</p></NavLink>
+                      <NavLink className="mana-nav-link" to="/management/addadmin"><p>Add An Admin</p></NavLink>
                     </li>
                   </ul>
                 </div>
