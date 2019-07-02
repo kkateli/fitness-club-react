@@ -18,7 +18,7 @@
 .talkBubble {
     width: 200px;
     height: 80px;
-    background: gray;
+    background: lightgray;
     position: absolute;
     top:10px;
     left:330px;
@@ -34,7 +34,7 @@
     width: 0;
     height: 0;
     border-top: 13px solid transparent;
-    border-right: 26px solid gray;
+    border-right: 26px solid lightgray;
     border-bottom: 13px solid transparent;
   }
 

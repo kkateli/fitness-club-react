@@ -123,10 +123,17 @@ class Signup extends Component {
 
     return (
       <div className={css.Signup}>
-        <h1 onClick={this.noteHandler}>
+        <h1>
           Sign up
           <i
-            style={{ fontSize: "10px", padding: "5px" }}
+            onClick={this.noteHandler}
+            style={{
+              fontSize: "10px",
+              border: "1px solid black",
+              borderRadius: "50px",
+              backgroundColor: "lightGray",
+              color: "black"
+            }}
             class="icofont-question"
           />
         </h1>
