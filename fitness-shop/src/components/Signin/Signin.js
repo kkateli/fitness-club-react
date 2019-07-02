@@ -94,10 +94,7 @@ class Signin extends Component {
 
   submitHandler = event => {
     event.preventDefault();
-    if (
-      this.state.userType === "Member" ||
-      this.state.userType === "Admin"
-    ) {
+    if (this.state.userType === "Member" || this.state.userType === "Admin") {
       this.props.signinAction(
         this.state.controls.email.value,
         this.state.controls.password.value,
@@ -161,12 +158,27 @@ class Signin extends Component {
               <Link to={"/signup"}>
                 <strong>sign up</strong>
               </Link>
-            </span>{" "}
-            or sign in as a guest:
+            </span>
           </p>
-
-          <p>Email: test@test.com</p>
-          <p> Password: 111111</p>
+          <div style={{border:"1px black dotted", marginBottom:"10px"}}>
+          <strong><p>Quick Start</p></strong>
+          <div>
+            <Container>
+              <Row>
+                <Col>
+                  <p>Sign in as a member</p>
+                  <p>Email: test@test.com</p>
+                  <p> Password: 111111</p>
+                </Col>
+                <Col>
+                  <p>Sign in as an admin</p>
+                  <p>Email: admin@test.com</p>
+                  <p> Password: 222222</p>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          </div>
           <div className="btn-f">
             <button className="button">
               Submit

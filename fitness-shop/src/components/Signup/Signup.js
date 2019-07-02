@@ -140,7 +140,7 @@ class Signup extends Component {
           <div className={css.talkBubble}>
             <p>
               Member signup only. If you are an administrator, please log in as
-              an admin to manage staff
+              an admin to add staff
             </p>
           </div>
         ) : null}
