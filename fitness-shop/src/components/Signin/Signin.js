@@ -96,7 +96,7 @@ class Signin extends Component {
     event.preventDefault();
     if (
       this.state.userType === "Member" ||
-      this.state.userType === "Management"
+      this.state.userType === "Admin"
     ) {
       this.props.signinAction(
         this.state.controls.email.value,
@@ -149,7 +149,7 @@ class Signin extends Component {
                   >
                     <option>Choose...</option>
                     <option>Member</option>
-                    <option>Management</option>
+                    <option>Admin</option>
                   </Form.Control>
                 </Col>
               </Row>

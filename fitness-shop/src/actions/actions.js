@@ -5,12 +5,12 @@ export const authStart = () => {
   };
 };
 
-export const authSuccess = (token, userId, userType,userEmail) => {
+export const authSuccess = (token, userId, userType, userEmail) => {
   return {
     type: "AUTH_SUCCESS",
     token: token,
     userId: userId,
-    userType:userType,
+    userType: userType,
     userEmail: userEmail
   };
 };
@@ -57,9 +57,8 @@ export const signup = (email, password) => {
   return dispatch => {
     dispatch(authStart());
     const member = {
-      email: "member/"+ email,
-      signupTime: new Date(),
-      
+      email: "member/" + email,
+      signupTime: new Date()
     };
     axios
       .post("https://fitness-members.firebaseio.com/.json", member)
@@ -68,10 +67,9 @@ export const signup = (email, password) => {
       });
 
     const authData = {
-      email: "member/"+ email,
+      email: "member/" + email,
       password: password,
-      returnSesureToken: true,
-      
+      returnSesureToken: true
     };
     let url =
       "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyA6rdzOOzlZBeUU4kSwqxuKIFXc2nvKr9Q";
@@ -89,11 +87,43 @@ export const signup = (email, password) => {
   };
 };
 
-export const signin = (email, password,userType) => {
+export const manaSignup = (email, password) => {
+  return dispatch => {
+    dispatch(authStart());
+    const member = {
+      email: "admin/" + email,
+      signupTime: new Date()
+    };
+    axios
+      .post("https://fitness-admin.firebaseio.com/.json", member)
+      .catch(err => {
+        console.log(err);
+      });
+    const authData = {
+      email: "admin/" + email,
+      password: password,
+      returnSesureToken: true
+    };
+    let url =
+      "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyA6rdzOOzlZBeUU4kSwqxuKIFXc2nvKr9Q";
+    axios
+      .post(url, authData)
+      .then(response => {
+        console.log(response.data);
+        alert("Your admin account has been created. Thank you!");
+      })
+      .catch(err => {
+        console.log(err);
+        alert(err);
+      });
+  };
+};
+
+export const signin = (email, password, userType) => {
   return dispatch => {
     dispatch(authStart());
     const authData = {
-      email: userType.toLowerCase()+"/"+email,
+      email: userType.toLowerCase() + "/" + email,
       password: password,
       returnSesureToken: true
     };
@@ -103,7 +133,7 @@ export const signin = (email, password,userType) => {
       .post(url, authData)
       .then(response => {
         console.log(response.data);
-        
+
         //Local storage to hold auth info after reloading
         //to store in an obj
         const expirationTime = new Date(new Date().getTime() + 3600 * 1000);
@@ -118,7 +148,6 @@ export const signin = (email, password,userType) => {
             response.data.localId,
             userType,
             response.data.email
-
           )
         );
       })

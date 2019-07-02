@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Form } from "react-bootstrap";
 import "./AddAdmin.css";
 import Input from "../../Input/Input";
+import { connect } from "react-redux";
+import * as actions from "../../../actions/actions";
+
 class AddAdmin extends Component {
   state = {
     controls: {
@@ -91,6 +93,14 @@ class AddAdmin extends Component {
     this.setState({ controls: updatedControls });
   };
 
+  submitHandler = event => {
+    event.preventDefault();
+    this.props.manaSignupAction(
+      this.state.controls.email.value,
+      this.state.controls.password.value
+    );
+  };
+
   checkValidity(value, rules) {
     let isValid = true;
     if (!rules) {
@@ -123,6 +133,7 @@ class AddAdmin extends Component {
   }
 
   render() {
+      console.log(this.state.controls);
     const formElementsArray = [];
     for (let key in this.state.controls) {
       formElementsArray.push({
@@ -162,4 +173,11 @@ class AddAdmin extends Component {
     );
   }
 }
-export default AddAdmin;
+ const mapDispatchToProps=(dispatch)=>{
+    return {
+        manaSignupAction: (email, password) => dispatch(actions.manaSignup(email, password))
+      };
+}
+
+
+export default connect(null, mapDispatchToProps)(AddAdmin);
