@@ -3,7 +3,7 @@ import { Collapse } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 import {Link} from "react-router-dom";
-
+import {connect} from "react-redux";
 class sidebar extends Component {
   state = {
     membersOpen:false,
@@ -42,7 +42,7 @@ class sidebar extends Component {
       <div>
         <nav className="mana-sidebar">
             <div className="mana-profile">
-                <p>Welcome, placeHolder</p>
+                <p>Welcome, {this.props.email.split("@")[0].split("/")[1]}</p>
                 <Link to={"/logout"}><p style={{borderBottom:"1px solid white"}}><i class="icofont-power"></i>Log out</p></Link>
             </div>
           <ul>
@@ -148,4 +148,10 @@ class sidebar extends Component {
     );
   }
 }
-export default sidebar;
+const mapStateToProps=(state)=>{
+  return {
+    email:state.auth.userEmail
+  }
+
+}
+export default connect(mapStateToProps,null)(sidebar);

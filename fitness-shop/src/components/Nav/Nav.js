@@ -141,7 +141,7 @@ class NavBar extends Component {
 
             {this.props.ifAuth ? (
               <p className="logoutButton">
-                Hi, {this.props.userEmail.split("@")[0]}
+                Hi, {this.props.userEmail.split("@")[0].split("/")[1]}
                 <Link to={"/logout"}> Log out</Link>
               </p>
             ) : null}
