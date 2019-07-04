@@ -5,11 +5,7 @@ import "./Members.css";
 import {connect} from "react-redux";
 import * as actions from "../../../actions/actions";
 class Members extends Component {
-  componentDidMount() {
-    this.props.memberAction();
-    
-  }
-
+  
   render() {
     
     let postList=null;
@@ -48,9 +44,5 @@ return {
   memberList:state.member
 }
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    memberAction: () => dispatch(actions.viewMembers())
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Members);
+
+export default connect(mapStateToProps, null)(Members);

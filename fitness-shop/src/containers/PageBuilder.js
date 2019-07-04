@@ -24,6 +24,7 @@ import Sidebar from "../components/Management/Sidebar/Sidebar";
 import AddAdmin from "../components/Management/AddAdmin/AddAdmin";
 import Admins from "../components/Management/ViewManagement/ViewManagement";
 import Posts from "../components/Management/ViewPosts/ViewPosts";
+import ManaHome from "../components/Management/Home/Home/Home";
 
 
 class PageBuilder extends Component {
@@ -75,6 +76,7 @@ class PageBuilder extends Component {
         <div>
           <Sidebar />
           <Switch>
+            <Route path="/management" exact component ={ManaHome} />
             <Route path="/management/members" component={Members} />
             <Route path="/management/addadmin" component={AddAdmin} />
             <Route path="/logout" component={Logout} />

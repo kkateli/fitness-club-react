@@ -2,16 +2,9 @@ import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import "./ViewManagement.css"
 import axios from "axios";
-import * as actions from "../../../actions/actions";
+
 import {connect} from "react-redux";
 class ViewManagement extends Component {
-  state = {
-    admins: []
-  };
-
-  componentDidMount() {
-    this.props.adminAction();
-  }
 
   render() {
     let adminList;
@@ -56,9 +49,5 @@ const mapStateToProps=(state)=>{
     adminList:state.admin
   }
   }
-  const mapDispatchToProps = dispatch => {
-    return {
-      adminAction: () => dispatch(actions.viewAdmins())
-    };
-  };
-export default connect(mapStateToProps,mapDispatchToProps)(ViewManagement);
+  
+export default connect(mapStateToProps,null)(ViewManagement);
