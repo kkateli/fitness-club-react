@@ -2,38 +2,34 @@ import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 import "./ViewManagement.css"
 import axios from "axios";
-
+import * as actions from "../../../actions/actions";
+import {connect} from "react-redux";
 class ViewManagement extends Component {
   state = {
     admins: []
   };
 
   componentDidMount() {
-    axios
-      .get("https://fitness-admin.firebaseio.com/.json")
-      .then(response => {
-        this.setState({
-          admins: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this.props.adminAction();
   }
 
   render() {
-    const adminList = Object.keys(this.state.admins).map((e, index) => {
-      return (
-        <tr>
-          <td>{index}</td>
-          <td>{this.state.admins[e].email}</td>
-          <td>{this.state.admins[e].name}</td>
-          <td>{this.state.admins[e].Job}</td>
-          <td>{this.state.admins[e].sponsor}</td>
-          <td>{String(this.state.admins[e].signupTime)}</td>
-        </tr>
-      );
-    });
+    let adminList;
+    if(this.props.adminList.adminList!=null){
+      adminList = Object.keys(this.props.adminList.adminList).map((e, index) => {
+          return (
+            <tr>
+              <td>{index}</td>
+              <td>{this.props.adminList.adminList[e].email}</td>
+              <td>{this.props.adminList.adminList[e].name}</td>
+              <td>{this.props.adminList.adminList[e].Job}</td>
+              <td>{this.props.adminList.adminList[e].sponsor}</td>
+              <td>{String(this.props.adminList.adminList[e].signupTime)}</td>
+            </tr>
+          );
+
+    })}
+  
     return (
       <div className="staffTable">
         <h1>View Staff</h1>
@@ -54,4 +50,15 @@ class ViewManagement extends Component {
     );
   }
 }
-export default ViewManagement;
+
+const mapStateToProps=(state)=>{
+  return {
+    adminList:state.admin
+  }
+  }
+  const mapDispatchToProps = dispatch => {
+    return {
+      adminAction: () => dispatch(actions.viewAdmins())
+    };
+  };
+export default connect(mapStateToProps,mapDispatchToProps)(ViewManagement);

@@ -14,6 +14,12 @@ const initialMemberList = {
   loading: false
 };
 
+const initialAdminList = {
+  adminList: null,
+  error: null,
+  loading: false
+};
+
 const authReducer = (state = initialState, action) => {
   if (action.type === "AUTH_START") {
     return {
@@ -67,7 +73,23 @@ const memberManagement = (state = initialMemberList, action) => {
   return state;
 };
 
+const adminManagement = (state = initialAdminList, action) => {
+  if (action.type === "ADMIN_LIST") {
+    return {
+      ...state,
+      ...{ adminList: action.payload, error: null }
+    };
+  } else if (action.type === "ADMIN_FAIL") {
+    return {
+      ...state,
+      ...{ error: action.error, adminList:null }
+    };
+  }
+  return state;
+};
+
 export default combineReducers({
   auth: authReducer,
-  member: memberManagement
+  member: memberManagement,
+  admin:adminManagement
 });

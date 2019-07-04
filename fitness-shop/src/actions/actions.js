@@ -51,6 +51,35 @@ export const viewMembers = () => {
   };
 };
 
+export const admins = adminList => {
+  return {
+    type: "ADMIN_LIST",
+    payload: adminList
+  };
+};
+
+export const adminFail = error => {
+  return {
+    type: "ADMIN_FAIL",
+    error: error
+  };
+};
+
+export const viewAdmins = () => {
+  return dispatch => {
+    axios
+    .get("https://fitness-admin.firebaseio.com/.json")
+    .then(response => {
+      dispatch(admins(response.data));
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch(adminFail(error));
+    });
+  };
+};
+
 export const logout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("expirationTime");
