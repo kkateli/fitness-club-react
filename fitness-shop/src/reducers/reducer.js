@@ -2,11 +2,18 @@ import { combineReducers } from "redux";
 const initialState = {
   token: null,
   userId: null,
-  userType:null,
-  userEmail:null,
+  userType: null,
+  userEmail: null,
   error: null,
   loading: false
 };
+
+const initialMemberList = {
+  memberList: null,
+  error: null,
+  loading: false
+};
+
 const authReducer = (state = initialState, action) => {
   if (action.type === "AUTH_START") {
     return {
@@ -19,8 +26,8 @@ const authReducer = (state = initialState, action) => {
       ...{
         token: action.token,
         userId: action.userId,
-        userType:action.userType,
-        userEmail:action.userEmail,
+        userType: action.userType,
+        userEmail: action.userEmail,
         error: null,
         loading: false
       }
@@ -30,16 +37,37 @@ const authReducer = (state = initialState, action) => {
       ...state,
       ...{ error: action.error, loading: false }
     };
-  }
-  else if(action.type ==="AUTH_LOGOUT"){
+  } else if (action.type === "AUTH_LOGOUT") {
     return {
       ...state,
-      ...{token:null,userId:null,userType:null,userEmail: null,loading:false}
-    }
+      ...{
+        token: null,
+        userId: null,
+        userType: null,
+        userEmail: null,
+        loading: false
+      }
+    };
+  }
+  return state; //NOTE 
+};
+
+const memberManagement = (state = initialMemberList, action) => {
+  if (action.type === "MEMBER_LIST") {
+    return {
+      ...state,
+      ...{ memberList: action.payload, error: null }
+    };
+  } else if (action.type === "MEMBER_FAIL") {
+    return {
+      ...state,
+      ...{ error: action.error, memberList:null }
+    };
   }
   return state;
 };
 
 export default combineReducers({
-  auth: authReducer
+  auth: authReducer,
+  member: memberManagement
 });

@@ -1,35 +1,31 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
-import axios from "axios";
-import "./Members.css";
-class Members extends Component {
-  state = {
-    posts: []
-  };
 
+import "./Members.css";
+import {connect} from "react-redux";
+import * as actions from "../../../actions/actions";
+class Members extends Component {
   componentDidMount() {
-    axios
-      .get("https://fitness-members.firebaseio.com/.json")
-      .then(response => {
-        this.setState({
-          posts: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this.props.memberAction();
+    
   }
 
   render() {
-    const postList = Object.keys(this.state.posts).map((e, index) => {
-      return (
-        <tr>
-          <td>{index}</td>
-          <td>{this.state.posts[e].email}</td>
-          <td>{String(this.state.posts[e].signupTime)}</td>
-        </tr>
-      );
-    });
+    
+    let postList=null;
+    if(this.props.memberList.memberList!=null){
+      postList = Object.keys(this.props.memberList.memberList).map((e, index) => {
+      
+          return (
+            <tr key={index}>
+              <td>{index}</td>
+              <td>{this.props.memberList.memberList[e].email}</td>
+              <td>{String(this.props.memberList.memberList[e].signupTime)}</td>
+            </tr>
+          );
+        });
+    }
+     
     return (
       <div className="memberTable">
         <h1>View Members</h1>
@@ -47,4 +43,14 @@ class Members extends Component {
     );
   }
 }
-export default Members;
+const mapStateToProps=(state)=>{
+return {
+  memberList:state.member
+}
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    memberAction: () => dispatch(actions.viewMembers())
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Members);

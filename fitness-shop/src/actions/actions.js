@@ -18,7 +18,36 @@ export const authSuccess = (token, userId, userType, userEmail) => {
 export const authFail = error => {
   return {
     type: "AUTH_FAIL",
-    payload: error
+    error: error
+  };
+};
+
+export const members = memberList => {
+  return {
+    type: "MEMBER_LIST",
+    payload: memberList
+  };
+};
+
+export const memberFail = error => {
+  return {
+    type: "MEMBER_FAIL",
+    error: error
+  };
+};
+
+export const viewMembers = () => {
+  return dispatch => {
+    axios
+      .get("https://fitness-members.firebaseio.com/.json")
+      .then(response => {
+        dispatch(members(response.data));
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+        dispatch(memberFail(error));
+      });
   };
 };
 
