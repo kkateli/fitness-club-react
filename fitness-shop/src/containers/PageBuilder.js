@@ -80,10 +80,10 @@ class PageBuilder extends Component {
             <Route path="/management/members" component={Members} />
             <Route path="/management/addadmin" component={AddAdmin} />
             <Route path="/logout" component={Logout} />
-            <Route path="/" exact component={Home} />
             <Route path="/management/admins" component={Admins} />
             <Route path="/management/posts" component={Posts} />
-            <Redirect to="/" />
+            <Route path="/signin" component={Signin} />
+            {/* <Redirect to="/management" /> */}
           </Switch>
         </div>
       );

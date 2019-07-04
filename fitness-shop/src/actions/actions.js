@@ -214,7 +214,7 @@ export const signin = (email, password, userType) => {
           )
         );
         // if(userType==="Member"){
-        //   document.location.href = "/home";
+        //   this.props.history.push("/");
         // }
         // if(userType==="Admin"){
         //   this.props.history.push("/management");

@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 import "./Members.css";
 import {connect} from "react-redux";
-import * as actions from "../../../actions/actions";
+
 class Members extends Component {
   
   render() {

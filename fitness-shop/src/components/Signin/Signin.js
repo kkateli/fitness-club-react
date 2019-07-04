@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/actions";
 import { Form, Col, Container, Row } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 class Signin extends Component {
   state = {
     controls: {
@@ -106,7 +107,17 @@ class Signin extends Component {
   };
 
   render() {
-    console.log(this.state.userType);
+    //signin after auth needs to be allowed in PageBuilder page ANCHOR 
+    let redirect = null;
+    console.log(this.props.ifAuth);
+    if (this.props.ifAuth) {
+      if (this.props.userType === "Member") {
+        redirect = <Redirect to="/" />;
+      }
+      if (this.props.userType === "Admin") {
+        redirect = <Redirect to="/management" />;
+      }
+    }
     const formElementsArray = [];
     for (let key in this.state.controls) {
       formElementsArray.push({
@@ -130,6 +141,7 @@ class Signin extends Component {
 
     return (
       <div className={css.Signin}>
+        {redirect}
         <h1>Sign in</h1>
         <form onSubmit={this.submitHandler}>
           {form}
@@ -160,24 +172,26 @@ class Signin extends Component {
               </Link>
             </span>
           </p>
-          <div style={{border:"1px black dotted", marginBottom:"10px"}}>
-          <strong><p>Quick Start</p></strong>
-          <div>
-            <Container>
-              <Row>
-                <Col>
-                  <p>Sign in as a member</p>
-                  <p>Email: test@test.com</p>
-                  <p> Password: 111111</p>
-                </Col>
-                <Col>
-                  <p>Sign in as an admin</p>
-                  <p>Email: admin@test.com</p>
-                  <p> Password: 222222</p>
-                </Col>
-              </Row>
-            </Container>
-          </div>
+          <div style={{ border: "1px black dotted", marginBottom: "10px" }}>
+            <strong>
+              <p>Quick Start</p>
+            </strong>
+            <div>
+              <Container>
+                <Row>
+                  <Col>
+                    <p>Sign in as a member</p>
+                    <p>Email: test@test.com</p>
+                    <p> Password: 111111</p>
+                  </Col>
+                  <Col>
+                    <p>Sign in as an admin</p>
+                    <p>Email: admin@test.com</p>
+                    <p> Password: 222222</p>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
           </div>
           <div className="btn-f">
             <button className="button">
@@ -198,7 +212,14 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+const mapStateToProps = state => {
+  return {
+    ifAuth: state.auth.token != null,
+    userType: state.auth.userType
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Signin);
