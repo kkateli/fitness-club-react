@@ -24,7 +24,7 @@ class ViewPosts extends Component {
   render() {
     const postList = Object.keys(this.state.posts).map((e, index) => {
       return (
-        <tr>
+        <tr key={index}>
           <td>{index}</td>
           <td>{this.state.posts[e].name}</td>
           <td>{this.state.posts[e].title}</td>

@@ -69,6 +69,13 @@ const memberManagement = (state = initialMemberList, action) => {
       ...state,
       ...{ error: action.error, memberList:null }
     };
+  }else if (action.type==="MEMBER_LOGOUT"){
+    return {
+      ...state,
+      ...{memberList: null,
+        error: null,
+        loading: false}
+    }
   }
   return state;
 };
@@ -84,6 +91,13 @@ const adminManagement = (state = initialAdminList, action) => {
       ...state,
       ...{ error: action.error, adminList:null }
     };
+  }else if (action.type==="ADMIN_LOGOUT"){
+    return {
+      ...state,
+      ...{adminList: null,
+        error: null,
+        loading: false}
+    }
   }
   return state;
 };

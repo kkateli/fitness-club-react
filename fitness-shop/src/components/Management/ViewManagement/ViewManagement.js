@@ -11,7 +11,7 @@ class ViewManagement extends Component {
     if(this.props.adminList.adminList!=null){
       adminList = Object.keys(this.props.adminList.adminList).map((e, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{index}</td>
               <td>{this.props.adminList.adminList[e].email}</td>
               <td>{this.props.adminList.adminList[e].name}</td>

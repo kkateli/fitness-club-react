@@ -43,7 +43,7 @@ class sidebar extends Component {
         <nav className="mana-sidebar">
             <div className="mana-profile">
                 <p>Welcome, {this.props.email.split("@")[0].split("/")[1]}</p>
-                <Link to={"/logout"}><p style={{borderBottom:"1px solid white"}}><i class="icofont-power"></i>Log out</p></Link>
+                <Link to={"/logout"}><p style={{borderBottom:"1px solid white"}}><i className="icofont-power"></i>Log out</p></Link>
             </div>
           <ul>
               <li>
@@ -56,7 +56,7 @@ class sidebar extends Component {
                 onClick={this.managementHandler}
                 data-toggle="collapse"
               >
-                <p>Management<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                <p>Management<i className="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
                 
               </a>
               <Collapse in={this.state.managementOpen}>
@@ -78,7 +78,7 @@ class sidebar extends Component {
                 onClick={this.membersHandler}
                 data-toggle="collapse"
               >
-                <p>Members<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                <p>Members<i className="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
                 
               </a>
               <Collapse in={this.state.membersOpen}>
@@ -98,7 +98,7 @@ class sidebar extends Component {
                 onClick={this.postsHandler}
                 data-toggle="collapse"
               >
-                <p>Member Post<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                <p>Member Post<i className="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
                 
               </a>
               <Collapse in={this.state.postsOpen}>
@@ -117,7 +117,7 @@ class sidebar extends Component {
                 onClick={this.videosHandler}
                 data-toggle="collapse"
               >
-                <p>Videos<i class="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
+                <p>Videos<i className="icofont-hand-drawn-down" style={{marginLeft:"10px"}}></i></p>
                 
               </a>
               <Collapse in={this.state.videosOpen}>

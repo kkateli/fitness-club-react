@@ -91,6 +91,20 @@ export const logout = () => {
   };
 };
 
+export const memberLogout = () => {
+  
+  return {
+    type: "MEMBER_LOGOUT"
+  };
+};
+
+export const adminLogout = () => {
+  
+  return {
+    type: "ADMIN_LOGOUT"
+  };
+};
+
 export const authCheck = () => {
   return dispatch => {
     const token = localStorage.getItem("token");
@@ -203,7 +217,8 @@ export const signin = (email, password, userType) => {
         //   document.location.href = "/home";
         // }
         // if(userType==="Admin"){
-        //   document.location.href = "/Management";
+        //   this.props.history.push("/management");
+
         // }
       })
       .catch(err => {
