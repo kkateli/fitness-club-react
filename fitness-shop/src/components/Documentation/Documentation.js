@@ -18,8 +18,7 @@ const documentation = () => {
         are stored in Firebase directly through AJAX calls. It is set up by
         create-react-app(https://github.com/facebook/create-react-app), where
         amazing tools such as Webpack, Babel, ESLint are already installed. The
-        project follows continuous integration / continuous delivery pipelines.
-        All commits are recorded on GitHub.
+        project follows continuous integration. All commits are logged on GitHub.
       </p>
       <p>
         <span className="initWord">P</span>lease view:
@@ -63,15 +62,16 @@ const documentation = () => {
           <li>A user is able to sign up</li>
           <li>A member is able to sign in</li>
          
-          <li className="reachHere">
+          <li>
             A member is able to view training videos by categories.(Yoga,
             cardio, and weight-lifting).
           </li>
           <li>A manager is able to log in.</li>
-          <li>A manager is able to upload a trainer's details. </li>
-          <li>A manager is able to delete a trainer's details.</li>
-          <li> A member is able to edit/delete their posts.</li>
-          <li>A manager is able to delete a member's posts. </li>
+          <li>A manager is able to view all the staff.</li>
+          <li>A manager is able to view all the members.</li>
+          <li>A manager is able to view all posts</li>
+          <li>A manager is able to add new admin </li>
+          <li className="reachHere">A manager is able to view statistical visuals after login</li>
           <li>A manager is able to upload training videos by categories. </li>
           
         </span>

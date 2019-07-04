@@ -175,6 +175,7 @@ export const manaSignup = (email, password) => {
       .then(response => {
         console.log(response.data);
         alert("Your admin account has been created. Thank you!");
+        document.location.href = "/management";
       })
       .catch(err => {
         console.log(err);
